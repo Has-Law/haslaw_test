@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "BritanicaHeavy";
+  src: url('/fonts/BritanicaHeavyRegular.ttf') format('truetype');
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "BritanicaBlack";
+  src: url('/fonts/BritanicaBlackRegular.ttf') format('truetype');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "BritanicaBold";
+  src: url('/fonts/BritanicaBoldRegular.ttf') format('truetype');
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: "BritanicaRegular";
+  src: url('/fonts/BritanicaRegular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "LatoBold";
+  src: url('/fonts/LatoBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "LatoRegular";
+  src: url('/fonts/LatoRegular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "MontserratBold";
+  src: url('/fonts/MontserratBold.ttf') format('truetype');
+}
+
+.font_britanica_heavy{
+  font-family: "BritanicaHeavy", sans-serif;
+}
+
+.font_britanica_black{
+  font-family: "BritanicaBlack", sans-serif;
+}
+
+.font_britanica_bold{
+  font-family: "BritanicaBold", sans-serif;
+}
+
+.font_britanica_regular{
+  font-family: "BritanicaRegular", sans-serif;
+}
+
+.font_lato_bold{
+  font-family: "LatoBold", sans-serif;
+}
+
+.font_lato_regular{
+  font-family: "LatoRegular", sans-serif;
+}
+
+.font_montserrat_bold{
+  font-family: "MontserratBold", sans-serif;
 }

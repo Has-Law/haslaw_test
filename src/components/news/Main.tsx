@@ -36,7 +36,6 @@ const NewsCard = ({ item }: { item: News }) => (
     </Link>
 );
 
-
 const Main = ({ news }: { news: News[] }) => {
     const [searchQuery, setSearchQuery] = useState('');
 
@@ -46,32 +45,34 @@ const Main = ({ news }: { news: News[] }) => {
     );
 
     return (
-        <div className="flex flex-col items-center justify-center gap-y-[1vw]">
-            <div className="w-full p-[8vw] flex flex-col items-center justify-center gap-y-[2vw]">
-                <h1 className="font_britanica_black text-[clamp(5vw,5vw,4rem)] text-[#780014] leading-none">
+        <div className="flex flex-col items-center justify-center gap-y-4">
+            <div className="w-full p-8 md:p-16 flex flex-col items-center justify-center text-center gap-y-6 md:gap-y-8">
+                <h1 className="font_britanica_black text-[clamp(2.5rem,6vw,4rem)] text-[#780014] leading-tight">
                     News & Insight
                 </h1>
-                <h3 className="font_britanica_regular text-[clamp(2vw,2vw,2rem)] text-center text-[#131313] max-w-4xl">
+            
+                <h3 className="font_britanica_regular text-[clamp(1rem,2.5vw,1.5rem)] text-[#131313] max-w-4xl">
                     The legal landscape is constantly evolving. Follow the latest publications from our team to gain
                     valuable insights and stay one step ahead in anticipating regulatory changes and industry trends.
                 </h3>
-                <div className="relative min-w-[100px] w-[30vw] flex items-center">
+                <div className="relative w-full max-w-md flex items-center">
                     <input
                         type="text"
                         placeholder="Search News..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="border rounded-full border-[#A0001B] w-full py-[1vw] px-[1vw] pr-10 text-black placeholder:text-[#5E0503]/50 outline-none transition-shadow duration-200 focus:shadow-lg"
+                        className="border rounded-full border-[#A0001B] w-full py-2.5 px-5 pr-12 text-black placeholder:text-[#5E0503]/50 outline-none transition-shadow duration-200 focus:shadow-lg"
                     />
-                    <div className="absolute right-[1vw] top-1/2 -translate-y-1/2 pointer-events-none">
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                         <Image
                             src={search}
                             alt="Search icon"
-                            className="w-8 h-8 text-gray-400"
+                            className="w-6 h-6 text-gray-400"
                         />
                     </div>
                 </div>
             </div>
+           
             <div className="w-full px-[5vw] pb-[5vw]">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mx-auto">
                     {filteredNews.map((item) => (

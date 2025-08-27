@@ -10,6 +10,7 @@ import bench24 from "@/assets/landingpage/image/bench24.webp";
 import top23 from "@/assets/landingpage/image/top23.webp";
 import top24 from "@/assets/landingpage/image/top24.webp";
 import iflr24 from "@/assets/landingpage/image/IFLR24.webp";
+import Link from "next/link";
 
 const achievements = [
   { image: alb23 },
@@ -75,9 +76,12 @@ const Achievement = () => {
           we deliver for our clients in their most critical and complex matters.
         </p>
         
-        <button className="bg-transparent font_britanica_black text-[clamp(1.7vw,1.7vw,2rem)] border-[0.2vw] border-white text-white p-[1vw] cursor-pointer  rounded-full hover:bg-white hover:text-gray-800 transition-all duration-300 ">
-          See Detail Achievement
-        </button>
+         <Link 
+          href="/achievements"
+          className="bg-transparent font_britanica_black text-[clamp(1.7vw,1.7vw,2rem)] border-[0.2vw] border-white text-white p-[1vw] cursor-pointer rounded-full hover:bg-white hover:text-gray-800 transition-all duration-300 "
+        >
+          See Detail Achievements
+        </Link>
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ const Footer = () => {
       <div className=" mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 lg:gap-24">
           
-          {/* Company Info Section */}
+
           <div className="lg:col-span-1">
             <div className="mb-10">
               <Image 
@@ -30,7 +30,7 @@ const Footer = () => {
             <p className="text-[#4F000D] text-xl leading-relaxed mb-12">
               Securing your business with litigation excellence in court and precision in corporate strategy.
             </p>
-            {/* Social Media Icons */}
+     
             <div className="flex space-x-8">
               <Link href="#" className="hover:opacity-80 transition-opacity">
                 <Image src={instagram} alt="Instagram" width={48} height={48} />
@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Our Firm Section */}
+
           <div className="lg:col-span-1 ml-20">
             <h3 className="text-[#4F000D] font-bold text-2xl  mb-5">Our Firm</h3>
             <ul className="space-y-3">
@@ -81,7 +81,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Explore Services Section */}
+   
           <div className="lg:col-span-1">
             <h3 className="text-[#4F000D] font-bold text-2xl mb-5">Explore Services</h3>
             <ul className="space-y-3">
@@ -103,11 +103,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Us Section */}
+     
           <div className="lg:col-span-1">
             <h3 className="text-[#4F000D] font-bold text-2xl mb-5">Contact Us</h3>
             <div className="space-y-3">
-              {/* Email */}
+        
               <div className="flex items-start space-x-5">
                 <Image src={emailIcon} alt="Email" width={32} height={32} className="flex-shrink-0 mt-0.5" />
                 <div>
@@ -117,7 +117,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              {/* Phone */}
+        
               <div className="flex items-start space-x-5">
                 <Image src={phoneIcon} alt="Phone" width={32} height={32} className="flex-shrink-0 mt-0.5" />
                 <div>
@@ -127,7 +127,6 @@ const Footer = () => {
                 </div>
               </div>
 
-              {/* WhatsApp */}
               <div className="flex items-start space-x-5">
                 <Image src={whatsappIcon} alt="WhatsApp" width={32} height={32} className="flex-shrink-0 mt-0.5" />
                 <div>
@@ -137,7 +136,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              {/* Address */}
+            
               <div className="flex items-start space-x-5">
                 <Image src={locationIcon} alt="Location" width={32} height={32} className="flex-shrink-0 mt-0.5" />
                 <div>
@@ -150,7 +149,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright Section */}
+      
         <div className="border-t border-[#4F000D] mt-20 pt-12">
           <div className="text-center">
             <p className="text-[#4F000D] text-xl">

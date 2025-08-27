@@ -63,7 +63,7 @@ const Hero = () => {
                                 <h2 className={`text-white font_britanica_black text-[clamp(3vw,4vw,4rem)] transition-transform duration-800 ease-in-out ${isHovered === 'internship' ? '-translate-y-2' : 'translate-y-0'}`}>Internship</h2>
                                 <div className={`transition-all duration-300 ${isHovered === 'internship' ? 'block' : 'hidden'}`}>
                                     <button className="group/btn flex items-center gap-2 border-2 border-white text-white px-[1.5vw] py-[1vw] rounded-full hover:bg-white hover:text-black transition-all duration-300">
-                                        <span className="font_britanica_regular text-[clamp(1.2vw,1.2vw,2rem)]">Apply now</span>
+                                        <span className="font_britanica_regular text-[clamp(1.2vw,1.2vw,2rem)] ">Apply now</span>
                                         <svg className="w-[1vw] h-[1vw] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                                     </button>
                                 </div>

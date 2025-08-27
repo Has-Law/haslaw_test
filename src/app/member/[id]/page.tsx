@@ -23,16 +23,7 @@ export default async function MemberDetail({ params }: MemberDetailProps) {
         notFound();
     }
 
-  const Parsing = (arr: string[]): string[] => {
-        try {
-            const jsonString = arr.join(',');
-            const parsedArray = JSON.parse(jsonString);
-            return Array.isArray(parsedArray) ? parsedArray : [];
-        } catch (error) {
-            console.error("Gagal mem-parsing data array dari API:", error);
-            return [];
-        }
-    };
+
 
 
 
@@ -64,13 +55,13 @@ export default async function MemberDetail({ params }: MemberDetailProps) {
                             <Image src={mail} alt="mail icon" className="w-[2.5vw] h-[2.5vw]" />
                             <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${member.email}`}
                                 target="_blank"
-                                rel="noopener noreferrer" className="text-[#DBDBDB] font_britanica_regular text-[clamp(1.5vw,2vw,5vw)] hover:underline">
+                                rel="noopener noreferrer" className="text-[#F5F5F5] font_britanica_regular text-[clamp(1.5vw,1.5vw,5vw)] hover:underline">
                                 Email
                             </a>
                         </div>
                         <div className="flex flex-row gap-x-[1vw] items-center">
                             <Image src={phone} alt="phone icon" className="w-[2.5vw] h-[2.5vw]" />
-                            <p className="text-[#DBDBDB] font_britanica_regular text-[clamp(1.5vw,2vw,5vw)]">{member.phone_number}</p>
+                            <p className="text-[#F5F5F5] font_britanica_regular text-[clamp(1.5vw,1.5vw,5vw)]">{member.phone_number}</p>
                         </div>
 
                        
@@ -80,7 +71,7 @@ export default async function MemberDetail({ params }: MemberDetailProps) {
                                 href={member.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-[#DBDBDB] font_britanica_regular text-[clamp(1.5vw,2vw,5vw)] hover:underline"
+                                className="text-[#F5F5F5] font_britanica_regular text-[clamp(1.5vw,1.5vw,5vw)] hover:underline"
                             >
                                 LinkedIn
                             </a>
@@ -93,7 +84,7 @@ export default async function MemberDetail({ params }: MemberDetailProps) {
                                 
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-[#DBDBDB] font_britanica_regular text-[clamp(1.5vw,2vw,5vw)] hover:underline"
+                                className="text-[#F5F5F5] font_britanica_regular text-[clamp(1.5vw,1.5vw,5vw)] hover:underline"
                             >
                                 Download Business Card
                             </a>
@@ -102,31 +93,31 @@ export default async function MemberDetail({ params }: MemberDetailProps) {
                 </div>
             </div>
 
-            <div className="w-[90vw] flex flex-row gap-x-[5vw] items-start z-10">
+            <div className="w-[90vw] flex flex-row gap-x-[10vw] items-start z-10">
                 <div className="flex flex-col text-justify w-[50vw]">
-                    <p className="text-[#131313] font_britanica_regular text-[clamp(1.5vw,2vw,5vw)] whitespace-pre-wrap">{member.biography}</p>
+                    <p className="text-[#131313] font_britanica_regular text-[clamp(1vw,1.5vw,3vw)] whitespace-pre-wrap">{member.biography}</p>
                 </div>
 
                 <div className="flex flex-col gap-y-[2vw]">
                     <div className="flex flex-col items-start">
-                        <h2 className="text-[#C90021] font_britanica_black text-[clamp(3vw,3vw,5vw)]">Practice Focus</h2>
-                        <ul className="text-[#131313] font_britanica_regular text-[clamp(2vw,2vw,5vw)]  space-y-2">
+                        <h2 className="text-[#C90021] font_britanica_black text-[clamp(2vw,2.3vw,5vw)]">Practice Focus</h2>
+                        <ul className="text-[#131313] font_britanica_regular text-[clamp(1.5vw,1.5vw,3vw)]  space-y-2">
                             {member.practice_focus?.map((item, index) => (
                                 <li key={index}>{item}</li>
                             ))}
                         </ul>
                     </div>
                     <div className="flex flex-col items-start">
-                        <h2 className="text-[#C90021] font_britanica_black text-[clamp(3vw,3vw,5vw)]">Education</h2>
-                        <ul className="text-[#131313] font_britanica_regular text-[clamp(2vw,2vw,5vw)] space-y-2">
+                        <h2 className="text-[#C90021] font_britanica_black text-[clamp(2vw,2.3vw,5vw)]">Education</h2>
+                        <ul className="text-[#131313] font_britanica_regular text-[clamp(1.5vw,1.5vw,5vw)] space-y-2">
                             {member.education?.map((item, index) => (
                                 <li key={index}>{item}</li>
                             ))}
                         </ul>
                     </div>
                     <div className="flex flex-col items-start">
-                        <h2 className="text-[#C90021] font_britanica_black text-[clamp(3vw,3vw,5vw)]">Language</h2>
-                        <ul className="text-[#131313] font_britanica_regular text-[clamp(2vw,2vw,5vw)] space-y-2">
+                        <h2 className="text-[#C90021] font_britanica_black text-[clamp(2vw,2.3vw,5vw)]">Language</h2>
+                        <ul className="text-[#131313] font_britanica_regular text-[clamp(1.5vw,1.5vw,5vw)] space-y-2">
                             {member.language?.map((item, index) => (
                             <li key={index}>{item}</li>
                         ))}

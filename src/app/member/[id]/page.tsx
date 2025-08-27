@@ -34,9 +34,7 @@ export default async function MemberDetail({ params }: MemberDetailProps) {
         }
     };
 
-    const cleanedPracticeFocus = Parsing(member.practice_focus);
-    const cleanedEducation = Parsing(member.education);
-    const cleanedLanguage = Parsing(member.language);
+
 
     const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
@@ -92,7 +90,7 @@ export default async function MemberDetail({ params }: MemberDetailProps) {
                             <Image src={download} alt="download icon" className="w-[2.5vw] h-[2.5vw]" />
                             <a
                                 href={`${API_BASE_URL}/${member.business_card}`}
-                                // download
+                                
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-[#DBDBDB] font_britanica_regular text-[clamp(1.5vw,2vw,5vw)] hover:underline"
@@ -106,28 +104,30 @@ export default async function MemberDetail({ params }: MemberDetailProps) {
 
             <div className="w-[90vw] flex flex-row gap-x-[5vw] items-start z-10">
                 <div className="flex flex-col text-justify w-[50vw]">
-                    <p className="text-[#131313] font_britanica_regular text-[clamp(1.5vw,2vw,5vw)]">{member.biography}</p>
+                    <p className="text-[#131313] font_britanica_regular text-[clamp(1.5vw,2vw,5vw)] whitespace-pre-wrap">{member.biography}</p>
                 </div>
 
                 <div className="flex flex-col gap-y-[2vw]">
                     <div className="flex flex-col items-start">
                         <h2 className="text-[#C90021] font_britanica_black text-[clamp(3vw,3vw,5vw)]">Practice Focus</h2>
                         <ul className="text-[#131313] font_britanica_regular text-[clamp(2vw,2vw,5vw)]  space-y-2">
-                            {cleanedPracticeFocus.map((item, index) => (
+                            {member.practice_focus?.map((item, index) => (
                                 <li key={index}>{item}</li>
                             ))}
                         </ul>
                     </div>
                     <div className="flex flex-col items-start">
                         <h2 className="text-[#C90021] font_britanica_black text-[clamp(3vw,3vw,5vw)]">Education</h2>
-                        <ul className="text-[#131313] font_britanica_regular text-[clamp(2vw,2vw,5vw)] space-y-2">                            {cleanedEducation.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
+                        <ul className="text-[#131313] font_britanica_regular text-[clamp(2vw,2vw,5vw)] space-y-2">
+                            {member.education?.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
                         </ul>
                     </div>
                     <div className="flex flex-col items-start">
                         <h2 className="text-[#C90021] font_britanica_black text-[clamp(3vw,3vw,5vw)]">Language</h2>
-                        <ul className="text-[#131313] font_britanica_regular text-[clamp(2vw,2vw,5vw)] space-y-2">                            {cleanedLanguage.map((item, index) => (
+                        <ul className="text-[#131313] font_britanica_regular text-[clamp(2vw,2vw,5vw)] space-y-2">
+                            {member.language?.map((item, index) => (
                             <li key={index}>{item}</li>
                         ))}
                         </ul>

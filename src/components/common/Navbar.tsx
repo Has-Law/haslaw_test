@@ -2,25 +2,31 @@
 import Image from "next/image"
 import Link from "next/link"
 import logo from "@/assets/logo.png"
-import arrow from "@/assets/arrow.png"
+import arrow from "@/assets/arrow.png" 
 import search from "@/assets/search.png"
 import { useState, useEffect, useRef } from "react"
-import { gsap } from "gsap"
+import { gsap } from "gsap" 
 
 const Navbar = () => {
+  
     const [isActive, setIsActive] = useState<string | null>(null)
+   
     const [isHovered, setIsHovered] = useState<string | null>(null)
     const [searchQuery, setSearchQuery] = useState('');
+
     const firmDropdownRef = useRef<HTMLDivElement>(null);
     const serviceDropdownRef = useRef<HTMLDivElement>(null);
     const memberSubmenuRef = useRef<HTMLDivElement>(null);
 
+   
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
     const handleSearch = () => {
         if (!searchQuery.trim()) return;
-        console.log("Mencari untuk:", searchQuery);
+
     };
 
-    // Animasi dropdown utama dengan GSAP
+   
     useEffect(() => {
         gsap.to(firmDropdownRef.current, {
             duration: 0.3,
@@ -43,7 +49,7 @@ const Navbar = () => {
         });
     }, [isActive]);
 
-    // Animasi submenu member
+ 
     useEffect(() => {
         if (memberSubmenuRef.current) {
             gsap.to(memberSubmenuRef.current, {
@@ -57,13 +63,64 @@ const Navbar = () => {
 
     return (
         <nav className="flex flex-row bg-white w-full justify-center items-center pt-[2vw] px-[5vw] relative z-50">
-            <div className="w-[90vw] flex flex-row items-center justify-center gap-x-[8vw] border-b-[0.2vw] border-[#A0001B] pb-[1vw]">
+          
+            {isMobileMenuOpen && (
+                <div 
+                    className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                ></div>
+            )}
+
+           
+            <div className="lg:hidden flex items-center justify-between w-full pb-[1vw] border-b-[0.2vw] border-[#A0001B]">
+               
+                <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 -ml-2">
+                    <svg className="w-8 h-8 text-[#5E0503]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+
+                <Link href="/" className="cursor-pointer hover:scale-105 transition-transform duration-200">
+                    <Image src={logo} alt="Logo" className="w-[100px] h-auto" /> 
+                </Link>
+
+                <button className="p-2 -mr-2">
+                    <Image src={search} alt="Search Icon" className="w-8 h-8 text-[#5E0503]" />
+                </button>
+            </div>
+
+     
+            <div className={`fixed top-0 left-0 h-full w-3/4 max-w-xs bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+                <div className="flex flex-col p-6">
+                    {/* Close Button */}
+                    <button onClick={() => setIsMobileMenuOpen(false)} className="self-end p-2 text-[#A0001B] hover:text-[#780014] transition-colors">
+                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                
+                    <div className="flex flex-col gap-y-4 mt-6 font_britanica_regular text-lg text-[#5E0503]">
+                        <Link href="/" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+                        <Link href="/about" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+                        <Link href="/member" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Members</Link>
+                        <Link href="/achievements" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Achievements</Link>
+                        <Link href="/service" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Our Services</Link>
+                        <Link href="/pro-bono" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Pro Bono</Link>
+                        <Link href="/news" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>News & Insights</Link>
+                        <Link href="/career" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</Link>
+                        <Link href="/contact" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
+                    </div>
+                </div>
+            </div>
+
+          
+            <div className="hidden lg:flex flex-row w-[90vw] items-center justify-center gap-x-[8vw] border-b-[0.2vw] border-[#A0001B] pb-[1vw]">
                 <Link href="/" className="cursor-pointer hover:scale-105 transition-transform duration-200">
                     <Image src={logo} alt="Logo" />
                 </Link>
                 
                 <div className="flex flex-row items-center font_britanica_regular text-[clamp(1.5vw,1.5vw,4rem)] gap-x-[3vw]">
-                    {/* Home Link */}
+                
                     <Link 
                         href="/" 
                         className="relative hover:text-[#A0001B] cursor-pointer transition-all duration-300 ease-out group"
@@ -72,7 +129,7 @@ const Navbar = () => {
                         <div className="transition-all duration-500 group-hover:w-full group-hover:left-0 group-hover:origin-left right-0 origin-right w-0 absolute bottom-0 h-[0.1vw] bg-[#A0001B]"></div>
                     </Link>
 
-                    {/* Our Firm Dropdown */}
+                
                     <div className="relative">
                         <div 
                             className="flex flex-row items-center cursor-pointer w-[7.5vw] transition-all duration-300 ease-out group relative"
@@ -140,7 +197,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Service Dropdown */}
+               
                     <div className="relative">
                         <div 
                             className="flex flex-row items-center w-[6.5vw] cursor-pointer transition-all duration-300 ease-out group relative"
@@ -175,7 +232,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Other Navigation Links */}
+                   
                     <Link 
                         href="/news" 
                         className="hover:text-[#A0001B] text-nowrap transition-all duration-300 ease-out group relative"
@@ -201,7 +258,7 @@ const Navbar = () => {
                     </Link>
                 </div>
 
-                {/* Search Bar */}
+               
                 <div className="relative flex items-center group">
                     <input 
                         type="text" 

@@ -13,15 +13,10 @@ const Navbar = () => {
    
     const [isHovered, setIsHovered] = useState<string | null>(null)
     const [searchQuery, setSearchQuery] = useState('');
-    
-    
-    const [isVisible, setIsVisible] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
 
     const firmDropdownRef = useRef<HTMLDivElement>(null);
     const serviceDropdownRef = useRef<HTMLDivElement>(null);
     const memberSubmenuRef = useRef<HTMLDivElement>(null);
-    const navbarRef = useRef<HTMLDivElement>(null);
 
    
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -30,49 +25,6 @@ const Navbar = () => {
         if (!searchQuery.trim()) return;
 
     };
-
-    useEffect(() => {
-        const controlNavbar = () => {
-            if (typeof window !== 'undefined') {
-                const currentScrollY = window.scrollY;
-               
-                if (window.innerWidth >= 1024) {
-                    if (currentScrollY < lastScrollY || currentScrollY < 10) {
-                      
-                        setIsVisible(true);
-                    } else {
-                        // Scrolling down
-                        setIsVisible(false);
-                     
-                        setIsActive(null);
-                        setIsHovered(null);
-                    }
-                }
-                
-                setLastScrollY(currentScrollY);
-            }
-        };
-
-        if (typeof window !== 'undefined') {
-            window.addEventListener('scroll', controlNavbar);
-            
-            
-            return () => {
-                window.removeEventListener('scroll', controlNavbar);
-            };
-        }
-    }, [lastScrollY]);
-
-    useEffect(() => {
-        if (navbarRef.current && typeof window !== 'undefined' && window.innerWidth >= 1024) {
-            gsap.to(navbarRef.current, {
-                duration: 0.8,
-                y: isVisible ? 0 : '-100%',
-             
-                ease: "power2.out"
-            });
-        }
-    }, [isVisible]);
 
    
     useEffect(() => {
@@ -110,10 +62,7 @@ const Navbar = () => {
     }, [isHovered]);
 
     return (
-        <nav 
-            ref={navbarRef}
-            className="flex flex-row bg-white w-full justify-center items-center pt-[2vw] px-[5vw] relative z-50 lg:fixed lg:top-0 lg:left-0 lg:right-0 lg:shadow-md"
-        >
+      <nav className="flex flex-row bg-white w-full justify-center items-center pt-[2vw] px-[5vw] sticky top-0 z-50 shadow-md">
           
             {isMobileMenuOpen && (
                 <div 
@@ -123,7 +72,7 @@ const Navbar = () => {
             )}
 
            
-            <div className="lg:hidden  flex items-center justify-between w-full pb-[1vw] border-b-[0.2vw] border-[#A0001B]">
+            <div className="lg:hidden flex items-center justify-between w-full pb-[1vw] border-b-[0.2vw] border-[#A0001B]">
                
                 <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 -ml-2">
                     <svg className="w-8 h-8 text-[#5E0503]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -165,7 +114,7 @@ const Navbar = () => {
             </div>
 
           
-            <div className="hidden  lg:flex  flex-row w-[90vw] items-center justify-center gap-x-[8vw] border-b-[0.2vw] border-[#A0001B] pb-[1vw]">
+            <div className="hidden lg:flex flex-row w-[90vw] items-center justify-center gap-x-[8vw] border-b-[0.2vw] border-[#A0001B] pb-[1vw]">
                 <Link href="/" className="cursor-pointer hover:scale-105 transition-transform duration-200">
                     <Image src={logo} alt="Logo" />
                 </Link>

@@ -11,7 +11,7 @@ const AboutSec2 = () => {
             <Image src={photo} alt="About Section Image" className="w-[40vw]  max-h-[50vw]"
             />
             <div className="flex flex-col gap-y-[2vw] py-[2vw]  items-start">
-                <h1 className="font_britanica_black text-[clamp(0.5rem,5vw,5rem)] text-[#131313]">Introducing <br />HAS Attorneys at Law</h1>
+                <h1 className="font_britanica_black text-[clamp(0.5rem,5vw,5rem)] text-[#131313]">Introducing <br /><span className="text-[#780014]">HAS Attorneys at Law</span></h1>
                 <p className="font_britanica_regular text-[clamp(2vw,2vw,4rem)] text-[#131313]">For nearly a decade, HAS Attorneys at Law has established itself as a trusted full-service law firm with a formidable reputation in litigation. Our primary strength lies in navigating high-stakes disputes, from complex commercial cases to sensitive anti-corruption matters. Backed by a team of seasoned lawyers, we are committed to delivering strategic and effective legal solutions to protect your most critical interests.</p>
                 <Link
                 href="/about" 

@@ -1,7 +1,7 @@
 'use client';
 import { useState } from "react";
 import Image from "next/image";
-import herobg from "@/assets/landingpage/background/hero.webp";
+import herobg from "@/assets/landingpage/background/hero-bg.png";
 import contact from "@/assets/landingpage/icon/contact.webp";
 import contactwhite from "@/assets/landingpage/icon/contactwhite.svg";
 import text from "@/assets/landingpage/image/text-contact.webp";

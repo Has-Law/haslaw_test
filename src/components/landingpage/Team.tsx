@@ -13,8 +13,9 @@ const Team = () => {
     ];
 
     const partners = [
-        { name: "John Doe, S.H." },
-        { name: "Jane Smith, S.H." },
+        { name: "Agus Askin Harta Mulya, S.H., M.H." },
+        { name: "Yohannes Andryanus, S.H." },
+        { name: "Rio Andre Winter Siahaan, S.H., M.H." },
     ];
 
     return (

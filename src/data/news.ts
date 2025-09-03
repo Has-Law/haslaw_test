@@ -5,7 +5,7 @@ export interface NewsProp {
     id: number;
     date: string;
     title: string;
-    category: String;
+    category: string;
     image: StaticImageData; 
     content?: string;
 }

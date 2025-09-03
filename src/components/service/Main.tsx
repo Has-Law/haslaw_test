@@ -2,9 +2,18 @@ import Image from "next/image";
 import arrow from "@/assets/service/icon/arrow.webp";
 import shield from "@/assets/service/image/shield.webp";
 import contract from "@/assets/service/image/contract.webp";
+import { StaticImageData } from "next/image";
 import Link from "next/link";
 
-const ServiceCard = ({ href, title, description, imageSrc, imageAlt }) => {
+interface ServiceCardProps {
+    href: string;
+    title: string;
+    description: string;
+    imageSrc: StaticImageData;
+    imageAlt: string;
+}
+
+const ServiceCard = ({ href, title, description, imageSrc, imageAlt }: ServiceCardProps) => {
     return (
         <Link 
             href={href} 

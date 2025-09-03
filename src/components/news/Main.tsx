@@ -81,7 +81,7 @@ const Main = ({ news }: { news: News[] }) => {
                 </div>
                 {filteredNews.length === 0 && searchQuery && (
                     <div className="text-center text-gray-500 mt-12">
-                        <p className="text-lg">No news found matching "{searchQuery}".</p>
+                        <p className="text-lg">No news found matching &quot;{searchQuery}&quot;.</p>
                     </div>
                 )}
             </div>

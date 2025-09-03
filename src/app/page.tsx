@@ -1,5 +1,4 @@
 import Hero from "@/components/landingpage/Hero";
-import About from "@/components/landingpage/About"
 import AboutSec2 from "@/components/landingpage/About-sec2";
 import Service from "@/components/landingpage/Service";
 import Team from "@/components/landingpage/Team";

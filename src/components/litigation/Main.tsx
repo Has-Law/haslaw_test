@@ -34,7 +34,7 @@ const Main = () => {
                             We represent clients across all types of criminal charges. Our service covers every part of the process, from thorough investigations before trial to carefully checking evidence and finding any mistakes in procedure.
                         </p>
                         <p>
-                            If your case goes to trial, our experienced litigators are ready to defend you vigorously. We're dedicated to protecting your rights, challenging overreach by prosecutors, and making sure your voice is heard. Our main goal is to get the best outcome for you, whether it's an acquittal, dismissal, or lighter penalties, so you can move forward.
+                            If your case goes to trial, our experienced litigators are ready to defend you vigorously. We&apos;re dedicated to protecting your rights, challenging overreach by prosecutors, and making sure your voice is heard. Our main goal is to get the best outcome for you, whether it&apos;s an acquittal, dismissal, or lighter penalties, so you can move forward.
                         </p>
                     </div>
                 </div>

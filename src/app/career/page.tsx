@@ -1,5 +1,4 @@
 import Hero from "@/components/career/Hero"
-import Main from "@/components/career/Main"
 import { Metadata } from "next"
 
 export const metadata : Metadata = {

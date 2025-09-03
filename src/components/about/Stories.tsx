@@ -19,7 +19,7 @@ const Stories = () => {
         </div>
         <div className="flex flex-col gap-y-[2vw] sm:w-[50vw]  ">
             <h1 className="font_britanica_bold text-[clamp(7vw,7vw,7rem)] sm:text-[clamp(5vw,5vw,4rem)] bg-gradient-to-t from-black to-[#F20028] bg-clip-text text-transparent">Our Stories</h1>
-            <p className="font_britanica_regular text-[clamp(4vw,4vw,4vw)] sm:text-[clamp(1.3vw,1.3vw,2rem)] text-black text-justify">At HAS Attorneys Law we believe that effective legal counsel goes beyond merely reacting to problems; it's about proactively safeguarding your future. For nearly a decade, our firm has been built on the principle that deep litigation experience provides the most practical and insightful foundation for all legal advice, whether it's navigating complex disputes or structuring secure business transactions. We are a dynamic team of experienced lawyers committed to delivering innovative, real-world solutions that truly protect your interests.  </p>
+            <p className="font_britanica_regular text-[clamp(4vw,4vw,4vw)] sm:text-[clamp(1.3vw,1.3vw,2rem)] text-black text-justify">At HAS Attorneys Law we believe that effective legal counsel goes beyond merely reacting to problems; it&apos;s about proactively safeguarding your future. For nearly a decade, our firm has been built on the principle that deep litigation experience provides the most practical and insightful foundation for all legal advice, whether it&apos;s navigating complex disputes or structuring secure business transactions. We are a dynamic team of experienced lawyers committed to delivering innovative, real-world solutions that truly protect your interests.  </p>
         </div>
     </div>
   );

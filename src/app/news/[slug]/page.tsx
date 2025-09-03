@@ -3,14 +3,24 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getNewsBySlug, getAllNews } from "@/lib/news"; 
 
+export async function generateStaticParams() {
+    const allNews = await getAllNews();
+
+    if (!allNews) return [];
+
+    return allNews.map((news) => ({
+        slug: news.slug,
+    }));
+}
+
 interface NewsDetailProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 export default async function NewsDetail({ params }: NewsDetailProps) {
-    const { slug } = params;
+    const { slug } = await params;
 
     const [newsItem, allNews] = await Promise.all([
         getNewsBySlug(slug),

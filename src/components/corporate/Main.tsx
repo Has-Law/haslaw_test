@@ -4,7 +4,7 @@ import ornaments from "@/assets/service/image/ornaments.webp"
 const Main = () => {
     return (
         <div className="flex-row flex justify-between w-full min-h-screen">
-            <div className="flex flex-col mt-[5vw] px-[5vw] gap-y-[2vw] items-center">        
+            <div className="flex flex-col mt-[5vw] px-[5vw] gap-y-[2vw] items-center">
                 <div className="flex flex-col sm:flex-row items-start justify-start text-[#4F000D]">
                     <div className="flex flex-row gap-x-[2vw] items-start w-[30vw]">
                         <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(10vw,10vw,10rem)] leading-none w-[8vw]">1</p>
@@ -14,7 +14,7 @@ const Main = () => {
                     </div>
                     <div className="font_britanica_bold sm:font_britanica_regular text-[clamp(1.5vw,2.5vw,2rem)] sm:text-[clamp(1.5vw,1.5vw,1.5rem)] space-y-[1.5vw] text-justify sm:w-[40vw]">
                         <p>
-                            Facing accusations of corporate or financial misconduct can be overwhelming, putting your reputation and future at risk. In Indonesia, these cases often involve complex investigations by agencies like the KPK (Komisi Pemberantasan Korupsi/Corruption Eradication Commission), Police, or Attorney General's Office. We're experts at navigating these challenges, from initial inquiries to the prosecution phase.
+                            Facing accusations of corporate or financial misconduct can be overwhelming, putting your reputation and future at risk. In Indonesia, these cases often involve complex investigations by agencies like the KPK (Komisi Pemberantasan Korupsi/Corruption Eradication Commission), Police, or Attorney General&apos;s Office. We&apos;re experts at navigating these challenges, from initial inquiries to the prosecution phase.
                         </p>
                         <p>
                             We provide strong and smart defense for individuals and companies caught in white-collar cases, like fraud, embezzlement, insider trading, and corruption. We act fast and proactively, gathering evidence and developing robust defense strategies to protect your position.
@@ -25,7 +25,6 @@ const Main = () => {
                     </div>
                 </div>
 
-                {/* 2 - Judicial Review */}
                 <div className="flex flex-col sm:flex-row items-start text-[#4F000D]">
                     <div className="flex flex-row gap-x-[2vw] items-start w-[30vw]">
                         <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(10vw,10vw,10rem)] leading-none w-[8vw]">2</p>
@@ -46,7 +45,6 @@ const Main = () => {
                     </div>
                 </div>
 
-                {/* 3 - Corporate & Commercial */}
                 <div className="flex flex-col sm:flex-row items-start text-[#4F000D]">
                     <div className="flex flex-row gap-x-[2vw] items-start w-[30vw]">
                         <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(10vw,10vw,10rem)] leading-none w-[8vw]">3</p>
@@ -56,7 +54,7 @@ const Main = () => {
                     </div>
                     <div className="font_britanica_bold sm:font_britanica_regular text-[clamp(1.5vw,2.5vw,2rem)] sm:text-[clamp(1.5vw,1.5vw,1.5rem)] space-y-[1.5vw] text-justify sm:w-[40vw]">
                         <p>
-                            Beyond solving disputes, a business's success relies on solid legal foundations and smart commercial operations. Our corporate and commercial services provide full legal support to protect your business, ensure you follow rules, and help you grow from start-up to complex deals. We do this by truly understanding your business model and market.
+                            Beyond solving disputes, a business&apos;s success relies on solid legal foundations and smart commercial operations. Our corporate and commercial services provide full legal support to protect your business, ensure you follow rules, and help you grow from start-up to complex deals. We do this by truly understanding your business model and market.
                         </p>
                         <p>
                             We offer extensive guidance on all parts of corporate law. This includes setting up your company (e.g., Limited Liability Companies/Perseroan Terbatas), writing and negotiating many types of commercial contracts (like agreements for supply, distribution, or services), and ensuring robust corporate governance. We also assist with crucial administrative and compliance tasks, including corporate secretarial services, to ensure your company adheres to all statutory requirements, manages its corporate records diligently, and maintains good standing with relevant authorities.

@@ -11,7 +11,7 @@ const Service = () => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
-        <div className="relative flex flex-col items-center justify-center py-16 md:py-0 md:aspect-[1280/450] mt-12 md:mt-[3.2vw]">
+        <div className="relative flex flex-col items-center justify-center py-12 md:py-0 md:aspect-[1280/420] mt-8 md:mt-[2.6vw]">
             <Image 
                 src={servicebg} 
                 alt="Service Background" 
@@ -29,21 +29,21 @@ const Service = () => {
             
                 <div className="flex flex-row items-start justify-around md:justify-center w-full gap-x-4 md:gap-x-[6.5vw] my-4 md:my-0">
                  
-                    <div className="flex flex-col items-center justify-start w-1/4 md:w-[4vw]">
-                        <Image src={handcuffs} alt="Handcuffs Icon" className="w-16 h-auto md:w-full mb-3 md:mb-[0.6vw]" />
-                        <h2 className="font_britanica_black text-white text-sm md:text-[clamp(1.1vw,1.1vw,2.8rem)]">
+                    <div className="flex flex-col items-center justify-start w-1/3 sm:w-1/4 md:w-[3.6vw]">
+                        <Image src={handcuffs} alt="Handcuffs Icon" className="w-12 sm:w-16 h-auto md:w-full mb-3 md:mb-[0.5vw]" />
+                        <h2 className="font_britanica_black text-white text-sm md:text-[clamp(1vw,1vw,2.4rem)]">
                             Criminal litigation
                         </h2>
                     </div>
-                    <div className="flex flex-col items-center justify-start w-1/4 md:w-[4vw]">
-                        <Image src={dolar} alt="Dolar Icon" className="w-16 h-auto md:w-full mb-3 md:mb-[0.6vw]" />
-                        <h2 className="font_britanica_black text-white text-sm md:text-[clamp(1.1vw,1.1vw,2.8rem)]">
+                    <div className="flex flex-col items-center justify-start w-1/3 sm:w-1/4 md:w-[3.6vw]">
+                        <Image src={dolar} alt="Dolar Icon" className="w-12 sm:w-16 h-auto md:w-full mb-3 md:mb-[0.5vw]" />
+                        <h2 className="font_britanica_black text-white text-sm md:text-[clamp(1vw,1vw,2.4rem)]">
                             Commercial litigation
                         </h2>
                     </div>
-                    <div className="flex flex-col items-center justify-start w-1/4 md:w-[4vw]">
-                        <Image src={administrator} alt="Administrator Icon" className="w-16 h-auto md:w-full mb-3 md:mb-[0.6vw]" />
-                        <h2 className="font_britanica_black text-white text-sm md:text-[clamp(1.1vw,1.1vw,2.8rem)]">
+                    <div className="flex flex-col items-center justify-start w-1/3 sm:w-1/4 md:w-[3.6vw]">
+                        <Image src={administrator} alt="Administrator Icon" className="w-12 sm:w-16 h-auto md:w-full mb-3 md:mb-[0.5vw]" />
+                        <h2 className="font_britanica_black text-white text-sm md:text-[clamp(1vw,1vw,2.4rem)]">
                             Administrative litigation
                         </h2>
                     </div>
@@ -54,8 +54,8 @@ const Service = () => {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                     className={`font_britanica_black border-2 md:border-[0.12vw] rounded-full transition-colors duration-300 ease-in-out cursor-pointer 
-                               text-base md:text-[clamp(1vw,1vw,2.5rem)] 
-                               px-8 py-3 md:p-[0.6vw]
+                               text-sm md:text-[clamp(0.9vw,0.95vw,2.2rem)] 
+                               px-6 py-2 md:p-[0.5vw]
                                ${isHovered ? 'bg-white text-[#A0001B]' : 'text-white border-white'}`}
                 >
                     See Our Services

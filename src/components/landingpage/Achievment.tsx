@@ -25,8 +25,8 @@ const Achievement = () => {
   const duplicateAchievements = [...achievements, ...achievements, ...achievements];
 
     return (
-        <div className="relative flex flex-col items-center justify-center 
-                       py-16 md:py-0 md:aspect-[1280/420] mt-12 md:mt-[7vw]">
+    <div className="relative flex flex-col items-center justify-center 
+               py-12 md:py-0 md:aspect-[1280/400] mt-8 md:mt-[5.6vw]">
             <Image 
                 src={achievementBg} 
                 alt="Achievement Background" 
@@ -40,8 +40,8 @@ const Achievement = () => {
                            gap-y-8 md:gap-y-[1.3vw] w-full">
                 
                 <h1 className="font_britanica_black text-white text-center
-                               text-4xl md:text-[clamp(3.2vw,3.2vw,3.2rem)] 
-                               tracking-wide md:tracking-[0.13vw]">
+                               text-3xl md:text-[clamp(2.8vw,2.8vw,3rem)] 
+                               tracking-wide md:tracking-[0.1vw]">
                     Achievements
                 </h1>
                 
@@ -64,14 +64,12 @@ const Achievement = () => {
                         {duplicateAchievements.map((achievement, index) => (
                             <div 
                                 key={index} 
-                            
-                                className="flex-shrink-0 px-2 md:px-[0.6vw] flex items-center justify-center w-24 md:w-[8.5vw]"
+                                className="flex-shrink-0 px-1 md:px-[0.4vw] flex items-center justify-center w-20 md:w-[7.5vw]"
                             >
                                 <Image
                                     src={achievement.image}
                                     alt={`Achievement award ${index + 1}`}
-                               
-                                    className="w-24 md:w-[6.5vw]"
+                                    className="w-20 md:w-[5.5vw]"
                                     priority={index < achievements.length} 
                                 />
                             </div>

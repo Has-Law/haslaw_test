@@ -43,7 +43,7 @@ export default function RootLayout({
             <Footer/>
           </div>
           
-          {/* GDPR/CCPA Compliant Cookie Components */}
+       
           <GDPRCookieBanner />
         </CookieProvider>
         

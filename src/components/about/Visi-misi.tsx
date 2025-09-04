@@ -10,7 +10,7 @@ const VisiMisi = () => {
             <div
                 onMouseEnter={() => setIsHovered('visi')}
                 onMouseLeave={() => setIsHovered(null)}
-                className="cursor-pointer w-full h-[20vw] sm:h-[15vw]  relative overflow-hidden "
+                className="cursor-pointer w-full h-[20vw]  relative overflow-hidden "
             >
                 <Image
                     src={visi}
@@ -28,7 +28,7 @@ const VisiMisi = () => {
                     <h1 className="font_britanica_black text-white text-[clamp(4vw,4vw,4rem)] py-[2vw]">
                         VISION
                     </h1>
-                    <p className={`text-right w-[70%] font_britanica_black text-white text-[clamp(1.5vw,1.7vw,4rem)] transition-all duration-500 ease-in-out ${isHovered === 'visi' ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-1/2'}`}>
+                    <p className={`text-right w-[70%] font_britanica_black text-white text-[clamp(1.5vw,2.2vw,4rem)] transition-all duration-500 ease-in-out ${isHovered === 'visi' ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-1/2'}`}>
                         To be the most trusted and effective legal partner, empowering our clients to navigate legal complexities with confidence and achieve their strategic objectives.
                     </p>
                 </div>
@@ -36,7 +36,7 @@ const VisiMisi = () => {
             <div
                 onMouseEnter={() => setIsHovered('misi')}
                 onMouseLeave={() => setIsHovered(null)}
-                className="cursor-pointer w-full  h-[20 vw] sm:h-[15vw]  relative overflow-hidden "
+                className="cursor-pointer w-full h-[20vw]  relative overflow-hidden "
             >
                 <Image
                     src={misi}
@@ -52,7 +52,7 @@ const VisiMisi = () => {
 
                 <div className="absolute inset-0 z-20 flex items-center justify-between w-full px-[10vw]">
 
-                    <p className={`text-left w-[70%] font_britanica_black text-white text-[clamp(1.5vw,1.7vw,4rem)] transition-all duration-500 ease-in-out ${isHovered === 'misi' ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-1/2'}`}>
+                    <p className={`text-left w-[70%] font_britanica_black text-white text-[clamp(1.5vw,2.2vw,4rem)] transition-all duration-500 ease-in-out ${isHovered === 'misi' ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-1/2'}`}>
                         We achieve our vision by providing proactive, practical and client-centric legal services, leveraging pur extensive litigation background to offer strategic counsel and robust advocacy in an ever-evolving legal landscape
                     </p>
                     <h1 className="font_britanica_black text-white text-[clamp(4vw,4vw,4rem)] py-[2vw]">

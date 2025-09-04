@@ -27,9 +27,9 @@ const LicenseCard = ({ item }: { item: LicenseItem }) => (
         className="group relative overflow-hidden flex flex-col items-center justify-center text-center 
                    bg-[#F0F0F0] sm:bg-white                         
                    rounded-3xl sm:rounded-xl                         
-                   p-6 sm:p-[2vw]                                    
-                   w-full h-52 sm:h-[20vw]                           
-                   gap-y-4 sm:gap-y-[1vw]"
+                   p-4 sm:p-[1.6vw]                                    
+                   w-full h-44 sm:h-[16vw]                           
+                   gap-y-3 sm:gap-y-[0.8vw]"
         style={{ boxShadow: "0px 4px 4px 0px #00000040" }}
     >
    
@@ -48,7 +48,7 @@ const LicenseCard = ({ item }: { item: LicenseItem }) => (
             </div>
             <h3 className="font_britanica_bold 
                            text-gray-800 sm:text-black                     
-                           text-lg sm:text-[clamp(1.8vw,1.8vw,4rem)]
+                           text-base sm:text-[clamp(1.4vw,1.4vw,3.2rem)]
                            transition-colors duration-300 group-hover:text-white">
                 {item.title}
             </h3>
@@ -58,7 +58,7 @@ const LicenseCard = ({ item }: { item: LicenseItem }) => (
 
 const License = () => {
     return (
-        <div className="relative py-[3.5vw] mt-[5vw] px-[5vw]">
+        <div className="relative py-[6vw] sm:py-[2.8vw] mt-[6vw] sm:mt-[4vw] px-[5vw]">
             <Image 
                 src={license} 
                 alt="Background Image" 
@@ -67,14 +67,14 @@ const License = () => {
                 className="absolute top-0 left-0 z-0" 
             />
 
-            <div className="relative z-10 flex flex-col items-center justify-center gap-y-[2vw]">
-                <h2 className="font_britanica_black text-white text-center text-[clamp(5vw,5vw,10rem)] ">
+            <div className="relative z-10 flex flex-col items-center justify-center gap-y-[4vw] sm:gap-y-[1.6vw]">
+                <h2 className="font_britanica_black text-white text-center text-[clamp(6vw,6vw,6rem)] sm:text-[clamp(4vw,4vw,8rem)]">
                     Organizational & Licenses
                 </h2>
 
                 <div className="w-full max-w-[90vw] mx-auto">
                    
-                    <div className="grid grid-cols-1 gap-6 sm:hidden">
+                    <div className="grid grid-cols-1 gap-4 sm:hidden">
                         {licenseData.map((item, index) => (
                             <LicenseCard key={index} item={item} />
                         ))}
@@ -82,12 +82,12 @@ const License = () => {
 
                
                     <div className="hidden sm:block">
-                        <div className="grid grid-cols-3 gap-[2.5vw] mb-[2.5vw]">
+                        <div className="grid grid-cols-3 gap-[2vw] mb-[2vw]">
                             <LicenseCard item={licenseData[0]} />
                             <LicenseCard item={licenseData[1]} />
                             <LicenseCard item={licenseData[2]} />
                         </div>
-                        <div className="grid grid-cols-6 gap-[2.5vw]">
+                        <div className="grid grid-cols-6 gap-[2vw]">
                             <div className="col-start-2 col-span-2">
                                 <LicenseCard item={licenseData[3]} />
                             </div>

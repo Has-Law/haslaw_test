@@ -27,8 +27,8 @@ const LicenseCard = ({ item }: { item: LicenseItem }) => (
         className="group relative overflow-hidden flex flex-col items-center justify-center text-center 
                    bg-[#F0F0F0] sm:bg-white                         
                    rounded-3xl sm:rounded-xl                         
-                   p-6 sm:p-[2vw]                                    
-                   w-full h-52 sm:h-[20vw]                           
+                   py-[1vw]                                   
+                   h-[15vw]                           
                    gap-y-4 sm:gap-y-[1vw]"
         style={{ boxShadow: "0px 4px 4px 0px #00000040" }}
     >
@@ -38,7 +38,7 @@ const LicenseCard = ({ item }: { item: LicenseItem }) => (
                        group-hover:translate-y-0 transition-transform duration-300 ease-in-out"
         />
         <div className="relative z-10 flex flex-col items-center justify-center h-full">
-            <div className="relative h-2/3 w-full">
+            <div className="relative h-[20vw] w-[20vw]">
                 <Image
                     src={item.img}
                     alt={item.alt}
@@ -46,9 +46,9 @@ const LicenseCard = ({ item }: { item: LicenseItem }) => (
                     objectFit="contain"
                 />
             </div>
-            <h3 className="font_britanica_bold 
+            <h3 className="font_britanica_black 
                            text-gray-800 sm:text-black                     
-                           text-lg sm:text-[clamp(1.8vw,1.8vw,4rem)]
+                           text-[clamp(1.3vw,1.3vw,4rem)] max-w-xs
                            transition-colors duration-300 group-hover:text-white">
                 {item.title}
             </h3>
@@ -58,17 +58,16 @@ const LicenseCard = ({ item }: { item: LicenseItem }) => (
 
 const License = () => {
     return (
-        <div className="relative py-[3.5vw] mt-[5vw] px-[5vw]">
+        <div className="relative  mb-[1vw] mt-[3vw]  px-[5vw]">
             <Image 
                 src={license} 
                 alt="Background Image" 
-                layout="fill"
-                objectFit="cover"
-                className="absolute top-0 left-0 z-0" 
+
+                className="absolute h-[46vw] top-0 left-0 z-0" 
             />
 
-            <div className="relative z-10 flex flex-col items-center justify-center gap-y-[2vw]">
-                <h2 className="font_britanica_black text-white text-center text-[clamp(5vw,5vw,10rem)] ">
+            <div className="relative z-10 flex flex-col items-center justify-center py-[3vw] gap-y-[2vw]">
+                <h2 className="font_britanica_black text-white text-center text-[clamp(3vw,3vw,10rem)] ">
                     Organizational & Licenses
                 </h2>
 

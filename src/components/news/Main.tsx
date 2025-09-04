@@ -45,13 +45,13 @@ const Main = ({ news }: { news: News[] }) => {
     );
 
     return (
-        <div className="flex flex-col items-center justify-center gap-y-4">
-            <div className="w-full p-8 md:p-16 flex flex-col items-center justify-center text-center gap-y-6 md:gap-y-8">
-                <h1 className="font_britanica_black text-[clamp(2.5rem,6vw,4rem)] text-[#780014] leading-tight">
+        <div className="flex flex-col items-center justify-center gap-y-2 pb-[2vw]">
+            <div className="w-full p-8  flex flex-col items-center justify-center text-center gap-y-6 ">
+                <h1 className="font_britanica_black text-[clamp(2.5vw,3vw,4rem)] text-[#780014] leading-tight">
                     News & Insight
                 </h1>
             
-                <h3 className="font_britanica_regular text-[clamp(1rem,2.5vw,1.5rem)] text-[#131313] max-w-4xl">
+                <h3 className="font_britanica_regular text-[clamp(1vw,1.5vw,1.5rem)] text-[#131313] max-w-4xl">
                     The legal landscape is constantly evolving. Follow the latest publications from our team to gain
                     valuable insights and stay one step ahead in anticipating regulatory changes and industry trends.
                 </h3>
@@ -73,7 +73,7 @@ const Main = ({ news }: { news: News[] }) => {
                 </div>
             </div>
            
-            <div className="w-full px-[5vw] pb-[5vw]">
+            <div className="w-full px-[5vw]">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mx-auto">
                     {filteredNews.map((item) => (
                         <NewsCard key={item.id} item={item} />

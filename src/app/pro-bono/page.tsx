@@ -6,7 +6,7 @@ export const metadata : Metadata = {
 }
 const ProBono = () => {
     return(
-        <div className="bg-[#F2F2F2]">
+        <div className="bg-[#F2F2F2] pb-[2vw]">
             <Probono/>
         </div>
     )

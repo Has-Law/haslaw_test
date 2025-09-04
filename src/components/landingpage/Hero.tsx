@@ -10,15 +10,15 @@ const Hero = () => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
-        <div className=" relative flex flex-col justify-center aspect-[1280/758]">
+        <div className=" relative flex flex-col justify-center aspect-[1280/670]">
             <Image src={herobg} alt="Hero Background" className="mt-[-5vw] absolute top-0" />
             <div className="relative flex justify-between px-10">
-                <h2 className="text-white font_britanica_black text-[clamp(2.5vw,2.5vw,4rem)]  max-w-[30vw]">
+                <h2 className="text-white font_britanica_black text-[clamp(2.5vw,2.5vw,4rem)] ml-[4vw] max-w-[30vw]">
                     Valuing Your Case.
                     Persevering in Your Fight.
                     Unlocking Your Future.
                 </h2>
-                <div className="relative w-[15vw] aspect-square mt-[15vw]">
+                <div className="relative w-[8vw] aspect-square mt-[25vw] mr-[2vw]">
                     <Image
                         src={text}
                         alt="Contact Us Text"

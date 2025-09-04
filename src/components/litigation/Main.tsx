@@ -6,7 +6,7 @@ const Main = () => {
             <div className="flex flex-col mt-[5vw] px-[5vw] gap-y-[2vw] items-center">
                 <div className="flex flex-col sm:flex-row items-start justify-start text-[#4F000D]">
                     <div className="flex flex-row gap-x-[2vw] items-start w-[30vw]">
-                        <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(10vw,10vw,10rem)] leading-none w-[8vw]">1</p>
+                        <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(5vw,5vw,10rem)] leading-none w-[8vw]">1</p>
                         <h2 className="font_britanica_black text-[clamp(2.5vw,3.5vw,3rem)] sm:text-[clamp(2.5vw,2.5vw,3rem)] leading-tight w-[15vw]">Commercial litigation</h2>
                     </div>
                     <div className="font_britanica_bold sm:font_britanica_regular text-[clamp(1.5vw,2.5vw,2rem)] sm:text-[clamp(1.5vw,1.5vw,1.5rem)] space-y-[1.5vw] text-justify sm:w-[40vw]">
@@ -23,7 +23,7 @@ const Main = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row items-start text-[#4F000D]">
                     <div className="flex flex-row gap-x-[2vw] items-start w-[30vw]">
-                        <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(10vw,10vw,10rem)] leading-none w-[8vw]">2</p>
+                        <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(5vw,5vw,10rem)] leading-none w-[8vw]">2</p>
                         <h2 className="font_britanica_black text-[clamp(2.5vw,3.5vw,3rem)] sm:text-[clamp(2.5vw,2.5vw,3rem)] leading-tight w-[15vw]">Criminal litigation</h2>
                     </div>
                     <div className="font_britanica_bold sm:font_britanica_regular text-[clamp(1.5vw,2.5vw,2rem)] sm:text-[clamp(1.5vw,1.5vw,1.5rem)] space-y-[1.5vw] text-justify sm:w-[40vw]">
@@ -40,7 +40,7 @@ const Main = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row items-start text-[#4F000D]">
                     <div className="flex flex-row gap-x-[2vw] items-start w-[30vw]">
-                        <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(10vw,10vw,10rem)] leading-none w-[8vw]">3</p>
+                        <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(5vw,5vw,10rem)] leading-none w-[8vw]">3</p>
                         <h2 className="font_britanica_black text-[clamp(2.5vw,3.5vw,3rem)] sm:text-[clamp(2.5vw,2.5vw,3rem)] leading-tight w-[15vw]">Administrative litigation</h2>
                     </div>
                     <div className="font_britanica_bold sm:font_britanica_regular text-[clamp(1.5vw,2.5vw,2rem)] sm:text-[clamp(1.5vw,1.5vw,1.5rem)] space-y-[1.5vw] text-justify sm:w-[40vw]">

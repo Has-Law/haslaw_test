@@ -76,14 +76,14 @@ const Main = ({ members }: { members: Member[] }) => {
         <div className="flex flex-col lg:flex-row w-full min-h-screen px-6 lg:px-[5vw] py-8 gap-8">
             
             <div className="w-full lg:w-[30vw] flex flex-col gap-y-6 lg:gap-y-[2vw]">
-                <h1 className="text-5xl lg:text-[clamp(6vw,6vw,6rem)] font_britanica_black text-[#5E0503] leading-tight">
+                <h1 className="text-5xl lg:text-[clamp(3vw,3vw,6rem)] font_britanica_black text-[#5E0503] leading-tight">
                     Meet Your<br />
                     Advocates
                 </h1>
 
                 <div className="w-full flex flex-col gap-y-4 lg:gap-y-[1vw]">
                     <div className="flex justify-between items-center py-2 lg:py-[1vw] border-b border-black/50">
-                        <h3 className="text-3xl lg:text-[clamp(4vw,4vw,4rem)] font_britanica_black text-[#780014]">Filter by</h3>
+                        <h3 className="text-3xl lg:text-[clamp(2vw,2vw,4rem)] font_britanica_black text-[#780014]">Filter by</h3>
                         <button
                             onClick={resetFilters}
                             className="cursor-pointer text-sm lg:text-[clamp(1vw,1vw,2rem)] text-[#A0001B] hover:text-gray-700 transition-colors hover:underline hover:underline-offset-4"
@@ -95,7 +95,7 @@ const Main = ({ members }: { members: Member[] }) => {
                     <div className="space-y-2 lg:space-y-[0.5vw]">
                       
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
-                            <label className="text-[#131313] text-lg lg:text-[clamp(2vw,2vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Senior Partner
                             </label>
                             <div
@@ -107,7 +107,7 @@ const Main = ({ members }: { members: Member[] }) => {
                         </div>
                     
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
-                            <label className="text-[#131313] text-lg lg:text-[clamp(2vw,2vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Partner
                             </label>
                             <div
@@ -119,7 +119,7 @@ const Main = ({ members }: { members: Member[] }) => {
                         </div>
                  
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
-                            <label className="text-[#131313] text-lg lg:text-[clamp(2vw,2vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Of Counsel
                             </label>
                             <div
@@ -131,7 +131,7 @@ const Main = ({ members }: { members: Member[] }) => {
                         </div>
                     
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
-                            <label className="text-[#131313] text-lg lg:text-[clamp(2vw,2vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Associates
                             </label>
                             <div

@@ -34,21 +34,21 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="flex flex-col justify-center items-center gap-y-[5vw]">
-            <div className="flex flex-col justify-center items-end relative aspect-[1280/739] w-full">
+        <div className="flex flex-col justify-center items-center gap-y-[5vw] pb-[2vw]">
+            <div className="flex flex-col justify-center items-end relative aspect-[1280/700] w-full">
                 <Image src={hero} alt="Hero Image" className="w-[65vw] absolute top-0 left-0 z-0" />
-                <div className="flex flex-col relative z-30 w-[59vw] transform -translate-x-[10vw] items-end">
+                <div className="flex flex-col relative z-30 w-[59vw] transform -translate-x-[10vw] -translate-y-[5vw] items-end">
                     <div className="flex flex-row items-center gap-x-[1vw]">
                         <h1 className="bg-black h-[0.1vw] w-[3vw]" />
-                        <h1 className="text-black font_britanica_black text-[clamp(2vw,2vw,4rem)]">Career</h1>
+                        <h1 className="text-black font_britanica_black text-[clamp(1.5vw,1.5vw,4rem)]">Career</h1>
                     </div>
-                    <h1 className="font_lato_bold text-[clamp(4vw,4vw,4vw)] text-[#780014] text-right">Shape the Future of Law With Us</h1>
-                    <h2 className="font_britanica_regular text-[clamp(1.8vw,1.9vw,3vw)] text-right text-[#131313]">The world is constantly changing, and so is the law. Join our dynamic team that doesn&apos;t just adapt, but leads the change in Indonesia&apos;s legal landscape through intelligent and innovative solutions.</h2>
+                    <h1 className="font_lato_bold text-[clamp(3vw,3vw,4vw)] text-[#780014] text-right">Shape the Future of Law With Us</h1>
+                    <h2 className="font_britanica_regular text-[clamp(1.3vw,1.3vw,3vw)] text-right text-[#131313]">The world is constantly changing, and so is the law. Join our dynamic team that doesn&apos;t just adapt, but leads the change in Indonesia&apos;s legal landscape through intelligent and innovative solutions.</h2>
                 </div>
             </div>
 
-            <div className="relative items-center flex flex-col gap-y-[5vw]">
-                <h1 className="font_britanica_bold text-[clamp(5vw,5vw,5vw)]">Who We&apos;re Looking For</h1>
+            <div className="relative items-center flex flex-col gap-y-[2vw] pt-[2vw] w-full">
+                <h1 className="font_britanica_bold text-[clamp(3vw,3vw,5vw)]">Who We&apos;re Looking For</h1>
                 <div className="flex flex-row justify-center items-center px-[5vw]">
                     <div
                         onMouseEnter={() => setIsHovered('internship')}

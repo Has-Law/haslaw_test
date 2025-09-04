@@ -8,7 +8,7 @@ export const metadata : Metadata = {
 
 const Services = () => {
     return(
-        <div className="bg-[#F2F2F2]">
+        <div className="bg-[#F2F2F2] pb-[2vw]">
             <Hero/>
             <Main/>
         </div>

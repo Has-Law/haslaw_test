@@ -8,7 +8,18 @@ import download from "@/assets/member/icon/download.png";
 import { getMemberById,getAllMembers } from "@/lib/members";
 import { notFound } from "next/navigation";
 
-
+export async function generateStaticParams() {
+    try {
+        const members = await getAllMembers(); // Fungsi untuk mendapatkan semua member
+        
+        return members.map((member) => ({
+            id: member.id.toString(), // Pastikan id dalam bentuk string
+        }));
+    } catch (error) {
+        console.error('Error generating static params:', error);
+        return []; // Return array kosong jika error
+    }
+}
 
 
 type Props = {

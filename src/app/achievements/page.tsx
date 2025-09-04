@@ -45,18 +45,18 @@ export default function Achievements() {
 
       <div className="relative z-10 w-full flex flex-col items-center">
      
-        <div className="w-full flex flex-col items-center pt-24 pb-8 text-center">
-          <h1 className="text-white text-5xl md:text-7xl mb-15 mt-10 font_britanica_bold tracking-wide">
+        <div className="w-full flex flex-col items-center pt-8 pb-8 text-center">
+          <h1 className="text-white text-[clamp(4vw,4vw,4rem)]  font_britanica_black tracking-wide">
             Achievements
           </h1>
-          <p className="text-gray-200 text-4xl max-w-7xl mt-4 font_britanica_regular px-4">
+          <p className="text-gray-200 text-[clamp(2vw,2vw,4rem)] max-w-7xl mt-4 font_britanica_regular px-4">
             Our commitment to excellence is consistently recognized by the
             industry. Below are some of the awards and achievements that mark
             our dedication to providing premier legal services.
           </p>
         </div>
 
-        <div className="w-full  grid grid-cols-2 md:grid-cols-3 gap-y-16 max-w-[80vw] mt-24 px-4 pb-20">
+        <div className="w-full  grid grid-cols-2 md:grid-cols-3 gap-y-16 max-w-[90vw]  px-4 pb-20">
           {achievements.map((item, idx) => (
             <div
               key={idx}
@@ -66,13 +66,12 @@ export default function Achievements() {
                 <Image
                   src={item.src}
                   alt={item.title}
-                  className="object-contain max-h-full max-w-full"
-                  width={300}
-                  height={250}
+                  className="w-[200px] h-[200px] "
+                
                 />
               </div>
 
-              <div className="text-[#4F000D] font_britanica_reguler font-bold text-[clamp(1.25rem,4vw,1.75rem)] leading-tight break-words max-w-[20rem] flex items-center justify-center">
+              <div className="text-[#4F000D] font_britanica_reguler font-bold text-[clamp(1vw,1.5vw,1.75rem)] leading-tight break-words max-w-[20rem] flex items-center justify-center">
                 {item.title}
               </div>
             </div>

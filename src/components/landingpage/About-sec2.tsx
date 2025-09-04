@@ -16,18 +16,18 @@ const AboutSec2 = () => {
                 <Image
                     src={photo}
                     alt="About Section Image"
-                    className="w-[40vw] max-h-[45vw] rounded-lg"
+                    className="w-[25vw] max-h-[40vw] object-cover rounded-3xl"
                 />
             </div>
 
             <div className="flex flex-col items-start gap-y-6 sm:gap-y-[2vw] sm:py-[2vw] w-full">
-                <h1 className="text-3xl sm:text-[clamp(0.5vw,3vw,5rem)]">
+                <h1 className="text-3xl sm:text-[clamp(0.5vw,2.7vw,5rem)]">
                     <span className="font_britanica_regular text-gray-800 sm:text-[#131313]">Introducing</span>
                     <br />
                     <span className="font_britanica_black text-[#780014]">HAS Attorneys at Law</span>
                 </h1>
 
-                <p className="font_britanica_regular text-base sm:text-[clamp(1vw,1.5vw,4rem)] text-gray-700 sm:text-[#131313] text-justify leading-relaxed">
+                <p className="font_britanica_regular text-base sm:text-[clamp(1vw,1.3vw,4rem)] text-gray-700 sm:text-[#131313] text-justify leading-relaxed">
                     For nearly a decade, HAS Attorneys at Law has established itself as a trusted full-service law firm with a formidable reputation in litigation. Our primary strength lies in navigating high-stakes disputes, from complex commercial cases to sensitive anti-corruption matters. Backed by a team of seasoned lawyers, we are committed to delivering strategic and effective legal solutions to protect your most critical interests.
                 </p>
 
@@ -36,7 +36,7 @@ const AboutSec2 = () => {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                     className={`font_britanica_black 
-                               text-base sm:text-[clamp(1.5vw,1.5vw,4rem)] 
+                               text-base sm:text-[clamp(1vw,1.3vw,4rem)]
                                border-2 sm:border-[0.2vw] 
                                p-3 px-6 sm:p-[1vw] 
                                rounded-full transition-colors duration-300 ease-in-out cursor-pointer 

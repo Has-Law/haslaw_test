@@ -64,3 +64,12 @@ export async function getOpenBatches(type?: string): Promise<BatchListItem[]> {
   const data = await res.json();
   return data.data;
 }
+
+export async function getAllBatches(type?: string): Promise<BatchListItem[]> {
+  let url = `${API_BASE_URL}/api/v1/careers/batches`;
+  if (type) url += `?batch_type=${encodeURIComponent(type)}`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error("Failed to fetch all batches");
+  const data = await res.json();
+  return data.data;
+}

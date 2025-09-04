@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { getOpenBatches } from "@/lib/career";
+import { getAllBatches, type BatchListItem } from "@/lib/career";
 import Image from "next/image";
 import hero from "@/assets/career/hero.webp";
 import heroMobile from "@/assets/career/hero-mobile.png";
@@ -23,15 +23,23 @@ import stafffull from "@/assets/career/image/staff-full.jpg";
 
 const Hero = () => {
     const [isHovered, setIsHovered] = useState<string | null>(null);
-    const [batches, setBatches] = useState<{ [key: string]: number | null }>({ internship: null, lawyers: null, staff: null });
+    const [batches, setBatches] = useState<{ [key: string]: { id: number | null; status: string | null } }>({ 
+        internship: { id: null, status: null }, 
+        lawyers: { id: null, status: null }, 
+        staff: { id: null, status: null } 
+    });
     const router = useRouter();
 
     useEffect(() => {
-        getOpenBatches().then(list => {
-            const map: { [key: string]: number | null } = { internship: null, lawyers: null, staff: null };
+        getAllBatches().then((list: BatchListItem[]) => {
+            const map: { [key: string]: { id: number | null; status: string | null } } = { 
+                internship: { id: null, status: null }, 
+                lawyers: { id: null, status: null }, 
+                staff: { id: null, status: null } 
+            };
             for (const type of ["Internship", "Lawyers", "Staff"]) {
-                const found = list.find(b => b.batch_type.toLowerCase() === type.toLowerCase());
-                map[type.toLowerCase()] = found ? found.id : null;
+                const found = list.find((b: BatchListItem) => b.batch_type.toLowerCase() === type.toLowerCase());
+                map[type.toLowerCase()] = found ? { id: found.id, status: found.status } : { id: null, status: null };
             }
             setBatches(map);
         });
@@ -81,7 +89,7 @@ const Hero = () => {
                     <div
                         onMouseEnter={() => setIsHovered('internship')}
                         onMouseLeave={() => setIsHovered(null)}
-                        className="relative cursor-pointer flex-1"
+                        className="relative  flex-1"
                     >
                         <div className="relative overflow-hidden border-[clamp(0.05vw,0.1vw,0.2vw)] border-white ">
                             <Image src={internship1} alt="Internship Default" className="w-full h-full object-cover" />
@@ -104,16 +112,19 @@ const Hero = () => {
                             <div className="absolute inset-0 flex flex-col items-center justify-end z-30 text-center p-[clamp(1rem,2vw,2rem)]">
                                 <h2 className={`text-white font_britanica_black text-[clamp(1.5rem,3vw,2.5rem)] transition-transform duration-800 ease-in-out ${isHovered === 'internship' ? '-translate-y-2' : 'translate-y-0'}`}>Internship</h2>
                                 <div className={`transition-all duration-300 ${isHovered === 'internship' ? 'block' : 'hidden'}`}>
-                                    <button
-                                        className="group/btn flex items-center gap-2 border-2 border-white text-white px-[clamp(0.8rem,1.5vw,1.5rem)] py-[clamp(0.5rem,1vw,1rem)] rounded-full hover:bg-white hover:text-black transition-all duration-300"
-                                        onClick={() => {
-                                            if (batches.internship) router.push(`/career/${batches.internship}`);
-                                        }}
-                                        disabled={!batches.internship}
-                                    >
-                                        <span className="font_britanica_regular text-[clamp(0.8rem,1.2vw,1.2rem)]">Apply now</span>
-                                        <svg className="w-[clamp(0.8rem,1vw,1rem)] h-[clamp(0.8rem,1vw,1rem)] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                                    </button>
+                                    {batches.internship.id && batches.internship.status === 'Open' ? (
+                                        <button
+                                            className="group/btn flex cursor-pointer items-center gap-2 border-2 border-white text-white px-[clamp(0.8rem,1.5vw,1.5rem)] py-[clamp(0.5rem,1vw,1rem)] rounded-full hover:bg-white hover:text-black transition-all duration-300"
+                                            onClick={() => router.push(`/career/${batches.internship.id}`)}
+                                        >
+                                            <span className="font_britanica_regular text-[clamp(0.8rem,1.2vw,1.2rem)]">Apply now</span>
+                                            <svg className="w-[clamp(0.8rem,1vw,1rem)] h-[clamp(0.8rem,1vw,1rem)] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                        </button>
+                                    ) : (
+                                        <div className="border-2 border-gray-400 text-gray-400 px-[clamp(0.8rem,1.5vw,1.5rem)] py-[clamp(0.5rem,1vw,1rem)] rounded-full">
+                                            <span className="font_britanica_regular text-[clamp(0.8rem,1.2vw,1.2rem)]">Batch Closed</span>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -122,7 +133,7 @@ const Hero = () => {
                     <div
                         onMouseEnter={() => setIsHovered('lawyers')}
                         onMouseLeave={() => setIsHovered(null)}
-                        className="relative cursor-pointer flex-1"
+                        className="relative  flex-1"
                     >
                         <div className="relative overflow-hidden border-[clamp(0.05vw,0.1vw,0.2vw)] border-white ">
                             <Image src={internship2} alt="Lawyers Default" className="w-full h-full object-cover" />
@@ -133,16 +144,19 @@ const Hero = () => {
                             <div className="absolute inset-0 flex flex-col items-center justify-end z-30 text-center p-[clamp(1rem,2vw,2rem)]">
                                 <h2 className={`text-white font_britanica_black text-[clamp(1.3rem,2.5vw,2.2rem)] transition-transform duration-800 ease-in-out ${isHovered === 'lawyers' ? '-translate-y-2' : 'translate-y-0'}`}>Lawyers</h2>
                                 <div className={`transition-all duration-300 ${isHovered === 'lawyers' ? 'block' : 'hidden'}`}>
-                                    <button
-                                        className="group/btn flex items-center gap-2 border-2 border-white text-white px-[clamp(0.8rem,1.5vw,1.5rem)] py-[clamp(0.5rem,1vw,1rem)] rounded-full hover:bg-white hover:text-black transition-all duration-300"
-                                        onClick={() => {
-                                            if (batches.lawyers) router.push(`/career/${batches.lawyers}`);
-                                        }}
-                                        disabled={!batches.lawyers}
-                                    >
-                                        <span className="font_britanica_regular text-[clamp(0.8rem,1.2vw,1.2rem)]">Apply now</span>
-                                        <svg className="w-[clamp(0.8rem,1vw,1rem)] h-[clamp(0.8rem,1vw,1rem)] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                                    </button>
+                                    {batches.lawyers.id && batches.lawyers.status === 'Open' ? (
+                                        <button
+                                            className="group/btn cursor-pointer flex items-center gap-2 border-2 border-white text-white px-[clamp(0.8rem,1.5vw,1.5rem)] py-[clamp(0.5rem,1vw,1rem)] rounded-full hover:bg-white hover:text-black transition-all duration-300"
+                                            onClick={() => router.push(`/career/${batches.lawyers.id}`)}
+                                        >
+                                            <span className="font_britanica_regular text-[clamp(0.8rem,1.2vw,1.2rem)]">Apply now</span>
+                                            <svg className="w-[clamp(0.8rem,1vw,1rem)] h-[clamp(0.8rem,1vw,1rem)] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                        </button>
+                                    ) : (
+                                        <div className="border-2 border-gray-400 text-gray-400 px-[clamp(0.8rem,1.5vw,1.5rem)] py-[clamp(0.5rem,1vw,1rem)] rounded-full">
+                                            <span className="font_britanica_regular text-[clamp(0.8rem,1.2vw,1.2rem)]">Batch Closed</span>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -151,7 +165,7 @@ const Hero = () => {
                     <div
                         onMouseEnter={() => setIsHovered('staff')}
                         onMouseLeave={() => setIsHovered(null)}
-                        className="relative cursor-pointer flex-1"
+                        className="relative  flex-1"
                     >
                         <div className="relative overflow-hidden border-[clamp(0.05vw,0.1vw,0.2vw)] border-white ">
                             <Image src={internship3} alt="Staff Default" className="w-full h-full object-cover" />
@@ -162,16 +176,19 @@ const Hero = () => {
                             <div className="absolute inset-0 flex flex-col items-center justify-end z-30 text-center p-[clamp(1rem,2vw,2rem)]">
                                 <h2 className={`text-white font_britanica_black text-[clamp(1.3rem,2.5vw,2.2rem)] transition-transform duration-800 ease-in-out ${isHovered === 'staff' ? '-translate-y-2' : 'translate-y-0'}`}>Staff</h2>
                                 <div className={`transition-all duration-300 ${isHovered === 'staff' ? 'block' : 'hidden'}`}>
-                                    <button
-                                        className="group/btn flex items-center gap-2 border-2 border-white text-white px-[clamp(0.8rem,1.5vw,1.5rem)] py-[clamp(0.5rem,1vw,1rem)] rounded-full hover:bg-white hover:text-black transition-all duration-300"
-                                        onClick={() => {
-                                            if (batches.staff) router.push(`/career/${batches.staff}`);
-                                        }}
-                                        disabled={!batches.staff}
-                                    >
-                                        <span className="font_britanica_regular text-[clamp(0.8rem,1.2vw,1.2rem)]">Apply now</span>
-                                        <svg className="w-[clamp(0.8rem,1vw,1rem)] h-[clamp(0.8rem,1vw,1rem)] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                                    </button>
+                                    {batches.staff.id && batches.staff.status === 'Open' ? (
+                                        <button
+                                            className="group/btn cursor-pointer flex items-center gap-2 border-2 border-white text-white px-[clamp(0.8rem,1.5vw,1.5rem)] py-[clamp(0.5rem,1vw,1rem)] rounded-full hover:bg-white hover:text-black transition-all duration-300"
+                                            onClick={() => router.push(`/career/${batches.staff.id}`)}
+                                        >
+                                            <span className="font_britanica_regular text-[clamp(0.8rem,1.2vw,1.2rem)]">Apply now</span>
+                                            <svg className="w-[clamp(0.8rem,1vw,1rem)] h-[clamp(0.8rem,1vw,1rem)] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                        </button>
+                                    ) : (
+                                        <div className="border-2 border-gray-400 text-gray-400 px-[clamp(0.8rem,1.5vw,1.5rem)] py-[clamp(0.5rem,1vw,1rem)] rounded-full">
+                                            <span className="font_britanica_regular text-[clamp(0.8rem,1.2vw,1.2rem)]">Batch Closed</span>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -186,16 +203,19 @@ const Hero = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                         <div className="absolute bottom-0 left-0 right-0 p-[clamp(1.2rem,5vw,1.5rem)]">
                             <h2 className="text-white font_britanica_black text-[clamp(1.8rem,7vw,2.5rem)] mb-[clamp(0.8rem,3vw,1rem)]">Internship</h2>
-                            <button
-                                className="group/btn flex items-center gap-2 border-2 border-white text-white px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.6rem,2.5vw,1rem)] rounded-full hover:bg-white hover:text-black transition-all duration-300"
-                                onClick={() => {
-                                    if (batches.internship) router.push(`/career/${batches.internship}`);
-                                }}
-                                disabled={!batches.internship}
-                            >
-                                <span className="font_britanica_regular text-[clamp(0.9rem,3.5vw,1.2rem)]">Apply now</span>
-                                <svg className="w-[clamp(1rem,4vw,1.2rem)] h-[clamp(1rem,4vw,1.2rem)] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                            </button>
+                            {batches.internship.id && batches.internship.status === 'Open' ? (
+                                <button
+                                    className="group/btn flex items-center gap-2 border-2 border-white text-white px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.6rem,2.5vw,1rem)] rounded-full hover:bg-white hover:text-black transition-all duration-300"
+                                    onClick={() => router.push(`/career/${batches.internship.id}`)}
+                                >
+                                    <span className="font_britanica_regular text-[clamp(0.9rem,3.5vw,1.2rem)]">Apply now</span>
+                                    <svg className="w-[clamp(1rem,4vw,1.2rem)] h-[clamp(1rem,4vw,1.2rem)] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                </button>
+                            ) : (
+                                <div className="border-2 border-gray-400 text-gray-400 px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.6rem,2.5vw,1rem)] rounded-full">
+                                    <span className="font_britanica_regular text-[clamp(0.9rem,3.5vw,1.2rem)]">Batch Closed</span>
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -205,16 +225,19 @@ const Hero = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                         <div className="absolute bottom-0 left-0 right-0 p-[clamp(1.2rem,5vw,1.5rem)]">
                             <h2 className="text-white font_britanica_black text-[clamp(1.8rem,7vw,2.5rem)] mb-[clamp(0.8rem,3vw,1rem)]">Lawyers</h2>
-                            <button
-                                className="group/btn flex items-center gap-2 border-2 border-white text-white px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.6rem,2.5vw,1rem)] rounded-full hover:bg-white hover:text-black transition-all duration-300"
-                                onClick={() => {
-                                    if (batches.lawyers) router.push(`/career/${batches.lawyers}`);
-                                }}
-                                disabled={!batches.lawyers}
-                            >
-                                <span className="font_britanica_regular text-[clamp(0.9rem,3.5vw,1.2rem)]">Apply now</span>
-                                <svg className="w-[clamp(1rem,4vw,1.2rem)] h-[clamp(1rem,4vw,1.2rem)] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                            </button>
+                            {batches.lawyers.id && batches.lawyers.status === 'Open' ? (
+                                <button
+                                    className="group/btn flex items-center gap-2 border-2 border-white text-white px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.6rem,2.5vw,1rem)] rounded-full hover:bg-white hover:text-black transition-all duration-300"
+                                    onClick={() => router.push(`/career/${batches.lawyers.id}`)}
+                                >
+                                    <span className="font_britanica_regular text-[clamp(0.9rem,3.5vw,1.2rem)]">Apply now</span>
+                                    <svg className="w-[clamp(1rem,4vw,1.2rem)] h-[clamp(1rem,4vw,1.2rem)] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                </button>
+                            ) : (
+                                <div className="border-2 border-gray-400 text-gray-400 px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.6rem,2.5vw,1rem)] rounded-full">
+                                    <span className="font_britanica_regular text-[clamp(0.9rem,3.5vw,1.2rem)]">Batch Closed</span>
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -224,16 +247,19 @@ const Hero = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                         <div className="absolute bottom-0 left-0 right-0 p-[clamp(1.2rem,5vw,1.5rem)]">
                             <h2 className="text-white font_britanica_black text-[clamp(1.8rem,7vw,2.5rem)] mb-[clamp(0.8rem,3vw,1rem)]">Staff</h2>
-                            <button
-                                className="group/btn flex items-center gap-2 border-2 border-white text-white px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.6rem,2.5vw,1rem)] rounded-full hover:bg-white hover:text-black transition-all duration-300"
-                                onClick={() => {
-                                    if (batches.staff) router.push(`/career/${batches.staff}`);
-                                }}
-                                disabled={!batches.staff}
-                            >
-                                <span className="font_britanica_regular text-[clamp(0.9rem,3.5vw,1.2rem)]">Apply now</span>
-                                <svg className="w-[clamp(1rem,4vw,1.2rem)] h-[clamp(1rem,4vw,1.2rem)] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                            </button>
+                            {batches.staff.id && batches.staff.status === 'Open' ? (
+                                <button
+                                    className="group/btn flex items-center gap-2 border-2 border-white text-white px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.6rem,2.5vw,1rem)] rounded-full hover:bg-white hover:text-black transition-all duration-300"
+                                    onClick={() => router.push(`/career/${batches.staff.id}`)}
+                                >
+                                    <span className="font_britanica_regular text-[clamp(0.9rem,3.5vw,1.2rem)]">Apply now</span>
+                                    <svg className="w-[clamp(1rem,4vw,1.2rem)] h-[clamp(1rem,4vw,1.2rem)] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                </button>
+                            ) : (
+                                <div className="border-2 border-gray-400 text-gray-400 px-[clamp(1rem,4vw,1.5rem)] py-[clamp(0.6rem,2.5vw,1rem)] rounded-full">
+                                    <span className="font_britanica_regular text-[clamp(0.9rem,3.5vw,1.2rem)]">Batch Closed</span>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

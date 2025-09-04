@@ -63,14 +63,23 @@ export default function CareerBatchClient({ batchId }: CareerBatchClientProps) {
         setLoading(true);
         getBatch(batchId)
             .then(data => {
+                // Check if batch status is closed
+                if (data.status !== 'Open') {
+                    // Redirect to career page if batch is closed
+                    router.push('/career');
+                    return;
+                }
                 setBatch(data);
                 setLoading(false);
                 if (data?.batch_type) {
                     getOtherOpenBatches(data.batch_type).then(setOtherBatches);
                 }
             })
-            .catch(() => setError("Failed to load batch info"));
-    }, [batchId]);
+            .catch(() => {
+                setError("Failed to load batch info");
+                setLoading(false);
+            });
+    }, [batchId, router]);
 
     const handleCheckboxChange = (field: string, option: string, checked: boolean) => {
         setForm(prev => {

@@ -2,10 +2,10 @@
 import { getOpenBatches } from "@/lib/career";
 import CareerBatchClient from "./Batch-list";
 
-// generateStaticParams harus di Server Component
+// generateStaticParams hanya untuk batch yang Open
 export async function generateStaticParams() {
     try {
-        const batches = await getOpenBatches(); // Menggunakan fungsi yang sudah ada
+        const batches = await getOpenBatches(); // Hanya ambil batch yang Open
         
         return batches.map((batch) => ({
             id: batch.id.toString(), // Pastikan id dalam bentuk string

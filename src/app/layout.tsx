@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
+import GDPRCookieBanner from "@/components/common/GDPRCookieBanner";
+import { CookieProvider } from "@/hooks/useCookies";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,13 +34,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex flex-col min-h-screen ">
-          <Navbar/>
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer/>
-        </div>
+        <CookieProvider>
+          <div className="flex flex-col min-h-screen ">
+            <Navbar/>
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer/>
+          </div>
+          
+          {/* GDPR/CCPA Compliant Cookie Components */}
+          <GDPRCookieBanner />
+        </CookieProvider>
         
       </body>
     </html>

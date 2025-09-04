@@ -62,19 +62,31 @@ const Hero = () => {
                     </div>
                 </div>
 
-                {/* Mobile Hero - Full Width Layout */}
+                {/* Mobile Hero - Layout matching the image */}
                 <div className="block sm:hidden w-full relative">
                     <div className="relative aspect-[9/16] w-full overflow-hidden">
-                        <Image src={heroMobile} alt="Hero Mobile" className="w-full h-full object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <Image src={heroMobile} alt="Hero Mobile" className="w-[60vw] h-full object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t  to-[#F5F5F5]"></div>
                         
-                        <div className="absolute bottom-0 left-0 right-0 p-[clamp(1.5rem,6vw,2rem)] text-white">
-                            <div className="flex flex-row items-center gap-x-[clamp(0.5rem,2vw,1rem)] mb-[clamp(0.8rem,3vw,1rem)]">
-                                <div className="bg-white h-[clamp(0.1rem,0.3vw,0.2rem)] w-[clamp(2rem,8vw,3rem)]" />
-                                <h1 className="font_britanica_black text-[clamp(1rem,4vw,1.5rem)]">Career</h1>
+                  
+                        <div className="absolute inset-0 flex flex-col justify-center items-end p-[clamp(1.5rem,6vw,2rem)]">
+                            <div className="w-full max-w-[85%] text-right text-white">
+                                {/* Career label */}
+                                <div className="flex flex-row items-center justify-end gap-x-[clamp(0.5rem,2vw,1rem)] mb-[clamp(1rem,4vw,1.5rem)]">
+                                    <div className="bg-black h-[clamp(0.1rem,0.3vw,0.2rem)] w-[clamp(2rem,8vw,3rem)]" />
+                                    <h1 className="font_britanica_black text-black text-[clamp(1rem,4vw,1.5rem)]">Careers</h1>
+                                </div>
+                                
+                                {/* Main title */}
+                                <h1 className="font_lato_bold text-[clamp(2.2rem,8vw,3.2rem)] text-[#780014] leading-tight mb-[clamp(1rem,4vw,1.5rem)]">
+                                    Shape the Future of Law With Us
+                                </h1>
+                                
+                                {/* Description */}
+                                <p className="font_britanica_regular text-black text-[clamp(1rem,3.5vw,1.1rem)] leading-relaxed opacity-95 max-w-[60%] ml-auto">
+                                    The world is constantly changing, and so is the law. Join our dynamic team that doesn&apos;t just adapt, but leads the change in Indonesia&apos;s legal landscape through intelligent and innovative solutions.
+                                </p>
                             </div>
-                            <h1 className="font_lato_bold text-[clamp(2rem,8vw,3rem)] text-[] leading-tight mb-[clamp(0.8rem,3vw,1rem)]">Shape the Future of Law With Us</h1>
-                            <h2 className="font_britanica_regular text-[clamp(0.85rem,3.5vw,1.1rem)] leading-relaxed opacity-90">The world is constantly changing, and so is the law. Join our dynamic team that doesn&apos;t just adapt, but leads the change in Indonesia&apos;s legal landscape through intelligent and innovative solutions.</h2>
                         </div>
                     </div>
                 </div>

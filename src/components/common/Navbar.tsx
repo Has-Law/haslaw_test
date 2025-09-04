@@ -62,7 +62,7 @@ const Navbar = () => {
     }, [isHovered]);
 
     return (
-      <nav className="flex flex-row bg-white w-full justify-center items-center pt-[2vw] px-[5vw] sticky top-0 z-50 shadow-md">
+      <nav className="flex flex-row bg-white w-full justify-center items-center pt-[1vw] px-[5vw] sticky top-0 z-50 shadow-md">
           
             {isMobileMenuOpen && (
                 <div 
@@ -99,7 +99,7 @@ const Navbar = () => {
                         </svg>
                     </button>
                 
-                    <div className="flex flex-col gap-y-4 mt-6 font_britanica_regular text-lg text-[#5E0503]">
+                    <div className="flex flex-col gap-y-4 mt-6 font_britanica_regular text-xs text-[#5E0503]">
                         <Link href="/" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
                         <Link href="/about" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
                         <Link href="/member" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Members</Link>
@@ -115,11 +115,11 @@ const Navbar = () => {
 
           
             <div className="hidden lg:flex flex-row w-[90vw] items-center justify-center gap-x-[8vw] border-b-[0.2vw] border-[#A0001B] pb-[1vw]">
-                <Link href="/" className="cursor-pointer hover:scale-105 transition-transform duration-200">
+                <Link href="/" className="cursor-pointer hover:scale-105 transition-transform duration-200 w-[5vw]">
                     <Image src={logo} alt="Logo" />
                 </Link>
                 
-                <div className="flex flex-row items-center font_britanica_regular text-[clamp(1.5vw,1.5vw,4rem)] gap-x-[3vw]">
+                <div className="flex flex-row items-center font_britanica_regular text-[clamp(1.2vw,1.2vw,4rem)] gap-x-[3vw]">
                 
                     <Link 
                         href="/" 
@@ -151,7 +151,7 @@ const Navbar = () => {
                         >
                             <Link 
                                 href="/about" 
-                                className="hover:text-white w-full text-center px-[1vw] py-[0.3vw] text-[#A0001B] text-nowrap hover:bg-[#A0001B] text-[clamp(1.5vw,1.5vw,4rem)] border-b-[0.01vw] border-[#A0001B]/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-sm"
+                                className="hover:text-white w-full text-center px-[1vw] py-[0.3vw] text-[#A0001B] text-nowrap hover:bg-[#A0001B]  border-b-[0.01vw] border-[#A0001B]/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-sm"
                             >
                                 About Us
                             </Link>
@@ -163,7 +163,7 @@ const Navbar = () => {
                             >
                                 <Link 
                                     href="/member" 
-                                    className="block transition-all duration-300 text-center px-[1vw] py-[0.3vw] text-black hover:bg-[#A0001B] hover:text-white border-b-[0.01vw] border-[#A0001B]/20 text-[clamp(1.5vw,1.5vw,4rem)] hover:scale-[1.02] hover:shadow-sm"
+                                    className="block transition-all duration-300 text-center px-[1vw] py-[0.3vw] text-black hover:bg-[#A0001B] hover:text-white border-b-[0.01vw] border-[#A0001B]/20  hover:scale-[1.02] hover:shadow-sm"
                                 >
                                     Member
                                 </Link>
@@ -174,14 +174,14 @@ const Navbar = () => {
                                     style={{ maxHeight: '0px', opacity: 0 }}
                                 >
                                     <Link 
-                                        href="/member/dzaky" 
-                                        className="block transition-all duration-300 text-center py-[0.2vw] text-black hover:bg-[#A0001B] hover:text-white text-[clamp(1.3vw,1.3vw,3.5rem)] hover:scale-[1.02] border-b-[0.01vw] border-[#A0001B]/10"
+                                        href="/member" 
+                                        className="block transition-all duration-300 text-center py-[0.2vw] text-black hover:bg-[#A0001B] hover:text-white  hover:scale-[1.02] border-b-[0.01vw] border-[#A0001B]/10"
                                     >
-                                        Dzaky
+                                        Agus Askin
                                     </Link>
                                     <Link 
-                                        href="/member/others" 
-                                        className="block transition-all duration-300 text-center py-[0.2vw] text-black hover:bg-[#A0001B] hover:text-white text-[clamp(1.3vw,1.3vw,3.5rem)] hover:scale-[1.02]"
+                                        href="/member" 
+                                        className="block transition-all duration-300 text-center py-[0.2vw] text-black hover:bg-[#A0001B] hover:text-white  hover:scale-[1.02]"
                                     >
                                         Others
                                     </Link>
@@ -190,7 +190,7 @@ const Navbar = () => {
                             
                             <Link 
                                 href="/achievements" 
-                                className="block transition-all duration-300 text-center px-[1vw] py-[0.3vw] text-black hover:bg-[#A0001B] hover:text-white text-[clamp(1.5vw,1.5vw,4rem)] hover:scale-[1.02] hover:shadow-sm"
+                                className="block transition-all duration-300 text-center px-[1vw] py-[0.3vw] text-black hover:bg-[#A0001B] hover:text-white  hover:scale-[1.02] hover:shadow-sm"
                             >
                                 Achievements
                             </Link>
@@ -219,13 +219,13 @@ const Navbar = () => {
                         >
                             <Link 
                                 href="/service" 
-                                className="text-center px-[1vw] py-[0.3vw] hover:text-white text-black hover:bg-[#A0001B] text-[clamp(1.5vw,1.5vw,4rem)] transition-all duration-300 text-nowrap hover:scale-[1.02] hover:shadow-sm border-b-[0.01vw] border-[#A0001B]/20"
+                                className="text-center px-[1vw] py-[0.3vw] hover:text-white text-black hover:bg-[#A0001B]  transition-all duration-300 text-nowrap hover:scale-[1.02] hover:shadow-sm border-b-[0.01vw] border-[#A0001B]/20"
                             >
                                 Our Service
                             </Link>
                             <Link 
                                 href="/pro-bono" 
-                                className="text-center px-[1vw] py-[0.3vw] hover:text-white text-black hover:bg-[#A0001B] text-[clamp(1.5vw,1.5vw,4rem)] transition-all duration-300 text-nowrap hover:scale-[1.02] hover:shadow-sm"
+                                className="text-center px-[1vw] py-[0.3vw] hover:text-white text-black hover:bg-[#A0001B]  transition-all duration-300 text-nowrap hover:scale-[1.02] hover:shadow-sm"
                             >
                                 Pro Bono
                             </Link>
@@ -262,7 +262,7 @@ const Navbar = () => {
                 <div className="relative flex items-center group">
                     <input 
                         type="text" 
-                        className="border-[0.15vw] rounded-full placeholder:text-[#5E0503]/58 font_britanica_regular w-[12vw] pl-[1vw] pr-[3vw] py-[0.2vw] text-[clamp(1.5vw,1.5vw,4rem)] outline-none transition-all duration-300 focus:border-[#A0001B] focus:shadow-lg focus:scale-105" 
+                        className="border-[0.15vw] rounded-full placeholder:text-[#5E0503]/58 font_britanica_regular w-[12vw] pl-[1vw] pr-[3vw] py-[0.2vw] text-[clamp(1.2vw,1.2vw,4rem)] outline-none transition-all duration-300 focus:border-[#A0001B] focus:shadow-lg focus:scale-105" 
                         placeholder="Search..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}

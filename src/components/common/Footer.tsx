@@ -13,7 +13,7 @@ import Image from 'next/image';
 const Footer = () => {
     return (
       
-        <footer className="bg-[#Ffffff] py-16 px-6 md:px-10 lg:py-28 lg:px-32 font_britanica_regular">
+        <footer className="bg-[#Ffffff] py-5 px-6 md:px-10 lg:px-32 font_britanica_regular">
             <div className="mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-24">
                     
@@ -36,7 +36,7 @@ const Footer = () => {
                                 </Link>
                             </div>
                         </div>
-                        <h3 className="text-[#A0001B] font_britanica_bold text-xl mt-6 mb-2">About Us</h3>
+                        <h3 className="text-[#A0001B] font_britanica_bold text-xl mt-2 mb-2">About Us</h3>
                         <p className="text-gray-700 text-base leading-relaxed">
                             Securing your business with litigation excellence in court and precision in corporate strategy.
                         </p>
@@ -44,17 +44,17 @@ const Footer = () => {
 
                   
                     <div className="hidden lg:block lg:col-span-1">
-                        <div className="mb-10">
+                        <div className="mb-5">
                             <Image 
                                 src={logo} 
                                 alt="HAS Law Logo" 
                                 width={320} 
                                 height={110} 
-                                className="mb-8"
+                                className="mb-3"
                             />
                         </div>
                   
-                        <h3 className="text-[#A0001B] font_britanica_bold text-2xl mb-5">About Us</h3> 
+                        <h3 className="text-[#A0001B] font_britanica_bold text-2xl mb-2">About Us</h3> 
                         <p className="text-[#4F000D] text-xl leading-relaxed mb-12">
                             Securing your business with litigation excellence in court and precision in corporate strategy.
                         </p>
@@ -73,7 +73,7 @@ const Footer = () => {
 
                     <div className="lg:col-span-1 lg:ml-20">
                         <h3 className="text-[#4F000D] font-bold text-2xl mb-5">Our firm</h3>
-                        <ul className="space-y-3">
+                        <ul className="space-y-2">
                             <li><Link href="/" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-xl">Home</Link></li>
                             <li><Link href="/about" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-xl">About Us</Link></li>
                             <li><Link href="/member" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-xl">Members</Link></li>
@@ -117,7 +117,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="border-t border-[#4F000D] mt-20 pt-12">
+                <div className="border-t border-[#4F000D] mt-10 pt-5">
                     <div className="text-center">
                         <p className="text-[#4F000D] text-xl">
                             Copyright © 2025 - Has Law

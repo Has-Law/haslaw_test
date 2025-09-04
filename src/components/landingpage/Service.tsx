@@ -20,10 +20,10 @@ const Service = () => {
                 className="z-0 md:rounded-[6rem] sm:rounded-4xl" 
             />
             <div className="relative z-10 flex flex-col items-center text-center px-6 md:px-[8vw] gap-y-8 md:gap-y-[1.3vw]">
-                <h1 className="font_lato_bold text-white text-4xl md:text-[clamp(0.35rem,3.5vw,3.5rem)] tracking-normal md:tracking-[0.07rem]">
+                <h1 className="font_britanica_black text-white text-4xl md:text-[clamp(0.35rem,3.5vw,3.5rem)] tracking-normal md:tracking-[0.07rem]">
                     Our Services
                 </h1>
-                <p className="font_britanica_regular text-white text-base md:text-[clamp(1.1vw,1.1vw,2.8rem)] leading-relaxed max-w-5xl">
+                <p className="font_britanica_regular text-white text-base md:text-[clamp(1.1vw,1.3vw,3rem)] leading-relaxed max-w-5xl">
                     At HAS Attorneys at Law, our identity is forged through powerful and strategic litigation. We exist to win your most critical disputes, supported by robust corporate services that strengthen your legal standing. To deliver this commitment, we provide a comprehensive suite of services designed to protect and advance your interests in every legal arena. Our focuses include:
                 </p>
             

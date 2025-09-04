@@ -39,7 +39,7 @@ const Achievement = () => {
                            px-6 md:px-[8vw] py-8 md:py-[1.3vw] 
                            gap-y-8 md:gap-y-[1.3vw] w-full">
                 
-                <h1 className="font_lato_bold text-white text-center
+                <h1 className="font_britanica_black text-white text-center
                                text-4xl md:text-[clamp(3.2vw,3.2vw,3.2rem)] 
                                tracking-wide md:tracking-[0.13vw]">
                     Achievements

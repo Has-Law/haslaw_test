@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+
 import logo from "@/assets/common/footer/footer-logo.svg";
 import instagram from "@/assets/common/footer/instagram-footer.svg";
 import email from "@/assets/common/footer/email-footer.svg";
@@ -8,16 +10,15 @@ import emailIcon from "@/assets/common/footer/mail-footer.svg";
 import phoneIcon from "@/assets/common/footer/phone-footer.svg";
 import whatsappIcon from "@/assets/common/footer/wa-footer.svg";
 import locationIcon from "@/assets/common/footer/location-footer.svg";
-import Image from 'next/image';
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
-      
-        <footer className="bg-[#Ffffff] py-[clamp(1.2rem,2.5vw,2rem)]  font_britanica_bold">
-            <div className="mx-auto ">
-                <div className="flex flex-row  gap-[clamp(2.5rem,5vw,6rem)] lg:gap-[clamp(4rem,6vw,6rem)] lg:px-[clamp(1.5rem,10vw,15vw)] px-[clamp(1.5rem,4vw,8rem)]">
-                    
-                    <div className="lg:hidden">
+        <footer className="bg-white py-[clamp(1.2rem,2.5vw,2rem)] font_britanica_bold">
+            <div className="mx-auto">
+
+                <div className="lg:hidden flex flex-col gap-10 px-[clamp(1.5rem,4vw,8rem)]">
+                    {/* Bagian Atas Mobile */}
+                    <div>
                         <div className="flex flex-row justify-between items-center mb-[clamp(1.5rem,4vw,2rem)]">
                             <Image 
                                 src={logo} 
@@ -36,14 +37,59 @@ const Footer = () => {
                                 </Link>
                             </div>
                         </div>
-                        <h3 className="text-[#A0001B] font_britanica_black text-[clamp(1.2rem,4.5vw,1.5rem)] mt-2 mb-[clamp(0.5rem,2vw,0.8rem)]">About Us</h3>
                         <p className="text-gray-700 text-[clamp(0.9rem,3.5vw,1rem)] leading-relaxed">
                             Securing your business with litigation excellence in court and precision in corporate strategy.
                         </p>
                     </div>
 
-                  
-                    <div className="hidden lg:block flex flex-row justify-center items-center ">
+                    <div className="flex flex-col">
+                        <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,1.5rem)] mb-4">Our firm</h3>
+                        <ul className="space-y-3">
+                            <li><Link href="/" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Home</Link></li>
+                            <li><Link href="/about" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">About Us</Link></li>
+                            <li><Link href="/member" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Members</Link></li>
+                            <li><Link href="/achievements" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Achievements</Link></li>
+                            <li><Link href="/career" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Careers</Link></li>
+                            <li><Link href="/pro-bono" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Pro Bono</Link></li>
+                        </ul>
+                    </div>
+            
+                    <div className="flex flex-col">
+                        <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,1.5rem)] mb-4">Explore Services</h3>
+                        <ul className="space-y-3">
+                            <li><Link href="/service" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Our Services</Link></li>
+                            <li><Link href="/news" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">News & Insight</Link></li>
+                            <li><Link href="/contact" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Contact Us</Link></li>
+                        </ul>
+                    </div>
+
+                    <div className="flex flex-col">
+                        <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,1.5rem)] mb-4">Contact Us</h3>
+                        <div className="space-y-4">
+                            <a href="mailto:info@has-law.com" className="flex items-start space-x-3 text-[#4F000D] hover:text-[#7A0015] transition-colors">
+                                <Image src={emailIcon} alt="Email" className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                                <span className="text-[clamp(0.9rem,3.5vw,1.2rem)]">info@has-law.com</span>
+                            </a>
+                            <a href="tel:+622157905183" className="flex items-start space-x-3 text-[#4F000D] hover:text-[#7A0015] transition-colors">
+                                <Image src={phoneIcon} alt="Phone" className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                                <span className="text-[clamp(0.9rem,3.5vw,1.2rem)]">+6221 5790 5183</span>
+                            </a>
+                            <a href="https://wa.me/6287857905183" className="flex items-start space-x-3 text-[#4F000D] hover:text-[#7A0015] transition-colors">
+                                <Image src={whatsappIcon} alt="WhatsApp" className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                                <span className="text-[clamp(0.9rem,3.5vw,1.2rem)]">+62 8785 790 5183</span>
+                            </a>
+                            <div className="flex items-start space-x-3">
+                                <Image src={locationIcon} alt="Location" className="w-5 h-5 flex-shrink-0 mt-1" />
+                                <p className="text-[#4F000D] leading-relaxed text-[clamp(0.9rem,3.5vw,1.2rem)]">
+                                    Plaza Sentral 15th Floor, Jln. Jendral Sudirman Kav 47 - 48, Jakarta Selatan 12930, Indonesia
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="hidden lg:flex flex-row gap-[clamp(4rem,6vw,6rem)] lg:px-[clamp(1.5rem,10vw,15vw)]">
+                    <div className="flex flex-col justify-start">
                         <div className="mb-[clamp(1.2rem,1.5vw,1.5rem)]">
                             <Image 
                                 src={logo} 
@@ -53,7 +99,6 @@ const Footer = () => {
                                 className="mb-3 w-[clamp(15vw,25vw,20rem)] h-auto"
                             />
                         </div>
-                  
                         <p className="text-[#4F000D] text-[clamp(1vw,1vw,1.5rem)] leading-relaxed mb-[clamp(1.5vw,1.5vw,3rem)]">
                             Securing your business with litigation excellence in court and precision in corporate strategy.
                         </p>
@@ -116,15 +161,14 @@ const Footer = () => {
                     </div>
                 </div>
 
-                
-            </div>
-            <div className="border-t border-[#4F000D] mt-[clamp(2.5rem,5vw,3rem)] pt-[clamp(1.2rem,2.5vw,1.5rem)]">
-                    <div className="text-center">
+                <div className="border-t border-[#4F000D] mt-[clamp(2.5rem,5vw,3rem)] pt-[clamp(1.2rem,2.5vw,1.5rem)]">
+                    <div className="text-center px-[clamp(1.5rem,4vw,8rem)] lg:px-0">
                         <p className="text-[#4F000D] text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">
-                            Copyright © 2025 - Has Law
+                            Copyright © {new Date().getFullYear()} - Has Law
                         </p>
                     </div>
                 </div>
+            </div>
         </footer>
     );
 };

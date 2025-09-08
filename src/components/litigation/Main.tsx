@@ -38,7 +38,7 @@ const Main = () => {
                         </p>
                     </div>
                 </div>
-                <div className="flex flex-col sm:flex-row items-start text-[#4F000D]">
+                <div className="flex flex-col sm:flex-row items-start text-[#4F000D] mb-[2vw]">
                     <div className="flex flex-row gap-x-[2vw] items-start w-[30vw]">
                         <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(5vw,5vw,10rem)] leading-none w-[8vw]">3</p>
                         <h2 className="font_britanica_black text-[clamp(2.5vw,3.5vw,3rem)] sm:text-[clamp(2.5vw,2.5vw,3rem)] leading-tight w-[15vw]">Administrative litigation</h2>

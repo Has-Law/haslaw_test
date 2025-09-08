@@ -48,11 +48,11 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
                     priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:px-[8vw] md:py-[5vw] text-white flex flex-col gap-y-3 md:gap-y-[1vw]">
-                    <p className="bg-[#A0001B] px-3 py-1 rounded-lg w-fit font_britanica_bold text-xl md:text-3xl">
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:px-[8vw] md:py-[5vw] md:pr-[15vw] text-white flex flex-col gap-y-3 md:gap-y-[1vw]">
+                    <p className="bg-[#A0001B] px-3 py-1 rounded-lg w-fit font_britanica_bold text-xl md:text-xl">
                         {newsItem.category}
                     </p>
-                    <h1 className="font_britanica_black text-[clamp(1.75rem,5vw,4rem)] leading-tight">
+                    <h1 className="font_britanica_black text-[clamp(2.5vw,2.5vw,4rem)] leading-tight">
                         {newsItem.news_title}
                     </h1>
                     <p className="text-gray-300 font_britanica_regular text-[clamp(0.875rem,3vw,1.25rem)]">

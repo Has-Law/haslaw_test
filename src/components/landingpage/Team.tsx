@@ -20,7 +20,7 @@ const Team = () => {
 
     return (
         <div className="flex flex-col items-center gap-y-8 sm:gap-y-[1.6vw] mt-8 sm:mt-[3.2vw] w-[90%] sm:w-[60%] mx-auto">
-            <h1 className="font_lato_bold text-[#131313] text-4xl sm:text-[clamp(1.5rem,4vw,3rem)]">Our Team</h1>
+            <h1 className="font_britanica_black text-[#131313] text-4xl sm:text-[clamp(1.5rem,4vw,3rem)]">Our Team</h1>
             <div className="flex flex-col items-center w-full">
                 
            

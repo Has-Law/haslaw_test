@@ -28,7 +28,7 @@ const LicenseCard = ({ item }: { item: LicenseItem }) => (
                    bg-[#F0F0F0] sm:bg-white                         
                    rounded-3xl sm:rounded-xl                         
                    p-4 sm:p-[1.6vw]                                    
-                   w-full h-44 sm:h-[16vw]                           
+                   w-[20vw] h-44 sm:h-[13vw]                           
                    gap-y-3 sm:gap-y-[0.8vw]"
         style={{ boxShadow: "0px 4px 4px 0px #00000040" }}
     >
@@ -38,17 +38,18 @@ const LicenseCard = ({ item }: { item: LicenseItem }) => (
                        group-hover:translate-y-0 transition-transform duration-300 ease-in-out"
         />
         <div className="relative z-10 flex flex-col items-center justify-center h-full">
-            <div className="relative h-2/3 w-full">
+            <div className="relative h-7/12 w-full">
                 <Image
                     src={item.img}
                     alt={item.alt}
                     layout="fill"
                     objectFit="contain"
+                    
                 />
             </div>
             <h3 className="font_britanica_bold 
                            text-gray-800 sm:text-black                     
-                           text-base sm:text-[clamp(1.4vw,1.4vw,3.2rem)]
+                           text-base sm:text-[clamp(1.2vw,1.2vw,3.2rem)]
                            transition-colors duration-300 group-hover:text-white">
                 {item.title}
             </h3>
@@ -82,12 +83,12 @@ const License = () => {
 
                
                     <div className="hidden sm:block">
-                        <div className="grid grid-cols-3 gap-[2vw] mb-[2vw]">
+                        <div className="flex flex-row items-center justify-center gap-[2vw] mb-[2vw]">
                             <LicenseCard item={licenseData[0]} />
                             <LicenseCard item={licenseData[1]} />
                             <LicenseCard item={licenseData[2]} />
                         </div>
-                        <div className="grid grid-cols-6 gap-[2vw]">
+                        <div className="flex flex-row items-center justify-center gap-[2vw]">
                             <div className="col-start-2 col-span-2">
                                 <LicenseCard item={licenseData[3]} />
                             </div>

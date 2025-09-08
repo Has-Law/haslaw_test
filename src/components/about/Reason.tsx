@@ -5,7 +5,7 @@ import atom from "@/assets/about/icon/atom.webp";
 const Reason = () => {
     return (
         <div className="flex flex-col items-center justify-center w-full  px-[5vw] mt-[4vw] gap-y-[3vw] sm:gap-y-[1.6vw]">
-            <h1 className="font_britanica_bold bg-clip-text text-transparent bg-gradient-to-t from-black to-[#F20028] text-[clamp(7vw,7vw,7rem)] sm:text-[clamp(4vw,4vw,3.2rem)]">Why Choose Us</h1>
+            <h1 className="font_britanica_bold bg-clip-text text-transparent bg-gradient-to-t from-black to-[#F20028] text-[clamp(7vw,7vw,7rem)] sm:text-[clamp(3vw,3vw,3.2rem)]">Why Choose Us</h1>
             <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-y-[6vw] sm:gap-y-0 sm:gap-x-[2.4vw]">
                 <div className="flex flex-col items-center gap-y-[2vw] sm:gap-y-[0.8vw]">
                     <div className="flex items-center justify-center bg-[linear-gradient(180deg,_#A0001B_0%,_#3A000A_100%)] p-[3vw] sm:p-[1.2vw] rounded-full">

@@ -50,7 +50,7 @@ const Hero = () => {
             {/* Hero Section */}
             <div className="flex flex-col justify-center items-end relative w-full">
                 {/* Desktop Hero */}
-                <div className="hidden bg-[#F5F5F5] sm:flex flex-col justify-center items-end relative aspect-[1280/700] w-full">
+                <div className="hidden bg-[#F5F5F5] sm:flex flex-col justify-center items-end relative aspect-[1280/640] w-full">
                     <Image src={hero} alt="Hero Image" className="w-[clamp(50vw,60vw,65vw)] absolute top-0 left-0 z-0" />
                     <div className="flex flex-col relative z-30 w-[clamp(45vw,55vw,59vw)] transform -translate-x-[clamp(6vw,8vw,10vw)] -translate-y-[clamp(3vw,4vw,5vw)] items-end">
                         <div className="flex flex-row items-center gap-x-[clamp(0.5vw,1vw,1.5vw)]">

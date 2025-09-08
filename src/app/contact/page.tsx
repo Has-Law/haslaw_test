@@ -13,8 +13,8 @@ export default function Contact() {
             <div className="w-full relative h-[clamp(18rem,22vw,28rem)] flex items-center justify-center">
                 <Image src={bgHero} alt="Contact Hero" layout="fill" objectFit="cover" className="w-full h-full rounded-br-4xl rounded-bl-4xl" priority />
                 <div className="absolute inset-0  flex flex-col items-center justify-center z-10 p-6 text-white">
-                    <h1 className="text-[clamp(1.8rem,6vw,4.5rem)] font_britanica_black mb-4 tracking-wide text-center drop-shadow-lg">Contact Us</h1>
-                    <p className="text-[clamp(0.9rem,2.2vw,1.25rem)] max-w-4xl text-center font_britanica_regular leading-relaxed opacity-90 drop-shadow-md">
+                    <h1 className="text-[clamp(1.8vw,3vw,4.5rem)] font_britanica_black mb-4 tracking-wide text-center drop-shadow-lg">Contact Us</h1>
+                    <p className="text-[clamp(1vw,2vw,1.25rem)] max-w-4xl text-center font_britanica_regular leading-relaxed opacity-90 drop-shadow-md">
                         We understand that every legal challenge is significant and often complex. Taking the first step to contact us is the key to finding clarity and a solution. Our team is ready to listen to your story with full confidentiality and provide the guidance you need.
                     </p>
                 </div>

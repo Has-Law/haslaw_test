@@ -12,10 +12,10 @@ const Hero = () => {
  
     <div className="flex flex-col sm:items-start items-center sm:relative z-30 sm:w-[30vw] w-[70vw] transform sm:translate-x-[8vw] absolute -translate-x-1/2  left-1/2 sm:left-0 bottom-[5%] ">
         <div className="flex flex-row items-center gap-x-[1vw] ">
-        <h1 className="text-white sm:text-black font_britanica_black text-[clamp(5vw,6.6vw,7vw)] sm:text-[clamp(1.6vw,1.6vw,3.2rem)] ">About</h1>
+        <h1 className="text-white sm:text-black font_britanica_black text-[clamp(5vw,6.6vw,7vw)] sm:text-[clamp(1rem,1.2vw,2rem)]">About</h1>
         <h1 className="bg-white sm:bg-black h-[0.1vw] sm:w-[2.4vw] w-[10vw]"/>
         </div>
-        <h2 className="font_lato_bold text-[clamp(5vw,6.8vw,7vw)] sm:text-[clamp(2.4vw,2.4vw,2.4vw)] sm:text-start text-center sm:text-black text-white">More Than a Law Firm, We Are Your Strategic Partner</h2>
+        <h2 className="font_lato_bold text-[clamp(5vw,6.8vw,7vw)] sm:text-[clamp(2vw,2vw,2.4vw)] sm:text-start text-center sm:text-black text-white leading-tight">More Than a Law Firm, We Are Your Strategic Partner</h2>
     </div>
  </div>
  );

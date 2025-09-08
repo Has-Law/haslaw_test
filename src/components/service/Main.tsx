@@ -48,8 +48,8 @@ const ServiceCard = ({ href, title, description, imageSrc, imageAlt }: ServiceCa
 
 const Main = () => {
     return (
-        <div className="mt-[5vw] gap-y-8 relative px-[5vw] flex-col flex items-center justify-center">
-            <h1 className="font_britanica_black text-[clamp(6vw,6vw,5rem)] sm:text-[clamp(4vw,4vw,4rem)] text-center">
+        <div className="mt-[3vw] gap-y-8 relative px-[5vw] flex-col flex items-center justify-center">
+            <h1 className="font_britanica_black text-[clamp(6vw,6vw,5rem)] sm:text-[clamp(3vw,3vw,4rem)] text-center">
                 Advocacy at Our Core
             </h1>
             <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-6">

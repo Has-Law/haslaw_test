@@ -21,7 +21,7 @@ const Hero = () => {
                 />
                 <div className="relative flex flex-col justify-between min-h-screen px-6 py-8">
                     <div className="flex-1 flex items-center">
-                        <h1 className="text-white font_britanica_black text-3xl leading-tight max-w-xs">
+                        <h1 className="text-white font_britanica_black text-xl leading-tight max-w-xs">
                             Valuing Your Case.<br />
                             Persevering in Your Fight.<br />
                             Unlocking Your Future.

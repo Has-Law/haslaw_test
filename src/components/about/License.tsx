@@ -68,7 +68,7 @@ const License = () => {
             />
 
             <div className="relative z-10 flex flex-col items-center justify-center gap-y-[4vw] sm:gap-y-[1.6vw]">
-                <h2 className="font_britanica_black text-white text-center text-[clamp(6vw,6vw,6rem)] sm:text-[clamp(4vw,4vw,8rem)]">
+                <h2 className="font_britanica_black text-white text-center text-[clamp(6vw,6vw,6rem)] sm:text-[clamp(3vw,3vw,8rem)]">
                     Organizational & Licenses
                 </h2>
 

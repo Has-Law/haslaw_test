@@ -64,7 +64,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
             </div>
 
       
-              <div className="px-[5vw]">
+              <div className="px-[5vw] mb-[2vw]">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-[3vw] mt-12">
                     <div className="sm:col-span-2">
                     
@@ -77,7 +77,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
 
    
                     <div className="lg:col-span-1 mt-12 lg:mt-0">
-                        <div className="sticky top-8">
+                        <div className="">
                             <div className="flex items-center gap-2 mb-6">
                                 <div className="w-1.5 h-10 bg-[#5E0503] rounded-r-xl"></div>
                                 <h2 className="font_britanica_bold text-[clamp(1.75rem,4vw,2.5rem)] text-[#5E0503]">

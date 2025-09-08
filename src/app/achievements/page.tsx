@@ -50,6 +50,9 @@ export default function Achievements() {
   const grid2 = achievements.slice(5, 10);
   const grid3 = achievements.slice(10, 14);
 
+  const gridmobile1 = achievements.slice(0, 7);
+  const gridmobile2 = achievements.slice(7, 14);
+
   const handleToggleDescription = (id: number) => {
     setExpandedIds(prevIds => {
       const newIds = new Set(prevIds);
@@ -116,25 +119,31 @@ export default function Achievements() {
 
       <div className="relative z-10 w-full flex flex-col items-center">
         <div className="w-full flex flex-col items-center pt-24 pb-8 text-center">
-          <h1 className="text-white text-5xl md:text-4xl mt-10 font_britanica_bold tracking-wide">
+          <h1 className="text-white text-5xl md:text-[clamp(0.35rem,3.5vw,3.5rem)] mt-10 font_britanica_black tracking-wide">
             Achievements
           </h1>
-          <p className="text-gray-200 text-2xl md:text-3xl max-w-7xl mt-4 font_britanica_regular px-4">
+          <p className="text-gray-200 text-2xl md:text-[clamp(0.35rem,1.5vw,3.5rem)] max-w-5xl mt-4 font_britanica_regular px-4">
             Our commitment to excellence is consistently recognized by the
             industry. Below are some of the awards and achievements that mark
             our dedication to providing premier legal services.
           </p>
         </div>
 
-        <div className="w-full flex flex-col md:flex-row justify-center items-start gap-8 max-w-[80vw] mt-24 px-4 pb-20">
-          <div className="w-full md:w-1/3 flex flex-col items-center gap-y-16">
+        <div className="w-full flex  md:flex-row justify-center items-start gap-8 max-w-[80vw] mt-8 px-4 pb-20">
+          <div className="w-full md:w-1/3 flex flex-col items-center gap-y-16 sm:block hidden">
             {grid1.map(item => renderAchievementCard(item))}
           </div>
-          <div className="w-full md:w-1/3 flex flex-col items-center gap-y-16 ">
+          <div className="w-full md:w-1/3 flex flex-col items-center gap-y-16 sm:block hidden ">
             {grid2.map(item => renderAchievementCard(item))}
           </div>
-          <div className="w-full md:w-1/3 flex flex-col items-center gap-y-16">
+          <div className="w-full md:w-1/3 flex flex-col items-center gap-y-16 sm:block hidden">
             {grid3.map(item => renderAchievementCard(item))}
+          </div>
+          <div className="w-full md:w-1/2 flex flex-col items-center gap-y-16 sm:hidden bloack">
+            {gridmobile1.map(item => renderAchievementCard(item))}
+          </div>
+          <div className="w-full md:w-1/2 flex flex-col items-center gap-y-16 sm:hidden block">
+            {gridmobile2.map(item => renderAchievementCard(item))}
           </div>
         </div>
       </div>

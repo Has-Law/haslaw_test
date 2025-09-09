@@ -47,11 +47,11 @@ const Main = ({ news }: { news: News[] }) => {
     return (
         <div className="flex flex-col items-center justify-center gap-y-4">
             <div className="w-full p-8 md:p-16 flex flex-col items-center justify-center text-center gap-y-6 md:gap-y-4">
-                <h1 className="font_britanica_black text-[clamp(1.8vw,3vw,4.5rem)] text-[#780014] leading-tight">
+                <h1 className="font_britanica_black text-[clamp(4vw,6vw,6rem)] sm:text-[clamp(1.8vw,3vw,4.5rem)] text-[#780014] leading-tight">
                     News & Insight
                 </h1>
             
-                <h3 className="font_britanica_regular text-[clamp(1vw,2vw,1.25rem)] text-[#131313] max-w-4xl">
+                <h3 className="font_britanica_regular text-[clamp(2vw,3vw,2rem)] sm:text-[clamp(1vw,2vw,1.25rem)] text-[#131313] max-w-4xl">
                     The legal landscape is constantly evolving. Follow the latest publications from our team to gain
                     valuable insights and stay one step ahead in anticipating regulatory changes and industry trends.
                 </h3>

@@ -17,6 +17,7 @@ import hukum24 from "@/assets/achievments/hukum24.png";
 import hukum25 from "@/assets/achievments/hukum25.png";
 import star25 from "@/assets/achievments/star25.png";
 import star24 from "@/assets/achievments/star24.png";
+import bgMobile from "@/assets/achievments/bg-mobile.webp";
 
 interface Achievement {
   id: number;
@@ -113,7 +114,8 @@ export default function Achievements() {
   return (
     <div className="bg-[#F2F2F2] min-h-screen w-full relative font_britanica_reguler">
       <div className="absolute top-0 w-full">
-        <Image src={bg} alt="bg" className="w-full h-auto" priority />
+        <Image src={bg} alt="bg" className="w-full h-auto sm:block hidden" priority />
+        <Image src={bgMobile} alt="bg" className="w-full h-auto sm:hidden block" priority />
         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#F2F2F2] to-transparent" />
       </div>
 
@@ -122,7 +124,7 @@ export default function Achievements() {
           <h1 className="text-white text-5xl md:text-[clamp(0.35rem,3.5vw,3.5rem)] mt-10 font_britanica_black tracking-wide">
             Achievements
           </h1>
-          <p className="text-gray-200 text-2xl md:text-[clamp(0.35rem,1.5vw,3.5rem)] max-w-5xl mt-4 font_britanica_regular px-4">
+          <p className="text-gray-200 text-xl md:text-[clamp(0.35rem,1.5vw,3.5rem)] max-w-5xl mt-4 font_britanica_regular px-4">
             Our commitment to excellence is consistently recognized by the
             industry. Below are some of the awards and achievements that mark
             our dedication to providing premier legal services.

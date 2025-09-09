@@ -24,7 +24,7 @@ const VisiMisi = () => {
             ${isHovered === 'visi' ? 'opacity-100' : 'sm:opacity-0 opacity-100'}`}
                 />
 
-                <div className="absolute inset-0 z-20 flex flex-col sm:flex-row items-center justify-between w-full px-[8vw] sm:px-[8vw]">
+                <div className="absolute inset-0 z-20 flex flex-col sm:flex-row items-center justify-center sm:justify-between w-full px-[8vw] sm:px-[8vw]">
                     <h1 className="font_britanica_black text-white text-[clamp(6vw,6vw,6rem)] sm:text-[clamp(3.2vw,3.2vw,3.2rem)] py-[2vw] sm:py-[1.6vw]">
                         VISION
                     </h1>
@@ -50,7 +50,7 @@ const VisiMisi = () => {
             ${isHovered === 'misi' ? 'opacity-100' : 'sm:opacity-0 opacity-100'}`}
                 />
 
-                <div className="absolute inset-0 z-20 flex flex-col-reverse sm:flex-row items-center justify-between w-full px-[8vw] sm:px-[8vw]">
+                <div className="absolute inset-0 z-20 flex flex-col-reverse sm:flex-row items-center justify-center sm:justify-between w-full px-[8vw] sm:px-[8vw]">
 
                     <p className={`text-center  sm:text-left w-full sm:w-[70%] font_britanica_black text-white text-[clamp(3.5vw,3.5vw,3.5rem)] sm:text-[clamp(1.2vw,1.5vw,3.2rem)] sm:transition-all sm:duration-500 sm:ease-in-out opacity-100 translate-x-0 ${isHovered === 'misi' ? 'sm:opacity-100 sm:translate-x-0' : 'sm:opacity-0 sm:-translate-x-1/2'}`}>
                         We achieve our vision by providing proactive, practical and client-centric legal services, leveraging our extensive litigation background to offer strategic counsel and robust advocacy in an ever-evolving legal landscape.

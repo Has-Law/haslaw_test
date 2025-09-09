@@ -1,19 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'api.has-law.com',
-        pathname: '/uploads/news/**', 
-      },
-      {
-        protocol: 'https',
-        hostname: 'api.has-law.com',
-        pathname: '/uploads/members/**', 
-      },
-    ],
+    domains: ['api.has-law.com'],
   },
-};
+}
 
-export default nextConfig;
+module.exports = nextConfig

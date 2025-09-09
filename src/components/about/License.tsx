@@ -28,7 +28,7 @@ const LicenseCard = ({ item }: { item: LicenseItem }) => (
                    bg-[#F0F0F0] sm:bg-white                         
                    rounded-3xl sm:rounded-xl                         
                    p-4 sm:p-[1.6vw]                                    
-                   w-[20vw] h-44 sm:h-[13vw]                           
+                   w-full sm:w-[20vw] h-44 sm:h-[13vw]                           
                    gap-y-3 sm:gap-y-[0.8vw]"
         style={{ boxShadow: "0px 4px 4px 0px #00000040" }}
     >

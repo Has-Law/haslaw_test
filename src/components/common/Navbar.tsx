@@ -102,7 +102,7 @@ const Navbar = () => {
                     <div className="flex flex-col gap-y-4 mt-6 font_britanica_regular text-xs text-[#5E0503]">
                         <Link href="/" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
                         <Link href="/about" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-                        <Link href="/member" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Members</Link>
+                        <Link href="/member" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Lawyers</Link>
                         <Link href="/achievements" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Achievements</Link>
                         <Link href="/service" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Our Services</Link>
                         <Link href="/pro-bono" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Pro Bono</Link>
@@ -165,7 +165,7 @@ const Navbar = () => {
                                     href="/member" 
                                     className="block transition-all duration-300 text-center px-[1vw] py-[0.3vw] text-black hover:bg-[#A0001B] hover:text-white border-b-[0.01vw] border-[#A0001B]/20  hover:scale-[1.02] hover:shadow-sm"
                                 >
-                                    Member
+                                    Lawyers
                                 </Link>
                                 
                                 <div 

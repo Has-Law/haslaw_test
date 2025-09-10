@@ -6,6 +6,7 @@ import contact from "@/assets/landingpage/icon/contact.webp";
 import contactwhite from "@/assets/landingpage/icon/contactwhite.svg";
 import text from "@/assets/landingpage/image/text-contact.webp";
 import BgMobile from "@/assets/landingpage/background/bg-mobile.png";
+import Link from "next/link";
 
 const Hero = () => {
     const [isHovered, setIsHovered] = useState(false);
@@ -74,7 +75,8 @@ const Hero = () => {
                             alt="Contact Us Text"
                             className="absolute inset-0 w-full h-auto"
                         />
-                        <div
+                        <Link
+                            href={"/contact"}
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
                             className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
@@ -88,7 +90,7 @@ const Hero = () => {
                                 alt="Contact Us"
                                 className="w-[80%] h-auto"
                             />
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </div>

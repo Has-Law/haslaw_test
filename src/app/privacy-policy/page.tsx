@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
           <h1 className="text-4xl font_britanica_black text-gray-900 mb-8">Privacy Policy & Cookie Information</h1>
           
           <div className="space-y-8">
-            {/* Cookie Information */}
+         
             <section>
               <h2 className="text-2xl font_britanica_bold text-gray-900 mb-4">Cookie Information</h2>
               <div className="prose max-w-none">
@@ -66,7 +66,7 @@ export default function PrivacyPolicy() {
               </div>
             </section>
             
-            {/* Your Rights */}
+         
             <section>
               <h2 className="text-2xl font_britanica_bold text-gray-900 mb-4">Your Cookie Choices</h2>
               <div className="bg-gray-50 p-6 rounded-lg">
@@ -94,8 +94,6 @@ export default function PrivacyPolicy() {
                 </ul>
               </div>
             </section>
-            
-            {/* Browser Settings */}
             <section>
               <h2 className="text-2xl font_britanica_bold text-gray-900 mb-4">Browser Cookie Settings</h2>
               <p className="font_britanica_regular text-gray-700 leading-relaxed mb-4">
@@ -129,8 +127,7 @@ export default function PrivacyPolicy() {
                 </div>
               </div>
             </section>
-            
-            {/* Last Updated */}
+
             <section className="text-center pt-8 border-t border-gray-200">
               <p className="font_britanica_regular text-gray-500 text-sm">
                 Last updated: {new Date().toLocaleDateString('en-US', { 

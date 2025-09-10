@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import logo from "@/assets/common/footer/footer-logo.svg";
+import logoMobile from "@/assets/common/footer/footer-logo-mobile.png";
 import instagram from "@/assets/common/footer/instagram-footer.svg";
 import email from "@/assets/common/footer/email-footer.svg";
 import linkedin from "@/assets/common/footer/linkedin-footer.svg";
@@ -21,7 +22,7 @@ const Footer: React.FC = () => {
                     <div>
                         <div className="flex flex-row justify-between items-center mb-[clamp(1.5rem,4vw,2rem)]">
                             <Image 
-                                src={logo} 
+                                src={logoMobile} 
                                 alt="HAS Law Logo" 
                                 className="w-[clamp(8rem,20vw,9rem)] h-auto"
                             />

@@ -81,7 +81,7 @@ const Navbar = () => {
                 </button>
 
                 <Link href="/" className="cursor-pointer hover:scale-105 transition-transform duration-200">
-                    <Image src={logo} alt="Logo" className="w-[100px] h-auto" /> 
+                    <Image src={logo} alt="Logo" className="w-[70px] h-auto" /> 
                 </Link>
 
                 <button className="p-2 -mr-2">

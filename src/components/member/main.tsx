@@ -4,13 +4,14 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { type Member } from "@/lib/members";
 
-type FilterKey = 'seniorPartner' | 'partner' | 'ofCounsel' | 'associates';
+type FilterKey = 'seniorPartner' | 'partner' | 'ofCounsel' | 'associates' | 'midAssociates';
 
 interface FiltersState {
     seniorPartner: boolean;
     partner: boolean;
     ofCounsel: boolean;
     associates: boolean;
+    midAssociates: boolean;
 }
 
 const mapTitleToFilterKey = (title: string): FilterKey | null => {
@@ -19,6 +20,7 @@ const mapTitleToFilterKey = (title: string): FilterKey | null => {
     if (lowerCaseTitle.includes('partner')) return 'partner';
     if (lowerCaseTitle.includes('of counsel')) return 'ofCounsel';
     if (lowerCaseTitle.includes('associate')) return 'associates';
+    if (lowerCaseTitle.includes('mid associate')) return 'midAssociates';
     return null;
 };
 
@@ -27,7 +29,8 @@ const Main = ({ members }: { members: Member[] }) => {
         seniorPartner: false,
         partner: false,
         ofCounsel: false,
-        associates: false
+        associates: false,
+        midAssociates: false,
     });
 
     const handleFilterChange = (filterName: FilterKey) => {
@@ -35,7 +38,7 @@ const Main = ({ members }: { members: Member[] }) => {
     };
 
     const resetFilters = () => {
-        setFilters({ seniorPartner: false, partner: false, ofCounsel: false, associates: false });
+        setFilters({ seniorPartner: false, partner: false, ofCounsel: false, associates: false, midAssociates: false });
     };
 
     const filteredMembers = members.filter(member => {
@@ -94,17 +97,7 @@ const Main = ({ members }: { members: Member[] }) => {
 
                     <div className="space-y-2 lg:space-y-[0.5vw]">
                       
-                        <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
-                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
-                                Senior Partner
-                            </label>
-                            <div
-                                onClick={() => handleFilterChange('seniorPartner')}
-                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.seniorPartner ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
-                            >
-                                {filters.seniorPartner && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
-                            </div>
-                        </div>
+                       
                     
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
                             <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
@@ -115,6 +108,43 @@ const Main = ({ members }: { members: Member[] }) => {
                                 className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.partner ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
                             >
                                 {filters.partner && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
+                            </div>
+                        </div>
+
+                        <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
+                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                                Mid Associates
+                            </label>
+                            <div
+                                onClick={() => handleFilterChange('midAssociates')}
+                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.midAssociates ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
+                            >
+                                {filters.partner && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
+                            </div>
+                        </div>
+
+                        <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
+                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                                Associates
+                            </label>
+                            <div
+                                onClick={() => handleFilterChange('associates')}
+                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.associates ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
+                            >
+                                {filters.associates && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
+                            </div>
+                        </div>
+
+
+                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
+                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                                Senior Partner
+                            </label>
+                            <div
+                                onClick={() => handleFilterChange('seniorPartner')}
+                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.seniorPartner ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
+                            >
+                                {filters.seniorPartner && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
                  
@@ -130,17 +160,7 @@ const Main = ({ members }: { members: Member[] }) => {
                             </div>
                         </div>
                     
-                        <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
-                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
-                                Associates
-                            </label>
-                            <div
-                                onClick={() => handleFilterChange('associates')}
-                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.associates ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
-                            >
-                                {filters.associates && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
-                            </div>
-                        </div>
+                   
                     </div>
                 </div>
             </div>

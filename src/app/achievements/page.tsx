@@ -11,7 +11,7 @@ import litigation from "@/assets/achievments/litigation.png";
 import hukum23 from "@/assets/achievments/hukum23.png";
 import iflr from "@/assets/achievments/iflr.png";
 import alb23 from "@/assets/achievments/alb23.png";
-import leader24 from "@/assets/achievments/leader24.png";
+
 import leader23 from "@/assets/achievments/leader23.png";
 import hukum24 from "@/assets/achievments/hukum24.png";
 import hukum25 from "@/assets/achievments/hukum25.png";
@@ -40,7 +40,7 @@ export default function Achievements() {
     { id: 7, src: litigation, title: "Benchmark Litigation", subTitle: "Tier 3" , description: ["Commercial and Transactions Dispute"]},
     { id: 8, src: alb, title: "Thomson Reuters ALB Indonesia Law Awards 2024", subTitle: "Finalist" , description:["Litigation Law Firm of the Year", "Insurance Law Firm of the Year", "Rising Law Firm of the Year", "Dispute Resolution Lawyer of the Year"] }, 
     { id: 9, src: leader23, title: "Hukumonline" }, 
-    { id: 10, src: leader24, title: "Practice Leaders 2023", subTitle: "Practice Leaders 2023", description:["Elite I", "Arbitration, Litigation & Dispute Resolution", "Insurance", "Elite II", "Criminal Law"] },
+    { id: 10, src: leader23, title: "Practice Leaders 2023", subTitle: "Practice Leaders 2023", description:["Elite I", "Arbitration, Litigation & Dispute Resolution", "Insurance", "Elite II", "Criminal Law"] },
     { id: 11, src: star25, title: "Indonesia Rising Stars 2025", description: ["Rio Andre Winter Siahaan"] },
     { id: 12, src: hukum24, title: "Hukumonline", subTitle: "Top 100 Indonesian Law Firms 2024", description:["Midsize Full Service Law Firms"] },
     { id: 13, src: next24, title: `Hukumonline's NexGen Lawyers 2024` },
@@ -50,9 +50,6 @@ export default function Achievements() {
   const grid1 = achievements.slice(0, 5);
   const grid2 = achievements.slice(5, 10);
   const grid3 = achievements.slice(10, 14);
-
-  const gridmobile1 = achievements.slice(0, 7);
-  const gridmobile2 = achievements.slice(7, 14);
 
   const handleToggleDescription = (id: number) => {
     setExpandedIds(prevIds => {
@@ -70,13 +67,13 @@ export default function Achievements() {
     <div
       key={item.id}
       onClick={() => (item.description || item.subTitle) && handleToggleDescription(item.id)}
-      className={`group flex flex-col items-center text-center gap-2 p-4 rounded-lg transition-all duration-300 cursor-pointer `}
+      className={`group flex flex-col items-center text-center gap-2 p-4 rounded-lg transition-all duration-300 cursor-pointer h-full`}
     >
-      <div className="w-full h-48 flex items-center justify-center">
+      <div className="w-full h-[clamp(8rem,25vw,12rem)] flex items-center justify-center">
         <Image src={item.src} alt={item.title} className="object-contain max-h-full max-w-full" />
       </div>
       
-      <div className="text-[#4F000D] font_britanica_bold text-2xl leading-tight min-h-[3.5rem] flex items-center justify-center mt-4">
+      <div className="text-[#4F000D] font_britanica_bold text-[clamp(1rem,2.5vw,1.5rem)] leading-tight min-h-[clamp(3rem,8vw,3.5rem)] flex items-center justify-center mt-4 flex-1">
         {item.title}
       </div>
       
@@ -120,32 +117,34 @@ export default function Achievements() {
       </div>
 
       <div className="relative z-10 w-full flex flex-col items-center">
-        <div className="w-full flex flex-col items-center pt-24 pb-8 text-center">
-          <h1 className="text-white text-5xl md:text-[clamp(0.35rem,3.5vw,3.5rem)] mt-10 font_britanica_black tracking-wide">
+        <div className="w-full flex flex-col items-center pt-[clamp(2rem,6vw,6rem)] pb-[clamp(1rem,3vw,2rem)] text-center">
+          <h1 className="text-white text-[clamp(2rem,6vw,4rem)] mt-[clamp(1rem,3vw,2.5rem)] font_britanica_black tracking-wide">
             Achievements
           </h1>
-          <p className="text-gray-200 text-xl md:text-[clamp(0.35rem,1.5vw,3.5rem)] max-w-5xl mt-4 font_britanica_regular px-4">
+          <p className="text-gray-200 text-[clamp(0.9rem,2.2vw,1.25rem)] max-w-[clamp(20rem,80vw,60rem)] mt-4 font_britanica_regular px-4">
             Our commitment to excellence is consistently recognized by the
             industry. Below are some of the awards and achievements that mark
             our dedication to providing premier legal services.
           </p>
         </div>
 
-        <div className="w-full flex  md:flex-row justify-center items-start gap-8 max-w-[80vw] mt-8 px-4 pb-20">
-          <div className="w-full md:w-1/3 flex flex-col items-center gap-y-16 sm:block hidden">
-            {grid1.map(item => renderAchievementCard(item))}
+        <div className="w-full max-w-[90vw] mt-8 px-4 pb-20">
+          {/* Desktop Layout - 3 columns */}
+          <div className="hidden sm:flex flex-row justify-center items-start gap-8">
+            <div className="w-full md:w-1/3 flex flex-col items-center gap-y-16">
+              {grid1.map(item => renderAchievementCard(item))}
+            </div>
+            <div className="w-full md:w-1/3 flex flex-col items-center gap-y-16">
+              {grid2.map(item => renderAchievementCard(item))}
+            </div>
+            <div className="w-full md:w-1/3 flex flex-col items-center gap-y-16">
+              {grid3.map(item => renderAchievementCard(item))}
+            </div>
           </div>
-          <div className="w-full md:w-1/3 flex flex-col items-center gap-y-16 sm:block hidden ">
-            {grid2.map(item => renderAchievementCard(item))}
-          </div>
-          <div className="w-full md:w-1/3 flex flex-col items-center gap-y-16 sm:block hidden">
-            {grid3.map(item => renderAchievementCard(item))}
-          </div>
-          <div className="w-full md:w-1/2 flex flex-col items-center gap-y-16 sm:hidden bloack">
-            {gridmobile1.map(item => renderAchievementCard(item))}
-          </div>
-          <div className="w-full md:w-1/2 flex flex-col items-center gap-y-16 sm:hidden block">
-            {gridmobile2.map(item => renderAchievementCard(item))}
+          
+          {/* Mobile Layout - 2 columns with CSS Grid */}
+          <div className="sm:hidden grid grid-cols-2 gap-4">
+            {achievements.map(item => renderAchievementCard(item))}
           </div>
         </div>
       </div>

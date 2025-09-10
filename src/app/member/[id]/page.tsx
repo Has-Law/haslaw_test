@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import bg from "@/assets/member/bg-detail.webp";
-import foto from "@/assets/member/foto-detail.webp";
 import mail from "@/assets/member/icon/mail.png";
 import phone from "@/assets/member/icon/phone.png";
 import linkedin from "@/assets/member/icon/linkedin.png";

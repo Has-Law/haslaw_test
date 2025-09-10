@@ -47,7 +47,7 @@ const Hero = () => {
 
     return (
         <div className="flex flex-col justify-center items-center gap-y-[clamp(3rem,5vw,4rem)] pb-[clamp(1rem,2vw,2rem)]">
-            {/* Hero Section */}
+     
             <div className="flex flex-col justify-center items-end relative w-full">
                 {/* Desktop Hero */}
                 <div className="hidden bg-[#F5F5F5] sm:flex flex-col justify-center items-end relative aspect-[1280/640] w-full">
@@ -71,18 +71,18 @@ const Hero = () => {
                   
                         <div className="absolute inset-0 flex flex-col justify-center items-end p-[clamp(1.5rem,6vw,2rem)]">
                             <div className="w-full max-w-[85%] text-right text-white">
-                                {/* Career label */}
+                               
                                 <div className="flex flex-row items-center justify-end gap-x-[clamp(0.5rem,2vw,1rem)] mb-[clamp(1rem,4vw,1.5rem)]">
                                     <div className="bg-black h-[clamp(0.1rem,0.3vw,0.2rem)] w-[clamp(2rem,8vw,3rem)]" />
                                     <h1 className="font_britanica_black text-black text-[clamp(1rem,4vw,1.5rem)]">Careers</h1>
                                 </div>
                                 
-                                {/* Main title */}
-                                <h1 className="font_lato_bold text-[clamp(2.2rem,8vw,3.2rem)] text-[#780014] leading-tight mb-[clamp(1rem,4vw,1.5rem)]">
+                           
+                                <h1 className="font_britanica_black text-[clamp(2.2rem,8vw,3.2rem)] text-[#780014] leading-tight mb-[clamp(1rem,4vw,1.5rem)]">
                                     Shape the Future of Law With Us
                                 </h1>
                                 
-                                {/* Description */}
+                              
                                 <p className="font_britanica_regular text-black text-[clamp(1rem,3.5vw,1.1rem)] leading-relaxed opacity-95 max-w-[60%] ml-auto">
                                     The world is constantly changing, and so is the law. Join our dynamic team that doesn&apos;t just adapt, but leads the change in Indonesia&apos;s legal landscape through intelligent and innovative solutions.
                                 </p>
@@ -92,7 +92,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* Who We're Looking For Section */}
+      
             <div className="relative items-center flex flex-col gap-y-[clamp(1.5rem,2vw,2rem)] pt-[clamp(1rem,2vw,2rem)] w-full px-[clamp(1rem,2vw,3rem)]">
                 <h1 className="font_britanica_bold bg-gradient-to-t from-black via-[#860016] to-[#F20028] bg-clip-text text-transparent text-[clamp(1.8rem,3vw,5rem)] text-center">Who We&apos;re Looking For</h1>
                 

@@ -185,7 +185,7 @@ export default async function MemberDetail({ params }: Props) {
                         
                         <div className="flex flex-col items-start">
                             <h2 className="text-[#C90021] font_britanica_black text-[clamp(1.3rem,5.5vw,2rem)] sm:text-[clamp(1.5rem,2vw,2.2rem)] mb-[clamp(0.8rem,3vw,1.5rem)]">
-                                Language
+                                Remarks
                             </h2>
                             <ul className="text-[#131313] font_britanica_regular text-[clamp(0.85rem,4vw,1.1rem)] sm:text-[clamp(0.9rem,1.3vw,1.4rem)] space-y-[clamp(0.3rem,1vw,0.8rem)] leading-relaxed">
                                 {member.language?.map((item, index) => (

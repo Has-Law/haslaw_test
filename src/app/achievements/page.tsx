@@ -67,26 +67,31 @@ export default function Achievements() {
     <div
       key={item.id}
       onClick={() => (item.description || item.subTitle) && handleToggleDescription(item.id)}
-      className={`group flex flex-col items-center text-center gap-2 p-4 rounded-lg transition-all duration-300 cursor-pointer h-full`}
+      className={`group flex flex-col transition-all duration-300 cursor-pointer h-full`}
     >
-      <div className="w-full h-[clamp(8rem,25vw,12rem)] flex items-center justify-center">
+ 
+      <div className="w-full h-[clamp(6rem,20vw,10rem)] sm:h-[clamp(8rem,25vw,12rem)] flex items-center justify-center p-2 mb-4">
         <Image src={item.src} alt={item.title} className="object-contain max-h-full max-w-full" />
       </div>
       
-      <div className="text-[#4F000D] font_britanica_bold text-[clamp(1rem,2.5vw,1.5rem)] leading-tight min-h-[clamp(3rem,8vw,3.5rem)] flex items-center justify-center mt-4 flex-1">
+    
+      <div className="text-[#4F000D] font_britanica_bold text-[clamp(0.8rem,2.2vw,1.25rem)] sm:text-[clamp(1rem,2.5vw,1.5rem)] leading-tight min-h-[clamp(2.5rem,6vw,3rem)] sm:min-h-[clamp(3rem,8vw,3.5rem)] flex items-center justify-center text-center px-1">
         {item.title}
       </div>
       
-      <div 
-        className={`h-0.5 bg-black transition-all duration-300 ${
-          expandedIds.has(item.id) ? 'w-full my-2' : 'w-0 group-hover:w-full group-hover:my-2'
-        }`}
-      />
+     
+      <div className="flex justify-center my-2">
+        <div 
+          className={`h-0.5 bg-black transition-all duration-300 ${
+            expandedIds.has(item.id) ? 'w-full' : 'w-0 group-hover:w-full'
+          }`}
+        />
+      </div>
 
       {expandedIds.has(item.id) && (
-        <div className="flex flex-col items-center text-center animate-fade-in">
+        <div className="flex flex-col items-center text-center animate-fade-in mt-2">
           {item.subTitle && (
-            <div className="text-xl text-[#A0001B] font_britanica_black leading-relaxed">
+            <div className="text-[clamp(0.9rem,2vw,1.125rem)] sm:text-xl text-[#A0001B] font_britanica_black leading-relaxed mb-2">
               {Array.isArray(item.subTitle) ? (
                 item.subTitle.map((sub, i) => <span key={i} className="block">{sub}</span>)
               ) : (
@@ -95,7 +100,7 @@ export default function Achievements() {
             </div>
           )}
           {item.description && (
-            <div className="mt-2 text-lg text-black font_britanica_regular leading-relaxed">
+            <div className="text-[clamp(0.8rem,1.8vw,1rem)] sm:text-lg text-black font_britanica_regular leading-relaxed">
               {Array.isArray(item.description) ? (
                 item.description.map((desc, i) => <span key={i} className="block">{desc}</span>)
               ) : (
@@ -128,7 +133,7 @@ export default function Achievements() {
           </p>
         </div>
 
-        <div className="w-full max-w-[90vw] mt-8 px-4 pb-20">
+        <div className="w-full max-w-[95vw] mt-8 px-4 pb-20">
           {/* Desktop Layout - 3 columns */}
           <div className="hidden sm:flex flex-row justify-center items-start gap-8">
             <div className="w-full md:w-1/3 flex flex-col items-center gap-y-16">
@@ -142,9 +147,13 @@ export default function Achievements() {
             </div>
           </div>
           
-          {/* Mobile Layout - 2 columns with CSS Grid */}
-          <div className="sm:hidden grid grid-cols-2 gap-4">
-            {achievements.map(item => renderAchievementCard(item))}
+          {/* Mobile Layout - 2 columns with perfect alignment */}
+          <div className="sm:hidden grid grid-cols-2 gap-x-3 gap-y-6 items-start">
+            {achievements.map(item => (
+              <div key={item.id} className="w-full">
+                {renderAchievementCard(item)}
+              </div>
+            ))}
           </div>
         </div>
       </div>

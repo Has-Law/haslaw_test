@@ -3,7 +3,6 @@
 import { useState, useEffect, useContext, createContext, ReactNode } from 'react';
 import { 
   CookiePreferences, 
-  LegalConsent, 
   DEFAULT_COOKIE_PREFERENCES, 
   PRIVACY_COMPLIANCE 
 } from '@/types/cookies';

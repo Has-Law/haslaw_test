@@ -76,7 +76,7 @@ export default function Contact() {
              
                 <form ref={form} onSubmit={sendEmail} className="bg-white rounded-2xl shadow-2xl p-[clamp(1rem,5vw,3rem)] w-full lg:w-[65%] order-2 lg:order-1 flex-shrink-0">
                     <h2 className="text-[#780014] text-[clamp(1.25rem,3.5vw,2.25rem)] font_britanica_black mb-3">Send Us Message</h2>
-                    <p className="text-gray-700 font_britanica_bold text-[clamp(0.95rem,2.2vw,1.25rem)] mb-8">Leave your message below, and let's start finding a solution together.</p>
+                    <p className="text-gray-700 font_britanica_bold text-[clamp(0.95rem,2.2vw,1.25rem)] mb-8">Leave your message below, and Let&apos;s start finding a solution together.</p>
 
                     <div className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">

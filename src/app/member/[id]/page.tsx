@@ -107,31 +107,53 @@ export default async function MemberDetail({ params }: Props) {
                                         <Image 
                                             src={linkedin} 
                                             alt="linkedin icon" 
-                                            className="w-[clamp(1.2rem,4vw,2rem)] sm:w-[clamp(1.5rem,2.2vw,2.5rem)] h-[clamp(1.2rem,4vw,2rem)] sm:h-[clamp(1.5rem,2.2vw,2.5rem)]" 
+                                            className={`w-[clamp(1.2rem,4vw,2rem)] sm:w-[clamp(1.5rem,2.2vw,2.5rem)] h-[clamp(1.2rem,4vw,2rem)] sm:h-[clamp(1.5rem,2.2vw,2.5rem)] ${
+                                                !member.linkedin || member.linkedin.trim() === '' ? 'opacity-50' : ''
+                                            }`} 
                                         />
-                                        <a
-                                            href={member.linkedin}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="font_britanica_regular text-[clamp(0.8rem,3.5vw,1.2rem)] sm:text-[clamp(1rem,1.4vw,1.6rem)] hover:underline"
-                                        >
-                                            LinkedIn
-                                        </a>
+                                        {member.linkedin && member.linkedin.trim() !== '' ? (
+                                            <a
+                                                href={member.linkedin}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="font_britanica_regular text-[clamp(0.8rem,3.5vw,1.2rem)] sm:text-[clamp(1rem,1.4vw,1.6rem)] hover:underline"
+                                            >
+                                                LinkedIn
+                                            </a>
+                                        ) : (
+                                            <span
+                                                className="font_britanica_regular text-[clamp(0.8rem,3.5vw,1.2rem)] sm:text-[clamp(1rem,1.4vw,1.6rem)] opacity-50 cursor-not-allowed"
+                                                title="LinkedIn profile not available"
+                                            >
+                                                LinkedIn (Not Available)
+                                            </span>
+                                        )}
                                     </div>
                                     <div className="flex items-center gap-x-[clamp(0.8rem,2vw,1rem)]">
                                         <Image 
                                             src={download} 
                                             alt="download icon" 
-                                            className="w-[clamp(1.2rem,4vw,2rem)] sm:w-[clamp(1.5rem,2.2vw,2.5rem)] h-[clamp(1.2rem,4vw,2rem)] sm:h-[clamp(1.5rem,2.2vw,2.5rem)]" 
+                                            className={`w-[clamp(1.2rem,4vw,2rem)] sm:w-[clamp(1.5rem,2.2vw,2.5rem)] h-[clamp(1.2rem,4vw,2rem)] sm:h-[clamp(1.5rem,2.2vw,2.5rem)] ${
+                                                !member.business_card || member.business_card.trim() === '' ? 'opacity-50' : ''
+                                            }`} 
                                         />
-                                        <a
-                                            href={`${API_BASE_URL}/${member.business_card}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="font_britanica_regular text-[clamp(0.8rem,3.5vw,1.2rem)] sm:text-[clamp(1rem,1.4vw,1.6rem)] hover:underline"
-                                        >
-                                            Download Business Card
-                                        </a>
+                                        {member.business_card && member.business_card.trim() !== '' ? (
+                                            <a
+                                                href={`${API_BASE_URL}/${member.business_card}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="font_britanica_regular text-[clamp(0.8rem,3.5vw,1.2rem)] sm:text-[clamp(1rem,1.4vw,1.6rem)] hover:underline"
+                                            >
+                                                Download Business Card
+                                            </a>
+                                        ) : (
+                                            <span
+                                                className="font_britanica_regular text-[clamp(0.8rem,3.5vw,1.2rem)] sm:text-[clamp(1rem,1.4vw,1.6rem)] opacity-50 cursor-not-allowed"
+                                                title="Business card not available"
+                                            >
+                                                Business Card (Not Available)
+                                            </span>
+                                        )}
                                     </div>
                                 </div>
 

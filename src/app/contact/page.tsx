@@ -13,8 +13,7 @@ type FormStatus = {
 }
 
 export default function Contact() {
-    const mapSrc = "http://googleusercontent.com/maps/google.com/0";
-    
+const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3531296021315!2d106.81378637540331!3d-6.21707626089426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7b8132100b7%3A0xa648aba444960aa8!2sPlaza%20Sentral!5e0!3m2!1sid!2sid!4v1754407995784!5m2!1sid!2sid"    
     const form = useRef<HTMLFormElement>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [formStatus, setFormStatus] = useState<FormStatus>({ message: '', type: '' });

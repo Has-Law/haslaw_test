@@ -17,10 +17,10 @@ interface FiltersState {
 const mapTitleToFilterKey = (title: string): FilterKey | null => {
     const lowerCaseTitle = title.toLowerCase();
     if (lowerCaseTitle.includes('senior partner')) return 'seniorPartner';
+    if (lowerCaseTitle.includes('mid associate')) return 'midAssociates';
     if (lowerCaseTitle.includes('partner')) return 'partner';
     if (lowerCaseTitle.includes('of counsel')) return 'ofCounsel';
     if (lowerCaseTitle.includes('associate')) return 'associates';
-    if (lowerCaseTitle.includes('mid associate')) return 'midAssociates';
     return null;
 };
 
@@ -59,7 +59,7 @@ const Main = ({ members }: { members: Member[] }) => {
                         alt={advocate.full_name}
                         width={200}
                         height={200}
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-cover"
                     />
                 </div>
                 <div className="flex-1 py-4">
@@ -119,7 +119,7 @@ const Main = ({ members }: { members: Member[] }) => {
                                 onClick={() => handleFilterChange('midAssociates')}
                                 className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.midAssociates ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
                             >
-                                {filters.partner && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
+                                {filters.midAssociates && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
 

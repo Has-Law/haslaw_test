@@ -4,24 +4,26 @@ import bgHero from "@/assets/contact/image/bg-hero.png";
 import waIcon from "@/assets/contact/icon/wa-contact.svg";
 import phoneIcon from "@/assets/contact/icon/phone-contact.svg";
 
-// 1. Import hooks dan library EmailJS
 import React, { useState, useRef, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 
+type FormStatus = {
+    message: string;
+    type: 'success' | 'error' | '';
+}
+
 export default function Contact() {
-    const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3531296021315!2d106.81378637540331!3d-6.21707626089426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7b8132100b7%3A0xa648aba444960aa8!2sPlaza%20Sentral!5e0!3m2!1sid!2sid!4v1754407995784!5m2!1sid!2sid";
+    const mapSrc = "http://googleusercontent.com/maps/google.com/0";
     
-    // 2. Siapkan referensi form dan state (dengan tipe data untuk useRef)
     const form = useRef<HTMLFormElement>(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [formStatus, setFormStatus] = useState<FormStatus>({ message: '', type: '' });
 
-    // 3. Buat fungsi untuk mengirim email (dengan tipe data untuk event 'e')
-    const sendEmail = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault(); // Mencegah form reload halaman
+    const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         
-        // Pengecekan untuk memastikan form.current dan env vars tidak null (Best practice di TypeScript)
         if (!form.current) {
-            alert("Form reference is not available.");
+            setFormStatus({ message: 'Terjadi kesalahan teknis. Coba muat ulang halaman.', type: 'error' });
             return;
         }
 
@@ -30,31 +32,38 @@ export default function Contact() {
         const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
         if (!serviceID || !templateID || !publicKey) {
-            alert("EmailJS configuration is missing.");
+            console.error("EmailJS environment variables are missing.");
+            setFormStatus({ message: 'Layanan pengiriman sedang tidak tersedia.', type: 'error' });
             return;
         }
 
-        setIsLoading(true); // Mulai loading
+        setIsLoading(true);
+        setFormStatus({ message: '', type: '' });
 
-        emailjs.sendForm(serviceID, templateID, form.current, publicKey)
-        .then((result) => {
-            console.log('SUCCESS!', result.text);
-            alert("Pesan berhasil terkirim!");
-            form.current?.reset(); // Kosongkan form setelah berhasil
-        }, (error) => {
-            console.log('FAILED...', error.text);
-            alert("Gagal mengirim pesan, silakan coba lagi.");
-        })
-        .finally(() => {
-            setIsLoading(false); // Selesai loading
-        });
+        try {
+            await emailjs.sendForm(serviceID, templateID, form.current, publicKey);
+            
+            setFormStatus({ message: 'Pesan Anda berhasil terkirim! Kami akan segera merespons.', type: 'success' });
+            form.current?.reset();
+        } catch (error) {
+            console.error('FAILED...', error);
+            setFormStatus({ message: 'Gagal mengirim pesan. Silakan coba lagi nanti.', type: 'error' });
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
         <div className="bg-[#F2F2F2] min-h-screen w-full flex flex-col items-center">
         
             <div className="w-full relative h-[clamp(18rem,22vw,28rem)] flex items-center justify-center">
-                <Image src={bgHero} alt="Contact Hero" layout="fill" objectFit="cover" className="w-full h-full rounded-br-4xl rounded-bl-4xl" priority />
+                <Image 
+                    src={bgHero} 
+                    alt="Contact Hero" 
+                    fill={true} 
+                    priority 
+                    className="object-cover w-full h-full rounded-br-4xl rounded-bl-4xl" 
+                />
                 <div className="absolute inset-0  flex flex-col items-center justify-center z-10 p-6 text-white">
                     <h1 className="text-3xl sm:text-[clamp(0.5vw,2.7vw,5rem)] font_britanica_black mb-4 tracking-wide text-center drop-shadow-lg">Contact Us</h1>
                     <p className="text-[clamp(0.8rem,2.2vw,1rem)] sm:text-[clamp(0.8rem,1.1vw,1.5rem)] max-w-4xl text-center font_britanica_regular leading-relaxed opacity-90 drop-shadow-md">
@@ -65,7 +74,6 @@ export default function Contact() {
 
             <div className="w-full lg:max-w-[80vw] mx-auto flex flex-col lg:flex-row items-start justify-center mt-8  px-6 md:px-10">
              
-                {/* 4. Hubungkan form dengan ref dan onSubmit */}
                 <form ref={form} onSubmit={sendEmail} className="bg-white rounded-2xl shadow-2xl p-[clamp(1rem,5vw,3rem)] w-full lg:w-[65%] order-2 lg:order-1 flex-shrink-0">
                     <h2 className="text-[#780014] text-[clamp(1.25rem,3.5vw,2.25rem)] font_britanica_black mb-3">Send Us Message</h2>
                     <p className="text-gray-700 font_britanica_bold text-[clamp(0.95rem,2.2vw,1.25rem)] mb-8">Leave your message below, and let's start finding a solution together.</p>
@@ -100,7 +108,14 @@ export default function Contact() {
                         </div>
                     </div>
                     
-                    {/* 5. Atur kondisi disabled dan teks tombol saat loading */}
+                    {formStatus.message && (
+                        <div className={`mt-6 p-3 rounded-lg text-center font-semibold ${
+                            formStatus.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                        }`}>
+                            {formStatus.message}
+                        </div>
+                    )}
+
                     <button type="submit" disabled={isLoading} className="bg-[#A0001B] text-white mt-8 px-[clamp(1.25rem,6vw,2.5rem)] py-[clamp(0.6rem,2.5vw,1rem)] rounded-full hover:bg-[#780014] transition-colors font_britanica_bold text-[clamp(0.875rem,2vw,1rem)] shadow-md disabled:bg-gray-400 disabled:cursor-not-allowed">
                         {isLoading ? 'Mengirim...' : 'Send Message'}
                     </button>
@@ -109,7 +124,6 @@ export default function Contact() {
                 <div className="bg-[#780014] text-white rounded-2xl shadow-2xl p-[clamp(2vw,2vw,3rem)] pb-[2.5vw] w-full lg:w-[40%] order-2 lg:order-2 flex-shrink-0 relative z-10 lg:mt-[clamp(2rem,8vw,6rem)] lg:ml-[-2%]">
                     <h3 className="font_britanica_black mb-6 text-[clamp(1.25rem,3.5vw,2.5rem)]">Our Office</h3>
                     <div className="space-y-8">
-                        {/* ... sisa kode tidak berubah ... */}
                         <div className="flex items-start gap-4">
                             <div>
                                 <h4 className="font_britanica_bold font-bold text-[clamp(0.95rem,2.2vw,1.125rem)] mb-1">Address</h4>

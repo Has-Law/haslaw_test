@@ -92,7 +92,6 @@ const Navbar = () => {
      
             <div className={`fixed top-0 left-0 h-full w-3/4 max-w-xs bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <div className="flex flex-col p-6">
-                    {/* Close Button */}
                     <button onClick={() => setIsMobileMenuOpen(false)} className="self-end p-2 text-[#A0001B] hover:text-[#780014] transition-colors">
                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -167,25 +166,6 @@ const Navbar = () => {
                                 >
                                     Lawyers
                                 </Link>
-                                
-                                <div 
-                                    ref={memberSubmenuRef}
-                                    className="overflow-hidden bg-[#f8f9fa] border-t border-[#A0001B]/10"
-                                    style={{ maxHeight: '0px', opacity: 0 }}
-                                >
-                                    <Link 
-                                        href="/member" 
-                                        className="block transition-all duration-300 text-center py-[0.2vw] text-black hover:bg-[#A0001B] hover:text-white  hover:scale-[1.02] border-b-[0.01vw] border-[#A0001B]/10"
-                                    >
-                                        Agus Askin
-                                    </Link>
-                                    <Link 
-                                        href="/member" 
-                                        className="block transition-all duration-300 text-center py-[0.2vw] text-black hover:bg-[#A0001B] hover:text-white  hover:scale-[1.02]"
-                                    >
-                                        Others
-                                    </Link>
-                                </div>
                             </div>
                             
                             <Link 

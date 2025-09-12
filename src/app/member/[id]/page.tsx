@@ -85,7 +85,7 @@ export default async function MemberDetail({ params }: Props) {
                                             className="w-[clamp(1.2rem,4vw,2rem)] sm:w-[clamp(1.5rem,2.2vw,2.5rem)] h-[clamp(1.2rem,4vw,2rem)] sm:h-[clamp(1.5rem,2.2vw,2.5rem)]" 
                                         />
                                         <a 
-                                            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${member.email}`}
+                                            href={`https://mail.google.com/mail/?view=cm&fs=1&to=info@has-law.com`}
                                             target="_blank"
                                             rel="noopener noreferrer" 
                                             className="font_britanica_regular text-[clamp(0.8rem,3.5vw,1.2rem)] sm:text-[clamp(1rem,1.4vw,1.6rem)] hover:underline"

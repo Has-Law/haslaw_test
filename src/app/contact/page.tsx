@@ -116,7 +116,7 @@ export default function Contact() {
                         </div>
                     )}
 
-                    <button type="submit" disabled={isLoading} className="bg-[#A0001B] text-white mt-8 px-[clamp(1.25rem,6vw,2.5rem)] py-[clamp(0.6rem,2.5vw,1rem)] rounded-full hover:bg-[#780014] transition-colors font_britanica_bold text-[clamp(0.875rem,2vw,1rem)] shadow-md disabled:bg-gray-400 disabled:cursor-not-allowed">
+                    <button type="submit" disabled={isLoading} className="bg-[#A0001B] text-white cursor-pointer mt-8 px-[clamp(1.25rem,6vw,2.5rem)] py-[clamp(0.6rem,2.5vw,1rem)] rounded-full hover:bg-[#780014] transition-colors font_britanica_bold text-[clamp(0.875rem,2vw,1rem)] shadow-md disabled:bg-gray-400 disabled:cursor-not-allowed">
                         {isLoading ? 'Mengirim...' : 'Send Message'}
                     </button>
                 </form>

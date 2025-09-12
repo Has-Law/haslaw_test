@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 // Cookie Provider to initialize analytics services based on saved preferences
 const CookieProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
-    // Initialize Google Analytics with consent mode
+
     if (typeof window !== 'undefined') {
       // Initialize Google Analytics Measurement ID - replace with your actual GA4 ID
       const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID

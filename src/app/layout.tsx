@@ -47,11 +47,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  // Updated icons configuration - all using icon.png
   icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
-    apple: '/icon.png',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
   openGraph: {
     title: "HasLaw - Leading Indonesian Law Firm",
@@ -163,9 +162,9 @@ export default function RootLayout({
         <meta name="theme-color" content="#A0001B" />
         <meta name="msapplication-TileColor" content="#A0001B" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/icon.png" />
-        <link rel="apple-touch-icon" href="/icon.png" />
-        <link rel="shortcut icon" href="/icon.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

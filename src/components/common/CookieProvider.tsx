@@ -2,29 +2,28 @@
 
 import { useEffect } from 'react'
 
-// Cookie Provider to initialize analytics services based on saved preferences
 const CookieProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
 
     if (typeof window !== 'undefined') {
-      // Initialize Google Analytics Measurement ID - replace with your actual GA4 ID
+   
       const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 
       if (GA_MEASUREMENT_ID) {
-        // Create and append gtag script
+   
         const script = document.createElement('script')
         script.async = true
         script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
         document.head.appendChild(script)
 
-        // Initialize gtag with consent mode
+
         window.dataLayer = window.dataLayer || []
         function gtag(...args: unknown[]) {
           window.dataLayer.push(args)
         }
         window.gtag = gtag
 
-        // Set default consent state
+     
         gtag('consent', 'default', {
           'analytics_storage': 'denied',
           'ad_storage': 'denied',
@@ -37,7 +36,7 @@ const CookieProvider = ({ children }: { children: React.ReactNode }) => {
         gtag('js', new Date())
         gtag('config', GA_MEASUREMENT_ID)
 
-        // Check for existing cookie preferences and apply them
+   
         const preferences = getCookiePreferences()
         if (preferences) {
           gtag('consent', 'update', {
@@ -54,7 +53,6 @@ const CookieProvider = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>
 }
 
-// Helper function to get cookie preferences
 const getCookiePreferences = () => {
   if (typeof document === 'undefined') return null
   

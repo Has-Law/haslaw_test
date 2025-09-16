@@ -103,9 +103,9 @@ export default function RootLayout({
     "name": "HasLaw",
     "alternateName": "HasLaw Indonesian Law Firm",
     "description": "Premier Indonesian law firm providing comprehensive legal services including corporate law, litigation, commercial transactions, and legal consulting.",
-    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://haslaw.id",
-    "logo": `${process.env.NEXT_PUBLIC_SITE_URL || "https://haslaw.id"}/assets/logo.png`,
-    "image": `${process.env.NEXT_PUBLIC_SITE_URL || "https://haslaw.id"}/assets/logo.png`,
+    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://has-law.com",
+    "logo": `${process.env.NEXT_PUBLIC_SITE_URL || "https://has-law.com"}/assets/logo.png`,
+    "image": `${process.env.NEXT_PUBLIC_SITE_URL || "https://has-law.com"}/assets/logo.png`,
     "telephone": "+62-21-XXXXXXX", // Replace with actual phone
     "email": "info@has-law.com",
     "address": {

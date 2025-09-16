@@ -217,7 +217,7 @@ const Navbar = () => {
                         href="/news" 
                         className="hover:text-[#A0001B] text-nowrap transition-all duration-300 ease-out group relative"
                     >
-                        <span className="relative z-10">News & Insight</span>
+                        <span className="relative z-10">News & Insights</span>
                         <div className="transition-all duration-500 group-hover:w-full group-hover:left-0 group-hover:origin-left right-0 origin-right w-0 absolute bottom-0 h-[0.1vw] bg-[#A0001B]"></div>
                     </Link>
                     

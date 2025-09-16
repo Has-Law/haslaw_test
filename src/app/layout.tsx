@@ -47,6 +47,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  // Updated icons configuration - all using icon.png
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
   openGraph: {
     title: "HasLaw - Leading Indonesian Law Firm",
     description: "Premier Indonesian law firm providing comprehensive legal services including corporate law, litigation, and commercial transactions.",
@@ -157,8 +163,9 @@ export default function RootLayout({
         <meta name="theme-color" content="#A0001B" />
         <meta name="msapplication-TileColor" content="#A0001B" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/icon.png" />
+        <link rel="apple-touch-icon" href="/icon.png" />
+        <link rel="shortcut icon" href="/icon.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -172,7 +179,6 @@ export default function RootLayout({
             <Footer/>
           </div>
           
-
           <GDPRCookieBanner />
         </CookieProvider>
         

@@ -25,24 +25,24 @@ const Team = () => {
                 
            
                 <div
-                    onMouseEnter={() => setHoveredSection('senior')}
+                    onMouseEnter={() => setHoveredSection('partner')}
                     onMouseLeave={() => setHoveredSection(null)}
-                    className={`relative overflow-hidden w-full cursor-pointer rounded-t-xl sm:rounded-t-[1.6vw] transition-all duration-300 ease-in-out ${hoveredSection === 'senior' ? 'sm:justify-between' : ''}`}
+                    className={`relative overflow-hidden w-full cursor-pointer rounded-t-xl sm:rounded-t-[1.6vw] transition-all duration-300 ease-in-out ${hoveredSection === 'partner' ? 'sm:justify-between' : ''}`}
                 >
-          
-                    <div className={`absolute inset-0 bg-[linear-gradient(90deg,_#A0001B_0%,_#3A000A_100%)] transition-opacity duration-300 ease-in-out ${hoveredSection === 'senior' ? 'opacity-0' : 'opacity-100'}`} />
-                    <div className={`absolute inset-0 bg-[linear-gradient(270deg,_#A0001B_0%,_#3A000A_100%)] transition-opacity duration-300 ease-in-out ${hoveredSection === 'senior' ? 'opacity-100' : 'opacity-0'}`} />
+
+                    <div className={`absolute inset-0 bg-[linear-gradient(90deg,_#A0001B_0%,_#3A000A_100%)] transition-opacity duration-300 ease-in-out ${hoveredSection === 'partner' ? 'opacity-0' : 'opacity-100'}`} />
+                    <div className={`absolute inset-0 bg-[linear-gradient(270deg,_#A0001B_0%,_#3A000A_100%)] transition-opacity duration-300 ease-in-out ${hoveredSection === 'partner' ? 'opacity-100' : 'opacity-0'}`} />
 
               
-                    <div className={`hidden sm:flex flex-row px-6 sm:px-[4vw] items-center py-6 sm:py-[3vw] ${hoveredSection === 'senior' ? 'justify-between' : 'justify-center'}`}>
-                        <h2 className={`z-10 font_britanica_black text-white text-2xl sm:text-[clamp(0.4rem,3vw,2.4rem)] py-4 sm:py-[1.6vw] absolute transition-all duration-500 ease-in-out ${hoveredSection === 'senior' ? 'left-6 sm:left-[4vw] -translate-x-0' : 'left-1/2 -translate-x-1/2'}`}>
-                            SENIOR PARTNER
+                    <div className={`hidden sm:flex flex-row px-6 sm:px-[4vw] items-center py-6 sm:py-[3vw] ${hoveredSection === 'partner' ? 'justify-between' : 'justify-center'}`}>
+                        <h2 className={`z-10 font_britanica_black text-white text-2xl sm:text-[clamp(0.4rem,3vw,2.4rem)] py-4 sm:py-[1.6vw] absolute transition-all duration-500 ease-in-out ${hoveredSection === 'partner' ? 'left-6 sm:left-[4vw] -translate-x-0' : 'left-1/2 -translate-x-1/2'}`}>
+                             PARTNER
                         </h2>
                         <div className="relative z-10 ml-auto">
-                            <div className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${hoveredSection === 'senior' ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                            <div className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${hoveredSection === 'partner' ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
                                 <div className="overflow-hidden">
                                     <div className="flex flex-col gap-y-2 sm:gap-y-[0.8vw]">
-                                        {seniorPartners.map((partner, index) => (
+                                        {partners.map((partner, index) => (
                                             <h3 key={index} className="font_britanica_bold text-white text-left text-lg sm:text-[clamp(0.4rem,1.6vw,1.6rem)]">
                                                 {partner.name}
                                             </h3>
@@ -57,14 +57,14 @@ const Team = () => {
                     <div className="sm:hidden flex flex-col px-6 py-2">
                         <div className="flex justify-center">
                             <h2 className="z-10 font_britanica_black text-white text-2xl py-4">
-                                SENIOR PARTNER
+                                 PARTNER
                             </h2>
                         </div>
                         <div className="relative z-10">
-                            <div className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${hoveredSection === 'senior' ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                            <div className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${hoveredSection === 'partner' ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
                                 <div className="overflow-hidden">
                                     <div className="flex flex-col gap-y-2 ">
-                                        {seniorPartners.map((partner, index) => (
+                                        {partners.map((partner, index) => (
                                             <h3 key={index} className="font_britanica_bold text-white text-center text-lg">
                                                 {partner.name}
                                             </h3>
@@ -78,24 +78,24 @@ const Team = () => {
 
          
                 <div
-                    onMouseEnter={() => setHoveredSection('partner')}
+                    onMouseEnter={() => setHoveredSection('senior')}
                     onMouseLeave={() => setHoveredSection(null)}
-                    className={`relative overflow-hidden w-full cursor-pointer border-t border-gray-400 border-b transition-all duration-300 ease-in-out ${hoveredSection === 'partner' ? 'sm:justify-between' : ''}`}
+                    className={`relative overflow-hidden w-full cursor-pointer border-t border-gray-400 border-b transition-all duration-300 ease-in-out ${hoveredSection === 'senior' ? 'sm:justify-between' : ''}`}
                 >
          
-                    <div className={`absolute inset-0 bg-[linear-gradient(90deg,_#A0001B_0%,_#3A000A_100%)] transition-opacity duration-300 ease-in-out ${hoveredSection === 'partner' ? 'opacity-0' : 'opacity-100'}`} />
-                    <div className={`absolute inset-0 bg-[linear-gradient(270deg,_#A0001B_0%,_#3A000A_100%)] transition-opacity duration-300 ease-in-out ${hoveredSection === 'partner' ? 'opacity-100' : 'opacity-0'}`} />
+                    <div className={`absolute inset-0 bg-[linear-gradient(90deg,_#A0001B_0%,_#3A000A_100%)] transition-opacity duration-300 ease-in-out ${hoveredSection === 'senior' ? 'opacity-0' : 'opacity-100'}`} />
+                    <div className={`absolute inset-0 bg-[linear-gradient(270deg,_#A0001B_0%,_#3A000A_100%)] transition-opacity duration-300 ease-in-out ${hoveredSection === 'senior' ? 'opacity-100' : 'opacity-0'}`} />
                     
          
-                    <div className={`hidden sm:flex flex-row px-6 sm:px-[4vw] items-center py-6 sm:py-[3vw] ${hoveredSection === 'partner' ? 'justify-between' : 'justify-center'}`}>
-                        <h2 className={`z-10 font_britanica_black text-white text-2xl sm:text-[clamp(0.4rem,3vw,2.4rem)] py-4 sm:py-[1.6vw] absolute transition-all duration-500 ease-in-out ${hoveredSection === 'partner' ? 'left-6 sm:left-[4vw] -translate-x-0' : 'left-1/2 -translate-x-1/2'}`}>
-                            PARTNER
+                    <div className={`hidden sm:flex flex-row px-6 sm:px-[4vw] items-center py-6 sm:py-[3vw] ${hoveredSection === 'senior' ? 'justify-between' : 'justify-center'}`}>
+                        <h2 className={`z-10 font_britanica_black text-white text-2xl sm:text-[clamp(0.4rem,3vw,2.4rem)] py-4 sm:py-[1.6vw] absolute transition-all duration-500 ease-in-out ${hoveredSection === 'senior' ? 'left-6 sm:left-[4vw] -translate-x-0' : 'left-1/2 -translate-x-1/2'}`}>
+                           SENIOR PARTNER
                         </h2>
                         <div className="relative z-10 ml-auto">
-                            <div className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${hoveredSection === 'partner' ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                            <div className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${hoveredSection === 'senior' ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
                                 <div className="overflow-hidden">
                                     <div className="flex flex-col gap-y-2 sm:gap-y-[0.8vw]">
-                                        {partners.map((partner, index) => (
+                                        {seniorPartners.map((partner, index) => (
                                             <h3 key={index} className="font_britanica_bold text-white text-left text-lg sm:text-[clamp(0.4rem,1.6vw,1.6rem)]">
                                                 {partner.name}
                                             </h3>
@@ -109,14 +109,14 @@ const Team = () => {
                     <div className="sm:hidden flex flex-col px-6 py-2">
                         <div className="flex justify-center">
                             <h2 className="z-10 font_britanica_black text-white text-2xl py-4">
-                                PARTNER
+                               SENIOR PARTNER
                             </h2>
                         </div>
                         <div className="relative z-10">
-                            <div className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${hoveredSection === 'partner' ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                            <div className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${hoveredSection === 'senior' ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
                                 <div className="overflow-hidden">
                                     <div className="flex flex-col gap-y-2 ">
-                                        {partners.map((partner, index) => (
+                                        {seniorPartners.map((partner, index) => (
                                             <h3 key={index} className="font_britanica_bold text-white text-center text-lg">
                                                 {partner.name}
                                             </h3>

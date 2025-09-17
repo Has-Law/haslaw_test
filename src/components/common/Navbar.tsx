@@ -183,7 +183,7 @@ const Navbar = () => {
                             className="flex flex-row items-center w-[6.5vw] cursor-pointer transition-all duration-300 ease-out group relative"
                             onClick={() => setIsActive(isActive === "service" ? null : "service")}
                         >
-                            <h2 className="group-hover:text-[#A0001B] transition-colors duration-300">Service</h2>
+                            <h2 className="group-hover:text-[#A0001B] transition-colors duration-300">Services</h2>
                             <Image 
                                 src={arrow} 
                                 alt="Arrow Icon" 
@@ -201,7 +201,7 @@ const Navbar = () => {
                                 href="/service" 
                                 className="text-center px-[1vw] py-[0.3vw] hover:text-white text-black hover:bg-[#A0001B]  transition-all duration-300 text-nowrap hover:scale-[1.02] hover:shadow-sm border-b-[0.01vw] border-[#A0001B]/20"
                             >
-                                Our Service
+                                Our Services
                             </Link>
                             <Link 
                                 href="/pro-bono" 
@@ -225,7 +225,7 @@ const Navbar = () => {
                         href="/career" 
                         className="hover:text-[#A0001B] transition-all duration-300 ease-out group relative"
                     >
-                        <span className="relative z-10">Career</span>
+                        <span className="relative z-10">Careers</span>
                         <div className="transition-all duration-500 group-hover:w-full group-hover:left-0 group-hover:origin-left right-0 origin-right w-0 absolute bottom-0 h-[0.1vw] bg-[#A0001B]"></div>
                     </Link>
                     

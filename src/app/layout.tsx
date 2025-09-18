@@ -158,7 +158,7 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData),
           }}
         />
-        <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL || "https://haslaw.id"} />
+        <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL || "https://has-law.com"} />
         <meta name="theme-color" content="#A0001B" />
         <meta name="msapplication-TileColor" content="#A0001B" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

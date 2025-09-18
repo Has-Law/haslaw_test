@@ -30,8 +30,8 @@ const Achievement = () => {
             <Image 
                 src={achievementBg} 
                 alt="Achievement Background" 
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: 'cover' }}
                 className="absolute top-0 left-0 z-0 md:rounded-[6rem] sm:rounded-3xl" 
             />
             

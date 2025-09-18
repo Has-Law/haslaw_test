@@ -15,8 +15,8 @@ const Service = () => {
             <Image 
                 src={servicebg} 
                 alt="Service Background" 
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: 'cover' }}
                 className="z-0 md:rounded-[6rem] sm:rounded-4xl" 
             />
             <div className="relative z-10 flex flex-col items-center text-center px-6 md:px-[8vw] gap-y-8 md:gap-y-[1.3vw]">

@@ -10,16 +10,19 @@ import { gsap } from "gsap"
 const Navbar = () => {
   
     const [isActive, setIsActive] = useState<string | null>(null)
-   
+   const [mounted, setMounted] = useState(false);
     const [isHovered, setIsHovered] = useState<string | null>(null)
     const [searchQuery, setSearchQuery] = useState('');
 
     const firmDropdownRef = useRef<HTMLDivElement>(null);
     const serviceDropdownRef = useRef<HTMLDivElement>(null);
-    const memberSubmenuRef = useRef<HTMLDivElement>(null);
-
-   
+    const memberSubmenuRef = useRef<HTMLDivElement>(null);   
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
 
     const handleSearch = () => {
         if (!searchQuery.trim()) return;
@@ -28,6 +31,7 @@ const Navbar = () => {
 
    
     useEffect(() => {
+        if(!mounted) return;
         gsap.to(firmDropdownRef.current, {
             duration: 0.3,
             opacity: isActive === 'firm' ? 1 : 0,
@@ -51,15 +55,41 @@ const Navbar = () => {
 
  
     useEffect(() => {
-        if (memberSubmenuRef.current) {
+        if(!mounted || !memberSubmenuRef.current) return;
+
+         
             gsap.to(memberSubmenuRef.current, {
                 duration: 0.25,
                 maxHeight: isHovered === "member" ? "200px" : "0px",
                 opacity: isHovered === "member" ? 1 : 0,
                 ease: "power2.out"
             });
-        }
+        
     }, [isHovered]);
+
+     if (!mounted) {
+        return (
+            <nav className="flex flex-row bg-white w-full justify-center items-center pt-[1vw] px-[5vw] sticky top-0 z-50 shadow-md">
+                {/* Mobile skeleton */}
+                <div className="lg:hidden flex items-center justify-between w-full pb-[1vw] border-b-[0.2vw] border-[#A0001B]">
+                    <div className="w-8 h-8 bg-gray-200 animate-pulse rounded" />
+                    <div className="w-[70px] h-[40px] bg-gray-200 animate-pulse rounded" />
+                    <div className="w-8 h-8 bg-gray-200 animate-pulse rounded" />
+                </div>
+
+                {/* Desktop skeleton */}
+                <div className="hidden lg:flex flex-row w-[90vw] items-center justify-center gap-x-[8vw] border-b-[0.2vw] border-[#A0001B] pb-[1vw]">
+                    <div className="w-[5vw] h-[3vw] bg-gray-200 animate-pulse rounded" />
+                    <div className="flex flex-row items-center gap-x-[3vw]">
+                        {Array.from({ length: 6 }).map((_, i) => (
+                            <div key={i} className="w-20 h-6 bg-gray-200 animate-pulse rounded" />
+                        ))}
+                    </div>
+                    <div className="w-[12vw] h-[2.5vw] bg-gray-200 animate-pulse rounded-full" />
+                </div>
+            </nav>
+        )
+    }
 
     return (
       <nav className="flex flex-row bg-white w-full justify-center items-center pt-[1vw] px-[5vw] sticky top-0 z-50 shadow-md">
@@ -251,6 +281,7 @@ const Navbar = () => {
                                 handleSearch();
                             }
                         }}
+                        suppressHydrationWarning={true}
                     />
                     <Image 
                         src={search} 

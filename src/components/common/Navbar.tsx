@@ -51,7 +51,7 @@ const Navbar = () => {
             pointerEvents: isActive === 'service' ? 'auto' : 'none',
             ease: "power2.out"
         });
-    }, [isActive]);
+    }, [isActive, mounted]);
 
  
     useEffect(() => {
@@ -65,7 +65,7 @@ const Navbar = () => {
                 ease: "power2.out"
             });
         
-    }, [isHovered]);
+    }, [isHovered, mounted]);
 
      if (!mounted) {
         return (

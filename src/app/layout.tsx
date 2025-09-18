@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "HasLaw - %s", 
     default: "HasLaw - Leading Indonesian Law Firm | Legal Services", 
   },
-  description: "HasLaw is a premier Indonesian law firm providing comprehensive legal services including corporate law, litigation, commercial transactions, and legal consulting. Trusted legal partners since establishment.",
+  description: "HARTAMULYA, ANDRYANUS & SIAHAAN is an Indonesian full-service law firm founded by experienced lawyers who currently possessed an adequate qualification in handling many fields of legal matters that faced by its clients. We strive to be our clients' trusted business advisors by fully understanding our clients' businesses and objectives. Our services comprise of Dispute Resolution Practices such as commercial disputes, administrative litigation, criminal and white collar defense and tax litigation services. Our Corporate and Commercial Services has served dozens of clients in corporate secretarial services, merger and acquisition, and corporate restructuring. HAS' partners has also been certified to be capital market lawyers.",
   keywords: [
     "law firm Indonesia",
     "Indonesian lawyers",

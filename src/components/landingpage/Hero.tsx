@@ -11,6 +11,8 @@ import Link from "next/link";
 const Hero = () => {
     const [isHovered, setIsHovered] = useState(false);
 
+    const whatsappLink = "https://wa.me/6287857905183"; 
+
     return (
         <>
             {/* Mobile Layout */}
@@ -30,7 +32,12 @@ const Hero = () => {
                     </div>
                     
                     <div className="flex justify-end">
-                        <div className="relative w-20 aspect-square">
+                        <Link 
+                            href={whatsappLink} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="relative w-20 aspect-square"
+                        >
                             <Image
                                 src={text}
                                 alt="Contact Us Text"
@@ -51,7 +58,7 @@ const Hero = () => {
                                     className="w-[80%] h-auto"
                                 />
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -61,7 +68,7 @@ const Hero = () => {
                 <Image 
                     src={herobg} 
                     alt="Hero Background" 
-                    className=" absolute top-0 w-full h-full object-cover" 
+                    className="absolute top-0 w-full h-full object-cover" 
                 />
                 <div className="relative flex justify-between mt px-10">
                     <h2 className="text-white font_britanica_black text-[clamp(2.5vw,2.5vw,4rem)] ml-[4vw] mt-[5vw] max-w-[30vw]">
@@ -76,7 +83,9 @@ const Hero = () => {
                             className="absolute inset-0 w-full h-auto"
                         />
                         <Link
-                            href={"/contact"}
+                            href={whatsappLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
                             className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 

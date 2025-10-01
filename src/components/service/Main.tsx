@@ -55,14 +55,14 @@ const Main = () => {
             <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-6">
                 <ServiceCard
                     href="/service/litigation"
-                    title="Litigation Service"
+                    title="Litigation Services"
                     description="Resolving complex business disputes through expert litigation and strategic alternative dispute resolution (ADR)."
                     imageSrc={shield}
                     imageAlt="Shield Icon"
                 />
                 <ServiceCard
                     href="/service/corporate"
-                    title="Corporate Service"
+                    title="Corporate Services"
                     description="Comprehensive legal support for your day-to-day operations and major corporate transactions."
                     imageSrc={contract}
                     imageAlt="Contract Icon"

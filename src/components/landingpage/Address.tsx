@@ -1,5 +1,5 @@
 import Image from "next/image";
-import phoneIcon from "@/assets/common/footer/phone-footer.svg"; 
+import phoneIcon from "@/assets/common/footer/phone-footer.svg";
 import waIcon from "@/assets/common/footer/wa-footer.svg";
 
 const Address = () => {
@@ -8,12 +8,12 @@ const Address = () => {
     return (
         <div className="bg-[#f2f2f2] w-full flex justify-center items-center py-20 px-4 md:px-6 lg:px-12">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-full max-w-screen-xl gap-y-12 lg:gap-x-16">
-             
+
                 <h1 className="font_britanica_black w-full text-[clamp(2.5rem,7vw,4.2rem)] leading-none lg:hidden">
                     Find Us
                 </h1>
 
-          
+
                 <div className="w-full lg:w-full flex justify-center order-2 lg:order-1">
                     <iframe
                         src={mapSrc}
@@ -28,30 +28,34 @@ const Address = () => {
 
                 <div className="w-full lg:w-1/3 flex-col items-start justify-center gap-y-5 lg:gap-y-5 hidden lg:flex order-1 lg:order-2">
                     <h1 className="font_britanica_black text-[clamp(2vw,2vw,3vw)] leading-none">Find Us</h1>
-                    
+
                     <div className="flex flex-col gap-y-6">
-                
+
                         <div>
                             <h3 className="font_montserrat_bold text-[#780014] text-[clamp(1.5vw,1.5vw,2vw)]">Email</h3>
                             <p className="font_britanica_bold text-black text-[clamp(1.2vw,1.2vw,1.5vw)]">info@has-law.com</p>
                         </div>
-                        
-             
+
+
                         <div>
                             <h3 className="font_montserrat_bold text-[#780014] text-[clamp(1.5vw,1.5vw,2vw)]">Telephone</h3>
                             <div className="flex flex-col gap-2 mt-2">
-                                <div className="flex items-center gap-2">
-                                    <Image src={phoneIcon} alt="phone" width={24} height={24} />
-                                    <p className="font_britanica_bold text-black text-[clamp(1vw,1vw,1.5vw)]">+6221 5790 5183</p>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Image src={waIcon} alt="whatsapp" width={24} height={24} />
-                                    <p className="font_britanica_bold text-black text-[clamp(1vw,1vw,1.5vw)]">+62 8785 790 5183</p>
-                                </div>
+                                <a href="tel:+622157905183">
+                                    <div className="flex items-center gap-2">
+                                        <Image src={phoneIcon} alt="phone" width={24} height={24} />
+                                        <p className="font_britanica_bold text-black text-[clamp(1vw,1vw,1.5vw)]">+6221 5790 5183</p>
+                                    </div>
+                                </a>
+                                <a href="https://wa.me/6287857905183" target="_blank" rel="noopener noreferrer">
+                                    <div className="flex items-center gap-2">
+                                        <Image src={waIcon} alt="whatsapp" width={24} height={24} />
+                                        <p className="font_britanica_bold text-black text-[clamp(1vw,1vw,1.5vw)]">+62 8785 790 5183</p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        
-                  
+
+
                         <div>
                             <h3 className="font_montserrat_bold text-[#780014] text-[clamp(1.5vw,1.5vw,2vw)]">Address</h3>
                             <p className="font_britanica_bold text-black text-[clamp(1vw,1vw,1.5vw)] leading-relaxed">
@@ -61,16 +65,16 @@ const Address = () => {
                     </div>
                 </div>
 
-              
+
                 <div className="w-full flex flex-col items-start justify-center gap-y-5 lg:gap-y-5 lg:hidden order-3">
                     <div className="flex flex-col gap-y-6">
-                    
+
                         <div>
                             <h3 className="font_montserrat_bold text-[#780014] text-[clamp(1.1rem,2.5vw,1.7rem)]">Email</h3>
                             <p className="font_britanica_bold text-black text-[clamp(1rem,2.2vw,1.4rem)]">info@has-law.com</p>
                         </div>
-                        
-                    
+
+
                         <div>
                             <h3 className="font_montserrat_bold text-[#780014] text-[clamp(1.1rem,2.5vw,1.7rem)]">Telephone</h3>
                             <div className="flex flex-col gap-2 mt-2">
@@ -84,8 +88,8 @@ const Address = () => {
                                 </div>
                             </div>
                         </div>
-                        
-                       
+
+
                         <div>
                             <h3 className="font_montserrat_bold text-[#780014] text-[clamp(1.1rem,2.5vw,1.7rem)]">Address</h3>
                             <p className="font_britanica_bold text-black text-[clamp(1rem,2.2vw,1.4rem)] leading-relaxed">

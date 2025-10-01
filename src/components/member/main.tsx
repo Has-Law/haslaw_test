@@ -81,7 +81,7 @@ const Main = ({ members }: { members: Member[] }) => {
             <div className="w-full lg:w-[30vw] flex flex-col gap-y-6 lg:gap-y-[2vw]">
                 <h1 className="text-5xl lg:text-[clamp(3vw,3vw,6rem)] font_britanica_black text-[#5E0503] leading-tight">
                     Meet Your<br />
-                    Advocates
+                    Lawyers
                 </h1>
 
                 <div className="w-full flex flex-col gap-y-4 lg:gap-y-[1vw]">
@@ -113,7 +113,7 @@ const Main = ({ members }: { members: Member[] }) => {
 
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
                             <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
-                                Mid Associates
+                                Mid Associate
                             </label>
                             <div
                                 onClick={() => handleFilterChange('midAssociates')}

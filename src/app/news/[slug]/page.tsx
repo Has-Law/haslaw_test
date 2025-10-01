@@ -70,7 +70,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
                     
                         <p className="font_britanica_regular text-gray-800 leading-relaxed 
                                    text-[clamp(1.1rem,2.5vw,1.25rem)] 
-                                   whitespace-pre-wrap break-words">
+                                   whitespace-pre-wrap break-words text-justify">
                             {newsItem.content}
                         </p>
                     </div>

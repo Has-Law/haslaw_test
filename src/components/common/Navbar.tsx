@@ -135,7 +135,7 @@ const Navbar = () => {
                         <Link href="/achievements" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Achievements</Link>
                         <Link href="/service" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Our Services</Link>
                         <Link href="/pro-bono" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Pro Bono</Link>
-                        <Link href="/news" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>News & Insights</Link>
+                        <Link href="/news" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Insights</Link>
                         <Link href="/career" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</Link>
                         <Link href="/contact" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
                     </div>
@@ -247,7 +247,7 @@ const Navbar = () => {
                         href="/news" 
                         className="hover:text-[#A0001B] text-nowrap transition-all duration-300 ease-out group relative"
                     >
-                        <span className="relative z-10">News & Insights</span>
+                        <span className="relative z-10">Insights</span>
                         <div className="transition-all duration-500 group-hover:w-full group-hover:left-0 group-hover:origin-left right-0 origin-right w-0 absolute bottom-0 h-[0.1vw] bg-[#A0001B]"></div>
                     </Link>
                     

@@ -11,6 +11,7 @@ import emailIcon from "@/assets/common/footer/mail-footer.svg";
 import phoneIcon from "@/assets/common/footer/phone-footer.svg";
 import whatsappIcon from "@/assets/common/footer/wa-footer.svg";
 import locationIcon from "@/assets/common/footer/location-footer.svg";
+import business from "@/assets/common/footer/business.png";
 
 const Footer: React.FC = () => {
     return (
@@ -36,6 +37,9 @@ const Footer: React.FC = () => {
                                 <Link href="#" className="hover:opacity-75 transition-opacity">
                                     <Image src={linkedin} alt="LinkedIn" className="w-[clamp(1.8rem,6vw,2rem)] h-[clamp(1.8rem,6vw,2rem)]" />
                                 </Link>
+                                <Link href="#" className="hover:opacity-75 transition-opacity">
+                                    <Image src={business} alt="LinkedIn" className="w-[clamp(1.8rem,6vw,2rem)] h-[clamp(1.8rem,6vw,2rem)]" />
+                                </Link>
                             </div>
                         </div>
                         <p className="text-gray-700 text-[clamp(0.9rem,3.5vw,1rem)] leading-relaxed">
@@ -48,7 +52,7 @@ const Footer: React.FC = () => {
                         <ul className="space-y-3">
                             <li><Link href="/" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Home</Link></li>
                             <li><Link href="/about" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">About Us</Link></li>
-                            <li><Link href="/member" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Members</Link></li>
+                            <li><Link href="/member" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Lawyers</Link></li>
                             <li><Link href="/achievements" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Achievements</Link></li>
                             <li><Link href="/career" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Careers</Link></li>
                             <li><Link href="/pro-bono" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Pro Bono</Link></li>
@@ -59,7 +63,7 @@ const Footer: React.FC = () => {
                         <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,1.5rem)] mb-4">Explore Services</h3>
                         <ul className="space-y-3">
                             <li><Link href="/service" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Our Services</Link></li>
-                            <li><Link href="/news" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">News & Insight</Link></li>
+                            <li><Link href="/news" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Insights</Link></li>
                             <li><Link href="/contact" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Contact Us</Link></li>
                         </ul>
                     </div>
@@ -113,6 +117,9 @@ const Footer: React.FC = () => {
                             <Link href="#" className="hover:opacity-80 transition-opacity">
                                 <Image src={linkedin} alt="LinkedIn" className="w-[clamp(2.5vw,2.6vw,3rem)] h-[clamp(2.5vw,2.6vw,3rem)]" />
                             </Link>
+                            <Link href="#" className="hover:opacity-80 transition-opacity">
+                                <Image src={business} alt="Business" className="w-[clamp(2.5vw,2.6vw,3rem)] h-[clamp(2.5vw,2.6vw,3rem)]" />
+                            </Link>
                         </div>
                     </div>
 
@@ -121,7 +128,7 @@ const Footer: React.FC = () => {
                         <ul className="space-y-[clamp(0.5vw,0.5vw,0.8rem)]">
                             <li><Link href="/" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">Home</Link></li>
                             <li><Link href="/about" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">About Us</Link></li>
-                            <li><Link href="/member" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">Members</Link></li>
+                            <li><Link href="/member" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">Lawyers</Link></li>
                             <li><Link href="/achievements" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">Achievements</Link></li>
                             <li><Link href="/career" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">Careers</Link></li>
                             <li><Link href="/pro-bono" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">Pro Bono</Link></li>
@@ -132,7 +139,7 @@ const Footer: React.FC = () => {
                         <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,2rem)] lg:text-[clamp(1vw,1.5vw,2rem)] text-nowrap mb-[clamp(1vw,1.5vw,1.5rem)]">Explore Services</h3>
                         <ul className="space-y-[clamp(0.5vw,0.5vw,1rem)]">
                             <li><Link href="/service" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">Our Services</Link></li>
-                            <li><Link href="/news" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">News & Insight</Link></li>
+                            <li><Link href="/news" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">Insights</Link></li>
                             <li><Link href="/contact" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">Contact Us</Link></li>
                         </ul>
                     </div>

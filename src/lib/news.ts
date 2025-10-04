@@ -21,7 +21,9 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 export async function getAllNews(): Promise<News[]> {
     try {
         const response = await fetch(`${API_BASE_URL}/api/v1/news`, {
-            next: { revalidate: 60 } 
+            next: { 
+                tags: ['news'] 
+            }
         });
         if (!response.ok) return [];
         const result: ApiResponse<News[]> = await response.json();
@@ -35,7 +37,9 @@ export async function getAllNews(): Promise<News[]> {
 export async function getNewsBySlug(slug: string): Promise<News | null> {
     try {
         const response = await fetch(`${API_BASE_URL}/api/v1/news/slug/${slug}`, {
-            next: { revalidate: 60 }
+            next: { 
+                tags: [`news:${slug}`] 
+            }
         });
         if (!response.ok) return null;
         const result: ApiResponse<News> = await response.json();

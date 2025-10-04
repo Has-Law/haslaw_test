@@ -44,7 +44,7 @@ export async function getAllMembers(): Promise<Member[]> {
 export async function getMemberById(id: string): Promise<Member | null> {
     try {
         const response = await fetch(`${API_BASE_URL}/api/v1/members/${id}`, {
-            next: { revalidate: 3600 }
+            next: { revalidate: 1 }
         });
         if (!response.ok) return null;
         const result: ApiResponse<Member> = await response.json();

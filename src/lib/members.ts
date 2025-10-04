@@ -27,7 +27,7 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 export async function getAllMembers(): Promise<Member[]> {
     try {
         const response = await fetch(`${API_BASE_URL}/api/v1/members`, {
-            cache: 'no-store'
+            next: { revalidate: 0 }
         });
         if (!response.ok) return [];
         const result: ApiResponse<Member[]> = await response.json();
@@ -41,7 +41,7 @@ export async function getAllMembers(): Promise<Member[]> {
 export async function getMemberById(id: string): Promise<Member | null> {
     try {
         const response = await fetch(`${API_BASE_URL}/api/v1/members/${id}`, {
-                cache: 'no-store'
+            next: { revalidate: 0 }
         });
         if (!response.ok) return null;
         const result: ApiResponse<Member> = await response.json();

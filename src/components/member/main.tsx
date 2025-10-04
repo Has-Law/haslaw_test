@@ -2,8 +2,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { type Member } from "@/lib/members";
+import useSWR from 'swr';
+import { type Member, type ApiResponse } from "@/lib/members";
 
+// --- Definisi Tipe & Helper ---
 type FilterKey = 'seniorPartner' | 'partner' | 'ofCounsel' | 'associates' | 'midAssociate' | "seniorAssociate";
 
 interface FiltersState {
@@ -26,7 +28,49 @@ const mapTitleToFilterKey = (title: string): FilterKey | null => {
     return null;
 };
 
-const Main = ({ members }: { members: Member[] }) => {
+// --- Fetcher untuk SWR ---
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const fetcher = async (url: string): Promise<Member[]> => {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Gagal mengambil daftar anggota.');
+    const result: ApiResponse<Member[]> = await res.json();
+    return result.data;
+};
+
+// --- Komponen Kartu ---
+const AdvocateCard = ({ advocate }: { advocate: Member }) => (
+    <div className="group relative bg-white rounded-lg shadow-md hover:bg-[#A0001B] transition-all duration-300 pr-4 hover:scale-105"
+        style={{ boxShadow: "0px 0px 4px 4px #00000033" }}
+    >
+        <Link href={`/member/${advocate.id}`} className="flex items-center">
+            <div className="relative w-28 md:w-[12vw] h-auto -mt-8 md:-mt-[4vw] mr-4 md:mr-6 flex-shrink-0">
+                <Image
+                    src={`${API_BASE_URL}/${advocate.display_image}`}
+                    alt={advocate.full_name}
+                    width={200}
+                    height={200}
+                    className="w-full h-full object-cover"
+                />
+            </div>
+            <div className="flex-1 py-4">
+                <h3 className="text-lg md:text-[clamp(2vw,2vw,2rem)] font_britanica_black text-[#131313] mb-1 leading-tight group-hover:text-white">
+                    {advocate.full_name}
+                </h3>
+                <p className="text-sm md:text-[clamp(1.3vw,1.3vw,1.5rem)] font_britanica_bold text-[#780014] group-hover:text-white">
+                    {advocate.title_position}
+                </p>
+            </div>
+        </Link>
+    </div>
+);
+
+// --- Komponen Utama ---
+const Main = () => {
+    const { data: members, error, isLoading } = useSWR(
+        `${API_BASE_URL}/api/v1/members`,
+        fetcher
+    );
+
     const [filters, setFilters] = useState<FiltersState>({
         seniorPartner: false,
         partner: false,
@@ -44,6 +88,9 @@ const Main = ({ members }: { members: Member[] }) => {
         setFilters({ seniorPartner: false, partner: false, ofCounsel: false, associates: false, midAssociate: false, seniorAssociate: false });
     };
 
+    if (isLoading) return <div className="text-center py-40">Loading...</div>;
+    if (error || !members) return <div className="text-center py-40">Failed to load lawyers.</div>;
+
     const filteredMembers = members.filter(member => {
         const hasActiveFilters = Object.values(filters).some(filter => filter);
         if (!hasActiveFilters) return true;
@@ -51,42 +98,13 @@ const Main = ({ members }: { members: Member[] }) => {
         return memberCategory ? filters[memberCategory] : false;
     });
 
-    const AdvocateCard = ({ advocate }: { advocate: Member }) => (
-        <div className="group relative bg-white rounded-lg shadow-md hover:bg-[#A0001B] transition-all duration-300 pr-4 hover:scale-105"
-            style={{ boxShadow: "0px 0px 4px 4px #00000033" }}
-        >
-            <Link href={`/member/${advocate.id}`} className="flex items-center">
-                <div className="relative w-28 md:w-[12vw] h-auto -mt-8 md:-mt-[4vw] mr-4 md:mr-6 flex-shrink-0">
-                    <Image
-                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}/${advocate.display_image}`}
-                        alt={advocate.full_name}
-                        width={200}
-                        height={200}
-                        className="w-full h-full object-cover"
-                    />
-                </div>
-                <div className="flex-1 py-4">
-                    <h3 className="text-lg md:text-[clamp(2vw,2vw,2rem)] font_britanica_black text-[#131313] mb-1 leading-tight group-hover:text-white">
-                        {advocate.full_name}
-                    </h3>
-                    <p className="text-sm md:text-[clamp(1.3vw,1.3vw,1.5rem)] font_britanica_bold text-[#780014] group-hover:text-white">
-                        {advocate.title_position}
-                    </p>
-                </div>
-            </Link>
-        </div>
-    );
-
     return (
-   
         <div className="flex flex-col lg:flex-row w-full min-h-screen px-6 lg:px-[5vw] py-8 gap-8">
-            
             <div className="w-full lg:w-[30vw] flex flex-col gap-y-6 lg:gap-y-[2vw]">
                 <h1 className="text-5xl lg:text-[clamp(3vw,3vw,6rem)] font_britanica_black text-[#5E0503] leading-tight">
                     Meet Your<br />
                     Lawyers
                 </h1>
-
                 <div className="w-full flex flex-col gap-y-4 lg:gap-y-[1vw]">
                     <div className="flex justify-between items-center py-2 lg:py-[1vw] border-b border-black/50">
                         <h3 className="text-3xl lg:text-[clamp(2vw,2vw,4rem)] font_britanica_black text-[#780014]">Filter by</h3>
@@ -97,11 +115,7 @@ const Main = ({ members }: { members: Member[] }) => {
                             Reset Filters
                         </button>
                     </div>
-
                     <div className="space-y-2 lg:space-y-[0.5vw]">
-                      
-                       
-                    
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
                             <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Partner
@@ -113,7 +127,6 @@ const Main = ({ members }: { members: Member[] }) => {
                                 {filters.partner && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
-
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
                             <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Senior Associate
@@ -125,7 +138,6 @@ const Main = ({ members }: { members: Member[] }) => {
                                 {filters.seniorAssociate && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
-
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
                             <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Mid Associate
@@ -137,7 +149,6 @@ const Main = ({ members }: { members: Member[] }) => {
                                 {filters.midAssociate && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
-
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
                             <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Associates
@@ -149,9 +160,7 @@ const Main = ({ members }: { members: Member[] }) => {
                                 {filters.associates && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
-
-
-                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
+                        <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
                             <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Senior Partner
                             </label>
@@ -162,7 +171,6 @@ const Main = ({ members }: { members: Member[] }) => {
                                 {filters.seniorPartner && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
-                 
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
                             <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Of Counsel
@@ -174,12 +182,9 @@ const Main = ({ members }: { members: Member[] }) => {
                                 {filters.ofCounsel && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
-                    
-                   
                     </div>
                 </div>
             </div>
-
             <div className="flex-1 mt-8 lg:mt-[3vw]">
                 <div className="grid grid-cols-1 gap-12 lg:gap-[4vw]">
                     {filteredMembers.map((advocate) => (

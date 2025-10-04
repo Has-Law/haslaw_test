@@ -1,4 +1,3 @@
-
 export interface Member {
     id: number;
     full_name: string;
@@ -17,7 +16,6 @@ export interface Member {
     updated_at: string;
 }
 
-
 export interface ApiResponse<T> {
     success: boolean;
     message: string;
@@ -29,28 +27,13 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 export async function getAllMembers(): Promise<Member[]> {
     try {
         const response = await fetch(`${API_BASE_URL}/api/v1/members`, {
-            next: { revalidate: 1 } 
+            cache: 'no-store' 
         });
         if (!response.ok) return [];
         const result: ApiResponse<Member[]> = await response.json();
         return result.data;
     } catch (error) {
-        console.error("Failed to fetch members:", error);
+        console.error("Failed to fetch members for build:", error);
         return [];
-    }
-}
-
-
-export async function getMemberById(id: string): Promise<Member | null> {
-    try {
-        const response = await fetch(`${API_BASE_URL}/api/v1/members/${id}`, {
-            next: { revalidate: 60 }
-        });
-        if (!response.ok) return null;
-        const result: ApiResponse<Member> = await response.json();
-        return result.data;
-    } catch (error) {
-        console.error(`Failed to fetch member by ID ${id}:`, error);
-        return null;
     }
 }

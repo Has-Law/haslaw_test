@@ -43,9 +43,7 @@ export async function getAllMembers(): Promise<Member[]> {
 export async function getMemberById(id: string): Promise<Member | null> {
     try {
         const response = await fetch(`${API_BASE_URL}/api/v1/members/${id}`, {
-            next: {
-                tags: [`member:${id}`]
-            }
+                cache: 'no-store'
         });
         if (!response.ok) return null;
         const result: ApiResponse<Member> = await response.json();

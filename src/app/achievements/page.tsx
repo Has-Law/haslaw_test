@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image, { StaticImageData } from "next/image";
 import bg from "@/assets/achievments/bg-detail-achievements.svg"; 
 import alb from "@/assets/achievments/alb.png";
+import alb25 from "@/assets/achievments/alb25.png";
 import hukum from "@/assets/achievments/hukum.png";
 import next24 from "@/assets/achievments/next24.png";
 import next26 from "@/assets/achievments/next26.png";
@@ -32,24 +33,26 @@ export default function Achievements() {
 
   const achievements: Achievement[] = [
     { id: 1, src: hukum25, title: "Practice Leaders 2025", subTitle: ["Practice Leaders 2025"], description: ["Elite I", "Criminal Law", "Insurance", "Arbitration, Ligitation & Dispute Resolution", "Elite III", "Bankruptcy, Insolvency & Restructuring", "Project, Mining, Energy & Renewable Energy"] },
-    { id: 2, src: next26, title: `Hukumonline's NexGen Lawyers 2025` },
-    { id: 3, src: iflr, title: "IFLR 1000 2024",subTitle:"Notable" , description: ["Project Development"] },
-    { id: 4, src: star24, title: "ALB Litigators of Asia 2024", description: ["Rio Andre Winter Siahaan"] },
-    { id: 5, src: alb23, title: "Thomson Reuters Asia Legal Business 2023", subTitle:"Finalist", description: ["Insurance Law Firm", "Rising Law Firm", "Litigation Law Firm"] },
-    { id: 6, src: hukum, title: "Hukumonline", description: ["Top 100 Indonesian Law Firms", "Top 50 Largest-Full Service Law Firms"] },
-    { id: 7, src: litigation, title: "Benchmark Litigation", subTitle: "Tier 3" , description: ["Commercial and Transactions Dispute"]},
-    { id: 8, src: alb, title: "Thomson Reuters ALB Indonesia Law Awards 2024", subTitle: "Finalist" , description:["Litigation Law Firm of the Year", "Insurance Law Firm of the Year", "Rising Law Firm of the Year", "Dispute Resolution Lawyer of the Year"] }, 
-    { id: 9, src: leader23, title: "Hukumonline" }, 
-    { id: 10, src: leader23, title: "Practice Leaders 2023", subTitle: "Practice Leaders 2023", description:["Elite I", "Arbitration, Litigation & Dispute Resolution", "Insurance", "Elite II", "Criminal Law"] },
-    { id: 11, src: star25, title: "Indonesia Rising Stars 2025", description: ["Rio Andre Winter Siahaan"] },
-    { id: 12, src: hukum24, title: "Hukumonline", subTitle: "Top 100 Indonesian Law Firms 2024", description:["Midsize Full Service Law Firms"] },
-    { id: 13, src: next24, title: `Hukumonline's NexGen Lawyers 2024` },
-    { id: 14, src: hukum23, title: "Hukumonline", subTitle: "Top 100 Indonesian Law Firms 2023"},
+    { id: 2, src: alb25, title: "ALB Indonesia Law Awards 2025", subTitle: "Finalist" , description:["Young Lawyer of the Year (Law Firm)", "InsurraDispute Resolution Boutique Law Fir of the Yearnce", "Insurance Law Firm of the Year", "Litigation Law Firm of the Year", "Indonesia Law Firm of the Year"] },
+    { id: 3, src: next26, title: `Hukumonline's NexGen Lawyers 2025` },
+    { id: 4, src: iflr, title: "IFLR 1000 2024",subTitle:"Notable" , description: ["Project Development"] },
+    { id: 5, src: star24, title: "ALB Litigators of Asia 2024", description: ["Rio Andre Winter Siahaan"] },
+    { id: 6, src: alb23, title: "Thomson Reuters Asia Legal Business 2023", subTitle:"Finalist", description: ["Insurance Law Firm", "Rising Law Firm", "Litigation Law Firm"] },
+    { id: 7, src: hukum, title: "Hukumonline", description: ["Top 100 Indonesian Law Firms", "Top 50 Largest-Full Service Law Firms"] },
+    { id: 8, src: litigation, title: "Benchmark Litigation", subTitle: "Tier 3" , description: ["Commercial and Transactions Dispute"]},
+    { id: 9, src: alb, title: "Thomson Reuters ALB Indonesia Law Awards 2024", subTitle: "Finalist" , description:["Litigation Law Firm of the Year", "Insurance Law Firm of the Year", "Rising Law Firm of the Year", "Dispute Resolution Lawyer of the Year"] }, 
+    { id: 10, src: leader23, title: "Hukumonline" }, 
+    { id: 11, src: leader23, title: "Practice Leaders 2023", subTitle: "Practice Leaders 2023", description:["Elite I", "Arbitration, Litigation & Dispute Resolution", "Insurance", "Elite II", "Criminal Law"] },
+    { id: 12, src: star25, title: "Indonesia Rising Stars 2025", description: ["Rio Andre Winter Siahaan"] },
+    { id: 13, src: hukum24, title: "Hukumonline", subTitle: "Top 100 Indonesian Law Firms 2024", description:["Midsize Full Service Law Firms"] },
+    { id: 14, src: next24, title: `Hukumonline's NexGen Lawyers 2024` },
+    { id: 15, src: hukum23, title: "Hukumonline", subTitle: "Top 100 Indonesian Law Firms 2023"},
+    { id: 16, src: iflr, title: "IFLR 1000 2025", subTitle: "Notable", description: ["Project Development"] },
   ];
 
-  const grid1 = achievements.slice(0, 5);
-  const grid2 = achievements.slice(5, 10);
-  const grid3 = achievements.slice(10, 14);
+  const grid1 = achievements.slice(0, 6);
+  const grid2 = achievements.slice(6, 11);
+  const grid3 = achievements.slice(11, 16);
 
   const handleToggleDescription = (id: number) => {
     setExpandedIds(prevIds => {

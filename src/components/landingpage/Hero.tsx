@@ -24,10 +24,11 @@ const Hero = () => {
                 />
                 <div className="relative flex flex-col justify-between min-h-screen px-6 py-8">
                     <div className="flex-1 flex items-center">
-                        <h1 className="text-white font_britanica_black text-xl leading-tight max-w-xs">
-                            Valuing Your Case.<br />
-                            Persevering in Your Fight.<br />
-                            Unlocking Your Future.
+                        <h1 className="text-white font_britanica_black text-3xl  max-w-xs">
+                        <p className="tracking-none"><span className="text-[#FF8A9D]">C</span>ompassionate</p>
+                        <p className=" tracking-none"><span className="text-[#FF8A9D]">A</span>gility</p> 
+                        <p className=" tracking-none"><span className="text-[#FF8A9D]">R</span>eliable</p> 
+                        <p className=" tracking-none"><span className="text-[#FF8A9D]">E</span>arnest</p> 
                         </h1>
                     </div>
                     
@@ -71,10 +72,11 @@ const Hero = () => {
                     className="absolute top-0 w-full h-full object-cover" 
                 />
                 <div className="relative flex justify-between mt px-10">
-                    <h2 className="text-white font_britanica_black text-[clamp(2.5vw,2.5vw,4rem)] ml-[4vw] mt-[5vw] max-w-[30vw]">
-                        Valuing Your Case.
-                        Persevering in Your Fight.
-                        Unlocking Your Future.
+                    <h2 className="text-white font_britanica_black text-[clamp(2.5vw,2.5vw,4rem)] ml-[4vw] mt-[5vw] max-w-[30vw] ">
+                        <p className="tracking-none"><span className="text-[#FF8A9D]">C</span>ompassionate</p>
+                        <p className=" tracking-none"><span className="text-[#FF8A9D]">A</span>gility</p> 
+                        <p className=" tracking-none"><span className="text-[#FF8A9D]">R</span>eliable</p> 
+                        <p className=" tracking-none"><span className="text-[#FF8A9D]">E</span>arnest</p> 
                     </h2>
                     <div className="relative w-[8vw] aspect-square mt-[25vw] mr-[2vw]">
                         <Image

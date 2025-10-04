@@ -4,20 +4,22 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { type Member } from "@/lib/members";
 
-type FilterKey = 'seniorPartner' | 'partner' | 'ofCounsel' | 'associates' | 'midAssociates';
+type FilterKey = 'seniorPartner' | 'partner' | 'ofCounsel' | 'associates' | 'midAssociate' | "seniorAssociate";
 
 interface FiltersState {
     seniorPartner: boolean;
     partner: boolean;
     ofCounsel: boolean;
     associates: boolean;
-    midAssociates: boolean;
+    midAssociate: boolean;
+    seniorAssociate: boolean;
 }
 
 const mapTitleToFilterKey = (title: string): FilterKey | null => {
     const lowerCaseTitle = title.toLowerCase();
     if (lowerCaseTitle.includes('senior partner')) return 'seniorPartner';
-    if (lowerCaseTitle.includes('mid associate')) return 'midAssociates';
+    if (lowerCaseTitle.includes('mid associate')) return 'midAssociate';
+    if (lowerCaseTitle.includes('senior associate')) return 'seniorAssociate';
     if (lowerCaseTitle.includes('partner')) return 'partner';
     if (lowerCaseTitle.includes('of counsel')) return 'ofCounsel';
     if (lowerCaseTitle.includes('associate')) return 'associates';
@@ -30,7 +32,8 @@ const Main = ({ members }: { members: Member[] }) => {
         partner: false,
         ofCounsel: false,
         associates: false,
-        midAssociates: false,
+        midAssociate: false,
+        seniorAssociate: false,
     });
 
     const handleFilterChange = (filterName: FilterKey) => {
@@ -38,7 +41,7 @@ const Main = ({ members }: { members: Member[] }) => {
     };
 
     const resetFilters = () => {
-        setFilters({ seniorPartner: false, partner: false, ofCounsel: false, associates: false, midAssociates: false });
+        setFilters({ seniorPartner: false, partner: false, ofCounsel: false, associates: false, midAssociate: false, seniorAssociate: false });
     };
 
     const filteredMembers = members.filter(member => {
@@ -113,13 +116,25 @@ const Main = ({ members }: { members: Member[] }) => {
 
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
                             <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                                Senior Associate
+                            </label>
+                            <div
+                                onClick={() => handleFilterChange('seniorAssociate')}
+                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.seniorAssociate ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
+                            >
+                                {filters.seniorAssociate && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
+                            </div>
+                        </div>
+
+                        <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
+                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Mid Associate
                             </label>
                             <div
-                                onClick={() => handleFilterChange('midAssociates')}
-                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.midAssociates ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
+                                onClick={() => handleFilterChange('midAssociate')}
+                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.midAssociate ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
                             >
-                                {filters.midAssociates && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
+                                {filters.midAssociate && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
 

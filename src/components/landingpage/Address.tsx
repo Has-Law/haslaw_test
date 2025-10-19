@@ -59,8 +59,9 @@ const Address = () => {
                         <div>
                             <h3 className="font_montserrat_bold text-[#780014] text-[clamp(1.5vw,1.5vw,2vw)]">Address</h3>
                             <p className="font_britanica_bold text-black text-[clamp(1vw,1vw,1.5vw)] leading-relaxed">
-                                Plaza Sentral 15th Floor, Jln. Jendral Sudirman Kav 47 - 48, Jakarta Selatan 12930, Indonesia
-                            </p>
+                                Plaza Sentral 15th Floor
+                                Jln. Jendral Sudirman Kav 47-48
+                                Jakarta Selatan 12930, Indonesia                            </p>
                         </div>
                     </div>
                 </div>
@@ -93,8 +94,9 @@ const Address = () => {
                         <div>
                             <h3 className="font_montserrat_bold text-[#780014] text-[clamp(1.1rem,2.5vw,1.7rem)]">Address</h3>
                             <p className="font_britanica_bold text-black text-[clamp(1rem,2.2vw,1.4rem)] leading-relaxed">
-                                Plaza Sentral 15th Floor, Jln. Jendral Sudirman Kav 47 - 48, Jakarta Selatan 12930, Indonesia
-                            </p>
+                                Plaza Sentral 15th Floor
+                                Jln. Jendral Sudirman Kav 47-48
+                                Jakarta Selatan 12930, Indonesia                            </p>
                         </div>
                     </div>
                 </div>

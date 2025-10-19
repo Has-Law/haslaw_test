@@ -2,23 +2,38 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import achievementBg from "@/assets/landingpage/background/achievement.webp";
-import alb23 from "@/assets/landingpage/image/alb23.webp";
-import alb24 from "@/assets/landingpage/image/alb24.webp";
-import leader23 from "@/assets/landingpage/image/leader23.webp";
-import bench24 from "@/assets/landingpage/image/bench24.webp";
-import top23 from "@/assets/landingpage/image/top23.webp";
-import top24 from "@/assets/landingpage/image/top24.webp";
-import iflr24 from "@/assets/landingpage/image/IFLR24.webp";
+import alb from "@/assets/achievments/alb.png";
+import alb25 from "@/assets/achievments/alb25.png";
+import hukum from "@/assets/achievments/hukum.png";
+import next24 from "@/assets/achievments/next24.png";
+import next26 from "@/assets/achievments/next26.png";
+import litigation from "@/assets/achievments/litigation.png";
+import hukum23 from "@/assets/achievments/hukum23.png";
+import iflr from "@/assets/achievments/iflr.png";
+import alb23 from "@/assets/achievments/alb23.png";
+
+import leader23 from "@/assets/achievments/leader23.png";
+import hukum24 from "@/assets/achievments/hukum24.png";
+import hukum25 from "@/assets/achievments/hukum25.png";
+import star25 from "@/assets/achievments/star25.png";
+import star24 from "@/assets/achievments/star24.png";
 import Link from "next/link";
 
 const achievements = [
   { image: alb23 },
-  { image: alb24 },
+  { image: alb25 },
+  { image: hukum },
+  { image: next24 },
+  { image: next26 },
+  { image: litigation },
+  { image: hukum23 },
+  { image: iflr },
+  { image: hukum24 },
+  { image: hukum25 },
+  { image: star25 },
+  { image: star24 },
+  { image: alb },
   { image: leader23 },
-  { image: bench24 },
-  { image: top23 },
-  { image: top24 },
-  { image: iflr24 }
 ];
 
 const Achievement = () => {

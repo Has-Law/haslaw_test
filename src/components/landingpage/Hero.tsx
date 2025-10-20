@@ -74,9 +74,9 @@ const Hero = () => {
                     className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="relative flex flex-col justify-between w-full  px-10">
-                    <div className="flex items-center justify-between pb-16">
+                    <div className="flex items-center justify-between pb-28">
                         <div className=" flex items-start">
-                            <h2 className="text-white font_britanica_black leading-tight text-[clamp(2.5vw,2.5vw,4rem)] ml-[4vw]    ">
+                            <h2 className="text-white font_britanica_black leading-tight text-[clamp(2vw,2vw,4rem)] ml-[9vw]    ">
                                 <p className="tracking-none"><span className="text-[#FF8A9D]">C</span>ompassionate</p>
                                 <p className=" tracking-none"><span className="text-[#FF8A9D]">A</span>gility</p>
                                 <p className=" tracking-none"><span className="text-[#FF8A9D]">R</span>eliable</p>

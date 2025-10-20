@@ -47,7 +47,7 @@ export default function MemberDetailClient() {
                 {/* Hero Section Mobile */}
                 <div className="relative w-[90vw] mt-5 overflow-hidden mx-auto">
                     <Image src={`${API_BASE_URL}/${member.detail_image}`} width={500} height={500} alt="Member Photo" className="w-full h-auto rounded-2xl object-cover  " />
-                    <div className="absolute flex flex-col gap-y-2 justify-center w-full items-center bottom-1  text-white text-center z-10">
+                    <div className="absolute flex flex-col gap-y-2 justify-center w-full items-center bottom-6  text-white text-center z-10">
                         <h1 className="font_britanica_heavy text-[clamp(4.5vw,4.5vw,4.5rem)] leading-tight">{member.full_name}</h1>
                         <p className="font_britanica_regular text-[clamp(4vw,4vw,1.8rem)]  opacity-90">{member.title_position}</p>
                     </div>
@@ -61,7 +61,7 @@ export default function MemberDetailClient() {
                     <div className="flex items-center gap-x-[clamp(0.8rem,2vw,1rem)]"><Image src={mail_mobile} alt="mail icon" className="w-[clamp(1.2rem,4vw,2rem)] h-[clamp(1.2rem,4vw,2rem)]" /><a href={`https://mail.google.com/mail/?view=cm&fs=1&to=info@has-law.com`} target="_blank" rel="noopener noreferrer" className="font_britanica_regular text-[clamp(0.8rem,3.5vw,1.2rem)] hover:underline">Email</a></div>
                     <div className="flex items-center gap-x-[clamp(0.8rem,2vw,1rem)]"><Image src={phone_mobile} alt="phone icon" className="w-[clamp(1.2rem,4vw,2rem)] h-[clamp(1.2rem,4vw,2rem)]" /><p className="font_britanica_regular text-[clamp(0.8rem,3.5vw,1.2rem)]">+62 8785 790 5183</p></div>
                     <div className="flex items-center gap-x-[clamp(0.8rem,2vw,1rem)]"><Image src={download_mobile} alt="download icon" className={`w-[clamp(1.2rem,4vw,2rem)] h-[clamp(1.2rem,4vw,2rem)] ${!member.business_card || member.business_card.trim() === '' ? 'opacity-50' : ''}`} />{member.business_card && member.business_card.trim() !== '' ? (<a href={`${API_BASE_URL}/${member.business_card}`} target="_blank" rel="noopener noreferrer" className="font_britanica_regular text-[clamp(0.8rem,3.5vw,1.2rem)] hover:underline">Download Business Card</a>) : (<span className="font_britanica_regular text-[clamp(0.8rem,3.5vw,1.2rem)] opacity-50 cursor-not-allowed">Business Card (Not Available)</span>)}</div>
-                                    <div className="h-[0.5px] w-full bg-[#C90021] px-[clamp(1rem,4vw,5rem)]"/>
+                    <div className="h-[0.5px] w-full bg-[#780014] px-[clamp(1rem,4vw,5rem)] mt-5"/>
 
                 </div>
 

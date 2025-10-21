@@ -41,7 +41,7 @@ const Achievement = () => {
 
     return (
     <div className="relative flex flex-col items-center justify-center 
-               py-12 md:py-0 md:aspect-[1280/400] mt-8 md:mt-[5.6vw]">
+               py-12 md:py-0 md:aspect-[1280/400] ">
             <Image 
                 src={achievementBg} 
                 alt="Achievement Background" 

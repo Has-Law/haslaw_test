@@ -11,7 +11,7 @@ const Service = () => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
-        <div className="relative flex flex-col items-center justify-center py-12 md:py-0 md:aspect-[1280/420] mt-8 md:mt-[2.6vw]">
+        <div className="relative flex flex-col items-center justify-center py-12 md:py-0 md:aspect-[1280/420]  ">
             <Image 
                 src={servicebg} 
                 alt="Service Background" 

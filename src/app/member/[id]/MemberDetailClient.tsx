@@ -113,7 +113,7 @@ export default function MemberDetailClient() {
                     </div>
                 </div>
                 {/* Content Section Desktop */}
-                <div className="py-[clamp(3rem,8vw,8rem)] px-[clamp(1rem,4vw,5rem)]">
+                <div className="py-[clamp(3rem,8vw,8rem)] px-[5vw]">
                     <div className="mx-auto flex flex-row gap-x-[clamp(3rem,8vw,10rem)] items-start">
                         <div className="flex flex-col text-justify w-full lg:w-[clamp(100%,100%,100%)]"><p className="text-[#131313] font_britanica_regular text-[clamp(1rem,1.4vw,1.6rem)] leading-relaxed whitespace-pre-wrap">{member.biography}</p></div>
                         <div className="flex flex-col gap-y-[clamp(2rem,2.5vw,4rem)] w-full lg:w-[clamp(35%,40%,45%)]">

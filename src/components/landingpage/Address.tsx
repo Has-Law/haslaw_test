@@ -6,7 +6,7 @@ const Address = () => {
     const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3531296021315!2d106.81378637540331!3d-6.21707626089426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7b8132100b7%3A0xa648aba444960aa8!2sPlaza%20Sentral!5e0!3m2!1sid!2sid!4v1754407995784!5m2!1sid!2sid";
 
     return (
-        <div className="bg-[#f2f2f2] w-full flex justify-center items-center py-20 px-4 md:px-6 lg:px-12">
+        <div className="bg-[#f2f2f2] w-full flex justify-center items-center py-10 px-4 md:px-6 lg:px-12">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-full max-w-screen-xl gap-y-12 lg:gap-x-16">
 
                 <h1 className="font_britanica_black w-full text-[clamp(2.5rem,7vw,4.2rem)] leading-none lg:hidden">

@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
                             </a>
                             <div className="flex items-start space-x-3">
                                 <Image src={locationIcon} alt="Location" className="w-5 h-5 flex-shrink-0 mt-1" />
-                                <p className="text-[#4F000D] leading-relaxed text-[clamp(0.9rem,3.5vw,1.2rem)]">
+                                <p className="text-[#4F000D] leading-relaxed text-[clamp(0.9rem,3.5vw,1.2rem)] max-w-xs">
 Plaza Sentral 15th Floor
 Jln. Jendral Sudirman Kav 47-48
 Jakarta Selatan 12930, Indonesia                                </p>
@@ -162,7 +162,7 @@ Jakarta Selatan 12930, Indonesia                                </p>
                             </div>
                             <div className="flex items-start space-x-[clamp(1rem,1vw,1.5rem)]">
                                 <Image src={locationIcon} alt="Location" className="w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.5rem,2vw,2rem)] flex-shrink-0 " />
-                                <p className="text-[#4F000D] leading-relaxed text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">
+                                <p className="text-[#4F000D] leading-relaxed text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)] max-w-xs">
 Plaza Sentral 15th Floor
 Jln. Jendral Sudirman Kav 47-48
 Jakarta Selatan 12930, Indonesia                                </p>

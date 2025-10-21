@@ -97,11 +97,11 @@ export default function MemberDetailClient() {
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center px-[clamp(1rem,4vw,5rem)] z-10">
                         <div className="flex flex-row items-center gap-x-[clamp(1rem,3vw,4rem)] w-full max-w-[80vw]">
-                            <Image src={`${API_BASE_URL}/${member.detail_image}`} width={500} height={500} alt="Member Photo" className="w-[clamp(19rem,37vw,38rem)] h-auto rounded-2xl object-cover flex-shrink-0" />
+                            <Image src={`${API_BASE_URL}/${member.detail_image}`} width={500} height={500} alt="Member Photo" className="w-[clamp(20vw,30vw,38rem)] h-auto rounded-2xl object-cover flex-shrink-0" />
                             <div className="flex flex-col justify-center text-white flex-1 text-left">
-                                <h1 className="font_britanica_heavy text-[clamp(2rem,4.5vw,5rem)] leading-tight mb-[clamp(0.5rem,2vw,1rem)]">{member.full_name}</h1>
-                                <p className="font_britanica_regular text-[clamp(1.2rem,2.2vw,2.2rem)] mb-[clamp(1.5rem,6vw,3rem)] opacity-90">{member.title_position}</p>
-                                <div className="flex flex-col gap-y-[clamp(1rem,1.5vw,2rem)]">
+                                <h1 className="font_britanica_heavy text-[clamp(3vw,3vw,5rem)] leading-tight mb-[clamp(0.5rem,2vw,1rem)]">{member.full_name}</h1>
+                                <p className="font_britanica_regular text-[clamp(1.2rem,2.2vw,2.2rem)] mb-[clamp(1vw,1vw,3rem)] opacity-90">{member.title_position}</p>
+                                <div className="flex flex-col gap-y-[clamp(1.5vw,1.5vw,2rem)]">
                                     <div className="flex flex-col items-start gap-y-[clamp(0.5rem,2vw,0rem)]">
                                         <div className="flex items-center gap-x-[clamp(0.8rem,2vw,1rem)]"><Image src={mail} alt="mail icon" className="w-[clamp(1.5rem,2.2vw,2.5rem)] h-[clamp(1.5rem,2.2vw,2.5rem)]" /><a href={`https://mail.google.com/mail/?view=cm&fs=1&to=info@has-law.com`} target="_blank" rel="noopener noreferrer" className="font_britanica_regular text-[clamp(1rem,1.4vw,1.6rem)] hover:underline">Email</a></div>
                                         <div className="flex items-center gap-x-[clamp(0.8rem,2vw,1rem)]"><Image src={phone} alt="phone icon" className="w-[clamp(1.5rem,2.2vw,2.5rem)] h-[clamp(1.5rem,2.2vw,2.5rem)]" /><p className="font_britanica_regular text-[clamp(1rem,1.4vw,1.6rem)]">+62 8785 790 5183</p></div>

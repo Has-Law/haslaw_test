@@ -43,13 +43,13 @@ const Address = () => {
                                 <a href="tel:+622157905183">
                                     <div className="flex items-center gap-2">
                                         <Image src={phoneIcon} alt="phone" width={24} height={24} />
-                                        <p className="font_britanica_bold text-black text-[clamp(1vw,1vw,1.5vw)]">+6221 5790 5183</p>
+                                        <p className="font_britanica_bold text-black text-[clamp(1.2vw,1.2vw,1.5vw)]">+6221 5790 5183</p>
                                     </div>
                                 </a>
                                 <a href="https://wa.me/6287857905183" target="_blank" rel="noopener noreferrer">
                                     <div className="flex items-center gap-2">
                                         <Image src={waIcon} alt="whatsapp" width={24} height={24} />
-                                        <p className="font_britanica_bold text-black text-[clamp(1vw,1vw,1.5vw)]">+62 8785 790 5183</p>
+                                        <p className="font_britanica_bold text-black text-[clamp(1.2vw,1.2vw,1.5vw)]">+62 8785 790 5183</p>
                                     </div>
                                 </a>
                             </div>
@@ -58,7 +58,7 @@ const Address = () => {
 
                         <div>
                             <h3 className="font_montserrat_bold text-[#780014] text-[clamp(1.5vw,1.5vw,2vw)]">Address</h3>
-                            <p className="font_britanica_bold text-black text-[clamp(1vw,1vw,1.5vw)] leading-relaxed">
+                            <p className="font_britanica_bold text-black text-[clamp(1.2vw,1.2vw,1.5vw)]  max-w-xs">
                                 Plaza Sentral 15th Floor
                                 Jln. Jendral Sudirman Kav 47-48
                                 Jakarta Selatan 12930, Indonesia                            </p>

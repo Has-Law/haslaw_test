@@ -72,11 +72,11 @@ export default function MemberDetailClient() {
                         <div className="flex flex-col gap-y-[clamp(2rem,6vw,3rem)] w-full">
                             <div className="flex flex-col items-start">
                                 <h2 className="text-[#C90021] font_britanica_black text-[clamp(1.3rem,5.5vw,2rem)] mb-[clamp(0.8rem,3vw,1.5rem)]">Practice Focus</h2>
-                                <p className="text-[#131313] font_britanica_regular text-[clamp(0.85rem,4vw,1.1rem)] space-y-[clamp(0.3rem,1vw,0.8rem)] leading-relaxed">{member.practice_focus}</p>
+                                <p className="text-[#131313] font_britanica_regular text-[clamp(0.85rem,4vw,1.1rem)] space-y-[clamp(0.3rem,1vw,0.8rem)] leading-relaxed text-justify">{member.practice_focus}</p>
                             </div>
                             <div className="flex flex-col items-start">
                                 <h2 className="text-[#C90021] font_britanica_black text-[clamp(1.3rem,5.5vw,2rem)] mb-[clamp(0.8rem,3vw,1.5rem)]">Education</h2>
-                                <ul className="text-[#131313] font_britanica_regular text-[clamp(0.85rem,4vw,1.1rem)] space-y-[clamp(0.3rem,1vw,0.8rem)] leading-relaxed">
+                                <ul className="text-[#131313] font_britanica_regular text-[clamp(0.85rem,4vw,1.1rem)] space-y-[clamp(0.3rem,1vw,0.8rem)] leading-relaxed text-justify">
                                     {member.education?.map((item: string, index: number) => (<li key={index} className="relative pl-4"><span className="absolute left-0 text-[#C90021]">• </span>{item}</li>))}
                                 </ul>
                             </div>
@@ -119,11 +119,11 @@ export default function MemberDetailClient() {
                         <div className="flex flex-col gap-y-[clamp(2rem,2.5vw,4rem)] w-full lg:w-[clamp(35%,40%,45%)]">
                             <div className="flex flex-col items-start">
                                 <h2 className="text-[#C90021] font_britanica_black text-[clamp(1.5rem,2vw,2.2rem)] mb-[clamp(0.8rem,3vw,1.5rem)]">Practice Focus</h2>
-                                <p className="text-[#131313] font_britanica_regular text-[clamp(0.9rem,1.3vw,1.4rem)] space-y-[clamp(0.3rem,1vw,0.8rem)] leading-relaxed">{member.practice_focus}</p>
+                                <p className="text-[#131313] font_britanica_regular text-[clamp(0.9rem,1.3vw,1.4rem)] space-y-[clamp(0.3rem,1vw,0.8rem)] text-justify leading-relaxed">{member.practice_focus}</p>
                             </div>
                             <div className="flex flex-col items-start">
                                 <h2 className="text-[#C90021] font_britanica_black text-[clamp(1.5rem,2vw,2.2rem)] mb-[clamp(0.8rem,3vw,1.5rem)]">Education</h2>
-                                <ul className="text-[#131313] font_britanica_regular text-[clamp(0.9rem,1.3vw,1.4rem)] space-y-[clamp(0.3rem,1vw,0.8rem)] leading-relaxed">
+                                <ul className="text-[#131313] font_britanica_regular text-[clamp(0.9rem,1.3vw,1.4rem)] space-y-[clamp(0.3rem,1vw,0.8rem)] leading-relaxed text-justify">
                                     {member.education?.map((item: string, index: number) => (<li key={index} className="relative pl-4"><span className="absolute left-0 text-[#C90021]">• </span>{item}</li>))}
                                 </ul>
                             </div>

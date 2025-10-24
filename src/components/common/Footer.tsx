@@ -22,9 +22,9 @@ const Footer: React.FC = () => {
                     {/* Bagian Atas Mobile */}
                     <div>
                         <div className="flex flex-row justify-between items-center mb-[clamp(1.5rem,4vw,2rem)]">
-                            <Image 
-                                src={logoMobile} 
-                                alt="HAS Law Logo" 
+                            <Image
+                                src={logoMobile}
+                                alt="HAS Law Logo"
                                 className="w-[clamp(8rem,20vw,9rem)] h-auto"
                             />
                             <div className="flex space-x-[clamp(0.8rem,3vw,1rem)]">
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                             <li><Link href="/pro-bono" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(3.5,3.5vw,1.2rem)]">Pro Bono</Link></li>
                         </ul>
                     </div>
-            
+
                     <div className="flex flex-col">
                         <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,1.5rem)] mb-4">Explore Services</h3>
                         <ul className="space-y-3">
@@ -85,10 +85,12 @@ const Footer: React.FC = () => {
                             </a>
                             <div className="flex items-start space-x-3">
                                 <Image src={locationIcon} alt="Location" className="w-5 h-5 flex-shrink-0 mt-1" />
-                                <p className="text-[#4F000D] leading-relaxed text-[clamp(0.9rem,3.5vw,1.2rem)] max-w-xs">
-Plaza Sentral 15th Floor
-Jln. Jendral Sudirman Kav 47-48
-Jakarta Selatan 12930, Indonesia                                </p>
+                                <p className="text-[#4F000D] leading-relaxed text-nowrap text-[clamp(3.5vw,3.5vw,1.2rem)] max-w-xs">
+                                    Plaza Sentral 15th Floor <br />
+                                    Jln. Jendral Sudirman Kav 47-48
+                                    <br />
+                                    Jakarta Selatan 12930, Indonesia                                
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -97,11 +99,11 @@ Jakarta Selatan 12930, Indonesia                                </p>
                 <div className="hidden lg:flex flex-row gap-[clamp(4rem,6vw,6rem)] lg:px-[clamp(1.5rem,10vw,15vw)]">
                     <div className="flex flex-col justify-start">
                         <div className="mb-[clamp(1.2rem,1.5vw,1.5rem)]">
-                            <Image 
-                                src={logo} 
-                                alt="HAS Law Logo" 
-                                width={320} 
-                                height={110} 
+                            <Image
+                                src={logo}
+                                alt="HAS Law Logo"
+                                width={320}
+                                height={110}
                                 className="mb-3 w-[clamp(15vw,25vw,20rem)] h-auto"
                             />
                         </div>
@@ -135,7 +137,7 @@ Jakarta Selatan 12930, Indonesia                                </p>
                             <li><Link href="/pro-bono" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">Pro Bono</Link></li>
                         </ul>
                     </div>
-            
+
                     <div className="flex flex-col">
                         <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,2rem)] lg:text-[clamp(1vw,1.5vw,2rem)] text-nowrap mb-[clamp(1vw,1.5vw,1.5rem)]">Explore Services</h3>
                         <ul className="space-y-[clamp(0.5vw,0.5vw,1rem)]">
@@ -162,10 +164,11 @@ Jakarta Selatan 12930, Indonesia                                </p>
                             </div>
                             <div className="flex items-start space-x-[clamp(1rem,1vw,1.5rem)]">
                                 <Image src={locationIcon} alt="Location" className="w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.5rem,2vw,2rem)] flex-shrink-0 " />
-                                <p className="text-[#4F000D] leading-relaxed text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)] max-w-xs">
-Plaza Sentral 15th Floor
-Jln. Jendral Sudirman Kav 47-48
-Jakarta Selatan 12930, Indonesia                                </p>
+                                <p className="text-[#4F000D]  text-[clamp(0.9rem,3.5vw,1.2rem)] text-nowrap lg:text-[clamp(1vw,1vw,1.5rem)] ">
+                                    Plaza Sentral 15th Floor <br />
+                                    Jln. Jendral Sudirman Kav 47-48
+                                    <br />
+                                    Jakarta Selatan 12930, Indonesia                                </p>
                             </div>
                         </div>
                     </div>
@@ -173,7 +176,7 @@ Jakarta Selatan 12930, Indonesia                                </p>
 
                 <div className="border-t border-[#4F000D] mt-[clamp(2.5rem,5vw,3rem)] pt-[clamp(1.2rem,2.5vw,1.5rem)]">
                     <div className="text-center px-[clamp(1.5rem,4vw,8rem)] lg:px-0">
-                        <p className="text-[#4F000D] text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">
+                        <p className="text-[#4F000D] text-[clamp(0.9rem,3.5vw,1.2rem)] leading-relaxed lg:text-[clamp(1vw,1vw,1.5rem)]">
                             Copyright © {new Date().getFullYear()} - Has Law
                         </p>
                     </div>

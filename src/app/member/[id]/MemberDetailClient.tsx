@@ -90,10 +90,9 @@ export default function MemberDetailClient() {
             {/* ======================================================= */}
             <div className="hidden sm:block bg-gray-100 min-h-screen w-full">
                 {/* Hero Section Desktop */}
-                <div className="relative w-full h-[clamp(25rem,200vh,100vh)] overflow-hidden">
+                <div className="relative w-full h-screen overflow-hidden">
                     <div className="absolute inset-0">
                         <Image src={bg} alt="bg" className="block w-full h-full object-cover" />
-                        <div className="absolute inset-0 "></div>
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center px-[clamp(1rem,4vw,5rem)] z-10">
                         <div className="flex flex-row items-center gap-x-[clamp(1rem,3vw,4rem)] w-full max-w-[80vw]">
@@ -113,7 +112,7 @@ export default function MemberDetailClient() {
                     </div>
                 </div>
                 {/* Content Section Desktop */}
-                <div className="py-[clamp(3rem,8vw,8rem)] px-[5vw]">
+                <div className="py-[clamp(5vw,5vw,8rem)] px-[5vw]">
                     <div className="mx-auto flex flex-row gap-x-[clamp(3rem,8vw,10rem)] items-start">
                         <div className="flex flex-col text-justify w-full lg:w-[clamp(100%,100%,100%)]"><p className="text-[#131313] font_britanica_regular text-[clamp(1rem,1.4vw,1.6rem)] leading-relaxed whitespace-pre-wrap">{member.biography}</p></div>
                         <div className="flex flex-col gap-y-[clamp(2rem,2.5vw,4rem)] w-full lg:w-[clamp(35%,40%,45%)]">

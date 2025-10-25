@@ -4,7 +4,7 @@ import stories1 from "@/assets/about/image/stories1.webp";
 import stories2 from "@/assets/about/image/stories2.webp";
 const Stories = () => {
   return (
-    <div className="flex flex-col sm:flex-row items-center sm:justify-center mt-[5vw]  gap-y-[4vw] sm:gap-y-0 sm:gap-x-[1.6vw] px-[5vw] relative">
+    <div className="flex flex-col sm:flex-row items-center sm:justify-center sm:mt-[5vw]  gap-y-[4vw] sm:gap-y-0 sm:gap-x-[1.6vw] px-[5vw] relative">
   <div className="w-full sm:w-[42vw] h-auto sm:h-[28vw] relative pb-[4vw] sm:pb-0">
   <Image src={ornament} alt="Ornament Background" className="hidden sm:block w-[50vw] sm:w-[28vw] absolute top-0 right-0 z-0" />
   <Image src={ornament} alt="Ornament Background" className="hidden sm:block w-[50vw] sm:w-[28vw] absolute bottom-0 left-0 z-0 rotate-90 scale-y-[-1] -translate-x-1/3" />

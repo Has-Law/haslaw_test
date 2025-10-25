@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getNewsBySlug, getAllNews } from "@/lib/news"; 
+import { getNewsBySlug, getAllNews } from "@/lib/news";
 
 export async function generateStaticParams() {
     const allNews = await getAllNews();
@@ -32,13 +32,13 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
     }
 
     const relatedNews = allNews.filter(item => item.slug !== slug).slice(0, 3);
-    
+
     const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
- 
+
     return (
         <div className="min-h-screen bg-gray-50">
-  
+
             <div className="relative h-[80vw] md:h-[52vw]">
                 <Image
                     src={`${API_BASE_URL}/${newsItem.image}`}
@@ -48,26 +48,29 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
                     priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:px-[8vw] md:py-[5vw] md:pr-[15vw] text-white flex flex-col gap-y-3 md:gap-y-[1vw]">
-                    <p className="bg-[#A0001B] px-3 py-1 rounded-lg w-fit font_britanica_bold text-xl md:text-xl">
-                        {newsItem.category}
-                    </p>
-                    <h1 className="font_britanica_black text-[clamp(2.5vw,2.5vw,4rem)] leading-tight">
-                        {newsItem.news_title}
-                    </h1>
-                    <p className="text-gray-300 font_britanica_regular text-[clamp(0.875rem,3vw,1.25rem)]">
-                        {new Date(newsItem.created_at).toLocaleDateString('id-ID', {
-                            year: 'numeric', month: 'long', day: 'numeric'
-                        })}
-                    </p>
+                <div className='absolute bottom-0 left-0 right-0 p-6 md:px-[8vw] md:py-[5vw] md:pr-[15vw] text-white flex flex-row gap-x-4 md:gap-x-6'>
+           <div className='h-[17vw] md:h-[14vw] w-2 bg-white rounded-tr-[2vw] rounded-br-[2vw]'/>         
+                    <div className="flex flex-col gap-y-[1vw]">
+                        <p className="bg-[#A0001B] px-3 py-[0.2vw] rounded-lg w-fit font_britanica_bold  text-[clamp(1.5vw,2.5vw,2.5vw)] md:text-[clamp(2vw,2vw,7vw)]">
+                            {newsItem.category}
+                        </p>
+                        <h1 className="font_britanica_black  text-[clamp(3vw,3.4vw,3rem)] md:text-[clamp(2.5vw,2.5vw,4rem)] leading-tight">
+                            {newsItem.news_title}
+                        </h1>
+                        <p className="text-gray-300 font_britanica_regular text-[clamp(1.5vw,2.5vw,2.5vw)] md:text-[clamp(2vw,2vw,5vw)]">
+                            {new Date(newsItem.created_at).toLocaleDateString('id-ID', {
+                                year: 'numeric', month: 'long', day: 'numeric'
+                            })}
+                        </p>
+                    </div>
                 </div>
             </div>
 
-      
-              <div className="px-[5vw] mb-[2vw]">
+
+            <div className="px-[5vw] mb-[2vw]">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-[3vw] mt-12">
                     <div className="sm:col-span-2">
-                    
+
                         <p className="font_britanica_regular text-gray-800 leading-relaxed 
                                    text-[clamp(1.1rem,2.5vw,1.25rem)] 
                                    whitespace-pre-wrap break-words text-justify">
@@ -75,7 +78,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
                         </p>
                     </div>
 
-   
+
                     <div className="lg:col-span-1 mt-12 lg:mt-0">
                         <div className="">
                             <div className="flex items-center gap-2 mb-6">

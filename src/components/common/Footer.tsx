@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
                                 </Link>
                             </div>
                         </div>
-                        <p className="text-gray-700 text-[clamp(3.5vw,3.5vw,1rem)] leading-relaxed">
+                        <p className="text-gray-700 text-[clamp(3vw,3.5vw,1rem)] leading-relaxed">
                             Securing your business with litigation excellence in court and precision in corporate strategy.
                         </p>
                     </div>
@@ -50,12 +50,12 @@ const Footer: React.FC = () => {
                     <div className="flex flex-col">
                         <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,1.5rem)] mb-4">Our firm</h3>
                         <ul className="space-y-3">
-                            <li><Link href="/" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(3.5vw,3.5vw,1.2rem)]">Home</Link></li>
-                            <li><Link href="/about" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(3.5vw,3.5vw,1.2rem)]">About Us</Link></li>
-                            <li><Link href="/member" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(3.5vw,3.5vw,1.2rem)]">Lawyers</Link></li>
-                            <li><Link href="/achievements" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(3.5vw,3.5vw,1.2rem)]">Achievements</Link></li>
-                            <li><Link href="/career" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(3.5vw,3.5vw,1.2rem)]">Careers</Link></li>
-                            <li><Link href="/pro-bono" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(3.5,3.5vw,1.2rem)]">Pro Bono</Link></li>
+                            <li><Link href="/" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Home</Link></li>
+                            <li><Link href="/about" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">About Us</Link></li>
+                            <li><Link href="/member" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Lawyers</Link></li>
+                            <li><Link href="/achievements" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Achievements</Link></li>
+                            <li><Link href="/career" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Careers</Link></li>
+                            <li><Link href="/pro-bono" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Pro Bono</Link></li>
                         </ul>
                     </div>
 
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
                             </a>
                             <div className="flex items-start space-x-3">
                                 <Image src={locationIcon} alt="Location" className="w-5 h-5 flex-shrink-0 mt-1" />
-                                <p className="text-[#4F000D] leading-relaxed text-nowrap text-[clamp(3.5vw,3.5vw,1.2rem)] max-w-xs">
+                                <p className="text-[#4F000D] leading-relaxed text-nowrap text-[clamp(0.9rem,3.5vw,1.2rem)] max-w-xs">
                                     Plaza Sentral 15th Floor <br />
                                     Jln. Jendral Sudirman Kav 47-48
                                     <br />

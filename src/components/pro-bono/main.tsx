@@ -10,7 +10,7 @@ const Main = () => {
         <h1 className="sm:font_lato_regular text-[clamp(6vw,5.7vw,8vw)] sm:text-[clamp(3vw,3vw,5vw)] sm:text-nowrap font_britanica_black">
           Pro Bono
         </h1>
-        <p className="font_britanica_bold sm:text-[clamp(1.2vw,1.5vw,5vw)] text-[clamp(2vw,4vw,5vw)] sm:text-justify text-center ">
+        <p className="font_britanica_bold sm:text-[clamp(1.2vw,1.5vw,5vw)] text-[clamp(2vw,4vw,5vw)] text-justify text-center ">
           At HAS Attorneys at Law, we believe that law is more than a
           profession, it is a calling to serve. We view our pro bono practice
           not as an obligation, but as the core of our responsibility to the
@@ -20,7 +20,7 @@ const Main = () => {
         </p>
       </div>
       <div className="flex justify-center items-center text-center bg-[linear-gradient(90deg,_#A0001B_0%,_#3A000A_100%)] p-[8vw] rounded-t-[2.4vw]">
-        <h3 className="font_britanica_bold sm:text-[clamp(1.2vw,1.5vw,5vw)] text-[clamp(2vw,4vw,5vw)] text-white sm:text-justify text-center">
+        <h3 className="font_britanica_bold sm:text-[clamp(1.2vw,1.5vw,5vw)] text-[clamp(2vw,4vw,5vw)] text-white text-justify text-center">
           We dedicate our time, resources, and litigation expertise to accompany
           individuals and organizations who fight for justice but have limited
           access. Our team actively seeks pro bono cases where we can create a
@@ -39,7 +39,7 @@ const Main = () => {
           alt="ornament-mobile"
           className="w-full sm:hidden block mt-[-5vw]"
         />
-        <div className="flex flex-col  gap-y-[4vw] sm:px-0 px-[5vw]  w-full">
+        <div className="flex flex-col  gap-y-[4vw] sm:px-0 px-[5vw] text-justify w-full">
           <h1 className="font_britanica_bold flex justify-center bg-clip-text text-transparent bg-[linear-gradient(0deg,_#000000_-29.55%,_#F20028_128.41%)] text-[clamp(5vw,8vw,10vw)] sm:text-[clamp(3vw,3vw,5vw)]">
             Our Pro Bono Stories
           </h1>

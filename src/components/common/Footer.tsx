@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
                     </div>
 
                     <div className="flex flex-col">
-                        <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,2rem)] lg:text-[clamp(1vw,1.5vw,2rem)] text-nowrap mb-[clamp(1vw,1.5vw,1.5rem)]">Explore Services</h3>
+                        <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,2rem)] lg:text-[clamp(1vw,1.5vw,2rem)] text-nowrap mb-[clamp(1vw,1vw,1.5rem)]">Explore Services</h3>
                         <ul className="space-y-[clamp(0.5vw,0.5vw,1rem)]">
                             <li><Link href="/service" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">Our Services</Link></li>
                             <li><Link href="/news" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">Insights</Link></li>
@@ -148,7 +148,7 @@ const Footer: React.FC = () => {
                     </div>
 
                     <div className="flex flex-col">
-                        <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,2rem)] lg:text-[clamp(1vw,1.5vw,2rem)] mb-[clamp(1vw,1.5vw,1.5rem)]">Contact Us</h3>
+                        <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,2rem)] lg:text-[clamp(1vw,1.5vw,2rem)] mb-[clamp(1vw,1vw,1.5rem)]">Contact Us</h3>
                         <div className="space-y-[clamp(0.5vw,0.5vw,1rem)]">
                             <div className="flex items-start space-x-[clamp(1rem,1vw,1.5rem)]">
                                 <Image src={emailIcon} alt="Email" className="w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.5rem,2vw,2rem)] flex-shrink-0 " />

@@ -65,7 +65,7 @@ const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.35312
                 />
                 <div className="absolute inset-0  flex flex-col items-center justify-center z-10 p-6 text-white">
                     <h1 className="text-[clamp(4vw,6vw,6rem)] sm:text-[clamp(1.8vw,3vw,4.5rem)] font_britanica_black mb-4 tracking-wide text-center drop-shadow-lg">Contact Us</h1>
-                    <p className="text-[clamp(2vw,3vw,2rem)] sm:text-[clamp(1vw,2vw,1.25rem)] max-w-6xl text-center font_britanica_regular leading-relaxed opacity-90 drop-shadow-md">
+                    <p className="text-[clamp(0.85rem,4vw,1.2rem)] max-w-4xl text-justify font_britanica_regular leading-relaxed opacity-90 drop-shadow-md">
                         We understand that every legal challenge is significant and often complex. Taking the first step to contact us is the key to finding clarity and a solution. Our team is ready to listen to your story with full confidentiality and provide the guidance you need.
                     </p>
                 </div>

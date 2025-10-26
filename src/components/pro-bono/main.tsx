@@ -59,7 +59,7 @@ const Main = () => {
               are still alive.
             </h3>
           </div>
-          <div className="flex flex-row items-center gap-x-[2vw] ">
+          <div className="flex flex-row items-start  gap-x-[2vw] ">
             <h2
               className="text-white bg-[#A0001B] rounded-full w-[7vw] h-[7vw] sm:w-[5vw] sm:h-[5vw] flex items-center justify-center text-[clamp(2vw,4vw,4vw)] flex-shrink-0"
               style={{ boxShadow: "0px 4px 4px 0px #00000040" }}
@@ -71,7 +71,7 @@ const Main = () => {
               committed by the hospital for eye surgery.
             </h3>
           </div>
-          <div className="flex flex-row items-center gap-x-[2vw] ">
+          <div className="flex flex-row items-start gap-x-[2vw] ">
             <h2
               className="text-white bg-[#A0001B] rounded-full w-[7vw] h-[7vw] sm:w-[5vw] sm:h-[5vw] flex items-center justify-center text-[clamp(2vw,4vw,5vw)] flex-shrink-0"
               style={{ boxShadow: "0px 4px 4px 0px #00000040" }}
@@ -83,7 +83,7 @@ const Main = () => {
               malpractice committed by the hospital for a tonsillectomy.
             </h3>
           </div>
-          <div className="flex flex-row items-center gap-x-[2vw] ">
+          <div className="flex flex-row items-start gap-x-[2vw] ">
             <h2
               className="text-white bg-[#A0001B] rounded-full w-[7vw] h-[7vw] sm:w-[5vw] sm:h-[5vw] flex items-center justify-center text-[clamp(2vw,4vw,5vw)] flex-shrink-0"
               style={{ boxShadow: "0px 4px 4px 0px #00000040" }}

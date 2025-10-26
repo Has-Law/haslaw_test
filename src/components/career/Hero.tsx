@@ -46,7 +46,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="flex flex-col justify-center items-center gap-y-[clamp(3rem,5vw,4rem)] pb-[clamp(1rem,2vw,2rem)]">
+        <div className="flex flex-col justify-center items-center gap-y-[clamp(5vw,5vw,4rem)] pb-[clamp(1rem,2vw,2rem)]">
      
             <div className="flex flex-col justify-center items-end relative w-full">
                 {/* Desktop Hero */}
@@ -64,7 +64,7 @@ const Hero = () => {
 
                 {/* Mobile Hero - Layout matching the image */}
                 <div className="block sm:hidden w-full relative">
-                    <div className="relative aspect-[9/16] w-full overflow-hidden">
+                    <div className="relative w-full overflow-hidden">
                         <Image src={heroMobile} alt="Hero Mobile" className="w-[60vw] h-full object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t  to-[#F5F5F5]"></div>
                         
@@ -93,8 +93,8 @@ const Hero = () => {
             </div>
 
       
-            <div className="relative items-center flex flex-col gap-y-[clamp(1.5rem,2vw,2rem)] pt-[clamp(1rem,2vw,2rem)] w-full px-[clamp(1rem,2vw,3rem)]">
-                <h1 className="font_britanica_bold bg-gradient-to-t from-black via-[#860016] to-[#F20028] bg-clip-text text-transparent text-[clamp(1.8rem,3vw,5rem)] text-center">Who We&apos;re Looking For</h1>
+            <div className="relative items-center flex flex-col gap-y-[clamp(1.5rem,2vw,2rem)] w-full px-[clamp(1rem,2vw,3rem)]">
+                <h1 className="font_britanica_bold bg-gradient-to-t from-black via-[#860016] to-[#F20028] bg-clip-text text-transparent sm:mt-[1vw] text-[clamp(1.8rem,3vw,5rem)] text-center leading-none">Who We&apos;re Looking For</h1>
                 
                 {/* Desktop Layout */}
                 <div className="hidden sm:flex flex-row justify-center items-center ">
@@ -208,7 +208,7 @@ const Hero = () => {
                 </div>
 
                 {/* Mobile Layout - Full Width Cards */}
-                <div className="block sm:hidden w-full space-y-[clamp(1.5rem,6vw,2rem)]">
+                <div className="block sm:hidden w-full space-y-[clamp(1.5rem,6vw,2rem)] mb-[1rem]">
                     {/* Internship Mobile */}
                     <div className="relative w-full aspect-[16/9] overflow-hidden rounded-lg">
                         <Image src={internshipfull} alt="Internship" className="w-full h-full object-cover" />

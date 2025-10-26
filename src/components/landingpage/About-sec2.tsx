@@ -20,7 +20,7 @@ const AboutSec2 = () => {
                 />
             </div>
 
-            <div className="flex flex-col mt-8 items-start gap-y-6 sm:gap-y-[2vw] sm:py-[2vw] w-full">
+            <div className="flex flex-col  items-start gap-y-6 sm:gap-y-[2vw] sm:py-[2vw] w-full">
                 <h1 className="text-3xl sm:text-[clamp(0.5vw,2.7vw,5rem)]">
                     <span className="font_britanica_regular text-gray-800 sm:text-[#131313]">Introducing</span>
                     <br />

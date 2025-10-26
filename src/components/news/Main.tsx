@@ -16,13 +16,13 @@ const NewsCard = ({ item }: { item: News }) => (
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-[2vw] text-white flex flex-row items-center sm:h-[12vw] h-[18vw] gap-x-[1vw]">
-                <h1 className='h-full w-[0.5vw] sm:w-[0.5vw] bg-white rounded-r-[2vw]'></h1>
+            <div className="absolute bottom-0 left-0 right-0 p-[2vw] text-white flex flex-row items-stretch  gap-x-[1vw]">
+                <h1 className='w-1  bg-white rounded-r-[2vw]'></h1>
                 <div className='flex flex-col w-full justify-between h-full'>
                     <h3 className="bg-[#A0001B] px-[1vw] py-[0.2vw] rounded text-[clamp(2vw,2vw,2rem)] sm:text-[clamp(1vw,1vw,1rem)] font_britanica_bold w-fit">
                         {item.category} 
                     </h3>
-                    <h3 className="font_britanica_bold text-[clamp(3vw,3vw,3rem)] sm:text-[clamp(1.5vw,1.5vw,2rem)] text-[#F5F5F5] group-hover:text-[#A0001B] transition-colors duration-300">
+                    <h3 className="font_britanica_black text-justify text-[clamp(3vw,3vw,3rem)] sm:text-[clamp(1.5vw,1.5vw,2rem)] text-[#F5F5F5] group-hover:text-[#A0001B] transition-colors duration-300">
                         {item.news_title}
                     </h3>
                     <p className="text-[#DBDBDB] font_britanica_regular text-[clamp(2vw,2vw,2rem)] sm:text-[clamp(1.2vw,1.2vw,1.2rem)]">

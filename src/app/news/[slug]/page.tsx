@@ -48,13 +48,13 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
                     priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className='absolute bottom-0 left-0 right-0 p-6 md:px-[8vw] md:py-[5vw] md:pr-[15vw] text-white flex flex-row gap-x-4 md:gap-x-6'>
-           <div className='h-[17vw] md:h-[14vw] w-2 bg-white rounded-tr-[2vw] rounded-br-[2vw]'/>         
+                <div className='absolute bottom-0 left-0 right-0 p-6 md:px-[8vw] md:py-[5vw] md:pr-[15vw] text-white flex flex-row gap-x-4 md:gap-x-6 items-stretch'>
+           <div className=' w-2 bg-white rounded-tr-[2vw] rounded-br-[2vw]'/>         
                     <div className="flex flex-col gap-y-[1vw]">
                         <p className="bg-[#A0001B] px-3 py-[0.2vw] rounded-lg w-fit font_britanica_bold  text-[clamp(1.5vw,2.5vw,2.5vw)] md:text-[clamp(2vw,2vw,7vw)]">
                             {newsItem.category}
                         </p>
-                        <h1 className="font_britanica_black  text-[clamp(3vw,3.4vw,3rem)] md:text-[clamp(2.5vw,2.5vw,4rem)] leading-tight">
+                        <h1 className="font_britanica_black  text-[clamp(3vw,4vw,5vw)] md:text-[clamp(2.5vw,2.5vw,4rem)] leading-tight text-justify">
                             {newsItem.news_title}
                         </h1>
                         <p className="text-gray-300 font_britanica_regular text-[clamp(1.5vw,2.5vw,2.5vw)] md:text-[clamp(2vw,2vw,5vw)]">
@@ -68,18 +68,18 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
 
 
             <div className="px-[5vw] mb-[2vw]">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-[3vw] mt-12">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-[3vw] mt-12 ">
                     <div className="sm:col-span-2">
 
                         <p className="font_britanica_regular text-gray-800 leading-relaxed 
-                                   text-[clamp(1.1rem,2.5vw,1.25rem)] 
+                                   text-[clamp(0.85rem,4vw,1.2rem)]
                                    whitespace-pre-wrap break-words text-justify">
                             {newsItem.content}
                         </p>
                     </div>
 
 
-                    <div className="lg:col-span-1 mt-12 lg:mt-0">
+                    <div className="lg:col-span-1 mt-12 lg:mt-0 sm:mb-0 mb-12">
                         <div className="">
                             <div className="flex items-center gap-2 mb-6">
                                 <div className="w-1.5 h-10 bg-[#5E0503] rounded-r-xl"></div>

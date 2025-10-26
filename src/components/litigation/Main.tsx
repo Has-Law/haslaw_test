@@ -2,12 +2,12 @@ import Image from "next/image"
 import ornaments from "@/assets/service/image/ornaments.webp"
 const Main = () => {
     return (
-        <div className="flex-row flex justify-between w-full min-h-screen">
+        <div className="flex-row flex justify-between w-full ">
             <div className="flex flex-col mt-[5vw] px-[8vw] gap-y-[2vw] items-center">
                 <div className="flex flex-col sm:flex-row items-start justify-start text-[#4F000D]">
-                    <div className="flex flex-row gap-x-[1vw] items-start w-[23vw]">
+                    <div className="flex flex-row gap-x-10 sm:gap-x-[1vw] items-center sm:items-start sm:w-[23vw]">
                         <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(4.5vw,4.5vw,10rem)] leading-none w-[8vw]">1</p>
-                        <h2 className="font_britanica_black text-[clamp(2.5vw,3.5vw,3rem)] sm:text-[clamp(2vw,2vw,3rem)] leading-tight w-[15vw]">Commercial Dispute</h2>
+                        <h2 className="font_britanica_black text-[clamp(2.5vw,3.5vw,3rem)] sm:text-[clamp(2vw,2vw,3rem)] leading-tight sm:w-[15vw]">Commercial Dispute</h2>
                     </div>
                     <div className="font_britanica_bold sm:font_britanica_regular text-[clamp(1.5vw,2.5vw,2rem)] lg:text-[clamp(1.3vw,1.3vw,4rem)] md:text-[clamp(1.5vw,1.5vw,4rem)] sm:text-[clamp(1.8vw,1.8vw,4rem)] space-y-[1.5vw] text-justify sm:w-[40vw]">
                         <p>
@@ -17,9 +17,9 @@ const Main = () => {
                     </div>
                 </div>
                 <div className="flex flex-col sm:flex-row items-start text-[#4F000D]">
-                    <div className="flex flex-row gap-x-[1vw] items-start w-[23vw]">
+                    <div className="flex flex-row gap-x-10 sm:gap-x-[1vw] items-center sm:items-start sm:w-[23vw]">
                         <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(4.5vw,4.5vw,10rem)] leading-none w-[8vw]">2</p>
-                        <h2 className="font_britanica_black text-[clamp(2.5vw,3.5vw,3rem)] sm:text-[clamp(2vw,2vw,3rem)] leading-tight w-[15vw]">Administrative Litigation</h2>
+                        <h2 className="font_britanica_black text-[clamp(2.5vw,3.5vw,3rem)] sm:text-[clamp(2vw,2vw,3rem)] leading-tight  sm:w-[15vw]">Administrative Litigation</h2>
                     </div>
                     <div className="font_britanica_bold sm:font_britanica_regular text-[clamp(1.5vw,2.5vw,2rem)] lg:text-[clamp(1.3vw,1.3vw,4rem)] md:text-[clamp(1.5vw,1.5vw,4rem)] sm:text-[clamp(1.8vw,1.8vw,4rem)] space-y-[1.5vw] text-justify sm:w-[40vw]">
                         <p>
@@ -29,9 +29,9 @@ const Main = () => {
                     </div>
                 </div>
                 <div className="flex flex-col sm:flex-row items-start text-[#4F000D] mb-[2vw]">
-                    <div className="flex flex-row gap-x-[1vw] items-start w-[23vw]">
+                    <div className="flex flex-row gap-x-10 sm:gap-x-[1vw] items-center sm:items-start sm:w-[23vw]">
                         <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(4.5vw,4.5vw,10rem)] leading-none w-[8vw]">3</p>
-                        <h2 className="font_britanica_black text-[clamp(2.5vw,3.5vw,3rem)] sm:text-[clamp(2vw,2vw,3rem)] leading-tight w-[15vw]">White Collar Defense</h2>
+                        <h2 className="font_britanica_black text-[clamp(2.5vw,3.5vw,3rem)] sm:text-[clamp(2vw,2vw,3rem)] leading-tight w-[23vw] sm:w-[15vw]">White Collar Defense</h2>
                     </div>
                     <div className="font_britanica_bold sm:font_britanica_regular text-[clamp(1.5vw,2.5vw,2rem)] lg:text-[clamp(1.3vw,1.3vw,4rem)] md:text-[clamp(1.5vw,1.5vw,4rem)] sm:text-[clamp(1.8vw,1.8vw,4rem)] space-y-[1.5vw] text-justify sm:w-[40vw]">
                         <p>
@@ -39,10 +39,10 @@ const Main = () => {
                         </p>
                     </div>
                 </div>
-                <div className="flex flex-col sm:flex-row items-start text-[#4F000D] mb-[10vw]">
-                    <div className="flex flex-row gap-x-[1vw] items-start w-[23vw]">
+                <div className="flex flex-col sm:flex-row items-start text-[#4F000D] mb-[5vw] sm:mb-[10vw]">
+                    <div className="flex flex-row gap-x-10 sm:gap-x-[1vw] items-center sm:items-start sm:w-[23vw]">
                         <p className="font_britanica_black text-[clamp(12vw,12vw,10rem)] sm:text-[clamp(4.5vw,4.5vw,10rem)] leading-none w-[8vw]">4</p>
-                        <h2 className="font_britanica_black text-[clamp(2.5vw,3.5vw,3rem)] sm:text-[clamp(2vw,2vw,3rem)] leading-tight w-[15vw]">Tax Litigation Services</h2>
+                        <h2 className="font_britanica_black text-[clamp(2.5vw,3.5vw,3rem)] sm:text-[clamp(2vw,2vw,3rem)] leading-tight w-[23vw] sm:w-[15vw]">Tax Litigation Services</h2>
                     </div>
                     <div className="font_britanica_bold sm:font_britanica_regular text-[clamp(1.5vw,2.5vw,2rem)] lg:text-[clamp(1.3vw,1.3vw,4rem)] md:text-[clamp(1.5vw,1.5vw,4rem)] sm:text-[clamp(1.8vw,1.8vw,4rem)] space-y-[1.5vw] text-justify sm:w-[40vw]">
                         <p>
@@ -52,7 +52,7 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-            <Image src={ornaments} alt="Ornaments" className="w-[20vw]  right-0 z-0 " />
+            <Image src={ornaments} alt="Ornaments" className="w-[20vw]  right-0 z-0 sm:block hidden " />
         </div>
     )
 }

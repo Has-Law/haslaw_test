@@ -42,13 +42,13 @@ const Footer: React.FC = () => {
                                 </Link>
                             </div>
                         </div>
-                        <p className="text-gray-700 text-[clamp(3vw,3.5vw,1rem)] leading-relaxed">
+                        <p className="text-gray-700 text-[clamp(0.9rem,3.5vw,1.2rem)] leading-relaxed">
                             Securing your business with litigation excellence in court and precision in corporate strategy.
                         </p>
                     </div>
 
                     <div className="flex flex-col">
-                        <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,1.5rem)] mb-4">Our firm</h3>
+                        <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,1.5rem)] mb-4">Our Firm</h3>
                         <ul className="space-y-3">
                             <li><Link href="/" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">Home</Link></li>
                             <li><Link href="/about" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)]">About Us</Link></li>
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
                                 className="mb-3 w-[clamp(15vw,25vw,20rem)] h-auto"
                             />
                         </div>
-                        <p className="text-[#4F000D] text-[clamp(1vw,1vw,1.5rem)] leading-relaxed mb-[clamp(1.5vw,1.5vw,3rem)]">
+                        <p className="text-[#4F000D] text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)] leading-relaxed mb-[clamp(1.5vw,1.5vw,3rem)]">
                             Securing your business with litigation excellence in court and precision in corporate strategy.
                         </p>
                         <div className="flex space-x-[clamp(0.5vw,0.5vw,2rem)]">
@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
                     </div>
 
                     <div className="flex flex-col">
-                        <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,2rem)] lg:text-[clamp(1vw,1.5vw,2rem)] mb-[clamp(1vw,1vw,1.5rem)]">Our firm</h3>
+                        <h3 className="text-[#4F000D] font_britanica_black text-[clamp(1.2rem,4.5vw,2rem)] lg:text-[clamp(1vw,1.5vw,2rem)] mb-[clamp(1vw,1vw,1.5rem)]">Our Firm</h3>
                         <ul className="space-y-[clamp(0.5vw,0.5vw,0.8rem)]">
                             <li><Link href="/" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">Home</Link></li>
                             <li><Link href="/about" className="text-[#4F000D] hover:text-[#7A0015] transition-colors text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)]">About Us</Link></li>

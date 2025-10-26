@@ -68,7 +68,7 @@ export default function MemberDetailClient() {
                 {/* Content Section Mobile */}
                 <div className="py-[clamp(5vw,5vw,8rem)] px-[clamp(1rem,4vw,5rem)]">
                     <div className="mx-auto flex flex-col gap-y-[clamp(2rem,8vw,0rem)] items-start">
-                        <div className="flex flex-col text-justify w-full"><p className="text-[#131313] font_britanica_regular text-[clamp(0.9rem,4vw,1.2rem)] leading-relaxed whitespace-pre-wrap">{member.biography}</p></div>
+                        <div className="flex flex-col text-justify w-full"><p className="text-[#131313] font_britanica_regular text-[clamp(0.85rem,4vw,1.2rem)] leading-relaxed whitespace-pre-wrap">{member.biography}</p></div>
                         <div className="flex flex-col gap-y-[clamp(2rem,6vw,3rem)] w-full">
                             <div className="flex flex-col items-start">
                                 <h2 className="text-[#C90021] font_britanica_black text-[clamp(1.3rem,5.5vw,2rem)] mb-[clamp(0.8rem,3vw,1.5rem)]">Practice Focus</h2>

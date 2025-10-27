@@ -48,7 +48,7 @@ export default function MemberDetailClient() {
                 <div className="relative w-[90vw] mt-5 overflow-hidden mx-auto">
                     <Image src={`${API_BASE_URL}/${member.detail_image}`} width={500} height={500} alt="Member Photo" className="w-full h-auto rounded-2xl object-cover  " />
                     <div className="absolute flex flex-col gap-y-2 justify-center w-full items-center bottom-6  text-white text-center z-10">
-                        <h1 className="font_britanica_heavy text-[clamp(4.5vw,4.5vw,4.5rem)] leading-tight">{member.full_name}</h1>
+                        <h1 className="font_britanica_heavy text-[clamp(4.5vw,4.5vw,4.5rem)] leading-tight text-nowrap">{member.full_name}</h1>
                         <p className="font_britanica_regular text-[clamp(4vw,4vw,1.8rem)]  opacity-90">{member.title_position}</p>
                     </div>
 
@@ -98,7 +98,7 @@ export default function MemberDetailClient() {
                         <div className="flex flex-row items-center gap-x-[clamp(1rem,3vw,4rem)] w-full max-w-[80vw]">
                             <Image src={`${API_BASE_URL}/${member.detail_image}`} width={500} height={500} alt="Member Photo" className="w-[clamp(20vw,30vw,38rem)] h-auto rounded-2xl object-cover flex-shrink-0" />
                             <div className="flex flex-col justify-center text-white flex-1 text-left">
-                                <h1 className="font_britanica_heavy text-[clamp(3vw,3vw,5rem)] leading-tight mb-[clamp(0.5rem,2vw,1rem)]">{member.full_name}</h1>
+                                <h1 className="font_britanica_heavy text-[clamp(3vw,3vw,5rem)] leading-tight mb-[clamp(0.5rem,2vw,1rem)] text-nowrap">{member.full_name}</h1>
                                 <p className="font_britanica_regular text-[clamp(1.2rem,2.2vw,2.2rem)] mb-[clamp(1vw,1vw,3rem)] opacity-90">{member.title_position}</p>
                                 <div className="flex flex-col gap-y-[clamp(1.5vw,1.5vw,2rem)]">
                                     <div className="flex flex-col items-start gap-y-[clamp(0.5rem,2vw,0rem)]">

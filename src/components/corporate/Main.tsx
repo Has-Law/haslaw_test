@@ -4,7 +4,7 @@ import ornaments from "@/assets/service/image/ornaments.webp"
 const Main = () => {
     return (
         <div className="flex-row flex justify-between w-full ">
-            <div className="flex flex-col mt-[5vw] px-[8vw] gap-y-[2vw] items-center">
+            <div className="flex flex-col mt-[5vw] px-[8vw] gap-y-6 items-center">
                 {/* Service Item 1 */}
                 <div className="flex flex-col sm:flex-row items-start justify-start text-[#4F000D]">
                     <div className="flex flex-row gap-x-10 sm:gap-x-[1vw] items-center sm:items-start sm:w-[23vw]">

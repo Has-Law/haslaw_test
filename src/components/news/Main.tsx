@@ -51,7 +51,7 @@ const Main = ({ news }: { news: News[] }) => {
                     Insights
                 </h1>
             
-                <h3 className="font_britanica_regular text-[clamp(0.85rem,4vw,1.2rem)] sm:text-[clamp(1vw,2vw,1.25rem)] text-[#131313] max-w-4xl">
+                <h3 className="font_britanica_regular text-[clamp(0.85rem,4vw,1.2rem)] sm:text-[clamp(1vw,2vw,1.25rem)] text-justify text-[#131313] max-w-4xl">
                     The legal landscape is constantly evolving. Follow the latest publications from our team to gain
                     valuable insights and stay one step ahead in anticipating regulatory changes and industry trends.
                 </h3>

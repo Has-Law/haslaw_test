@@ -2,7 +2,7 @@ const Hero = () => {
     return(
         <div className="flex flex-col sm:flex-row items-center justify-center bg-[#871614] w-full py-[3vw] px-[8vw] gap-x-[4vw]">
             <h1 className="font_britanica_black text-[clamp(6vw,7vw,6rem)] sm:text-[clamp(3vw,3vw,4rem)] text-white leading-tight">Corporate Service</h1>
-            <p className="font_britanica_regular text-[clamp(4vw,4vw,4rem)] sm:text-[clamp(1.3vw,1.3vw,4rem)] text-justify text-white">Beyond disputes, every successful business is built upon a solid legal foundation. Our corporate services provide comprehensive support for your entire business lifecycle, from company establishment and commercial contracts to major transactions like mergers and acquisitions. Our proactive, business-savvy counsel ensures your operations are compliant, your transactions secure, and your company is structured for sustainable growth.</p>
+            <p className="font_britanica_regular text-[clamp(0.85rem,4vw,1.2rem)]  sm:text-[clamp(1.3vw,1.3vw,4rem)] text-justify text-white">Beyond disputes, every successful business is built upon a solid legal foundation. Our corporate services provide comprehensive support for your entire business lifecycle, from company establishment and commercial contracts to major transactions like mergers and acquisitions. Our proactive, business-savvy counsel ensures your operations are compliant, your transactions secure, and your company is structured for sustainable growth.</p>
         </div>
     )
 }

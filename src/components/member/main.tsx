@@ -56,7 +56,7 @@ const AdvocateCard = ({ advocate }: { advocate: Member }) => (
                 <h3 className="text-[clamp(3.3vw,3.3vw,5rem)] lg:text-[clamp(2vw,2vw,2rem)] font_britanica_black text-[#131313] mb-1 group-hover:text-white tracking-normal">
                     {advocate.full_name}
                 </h3>
-                <p className="text-[clamp(2.5vw,2.5vw,5rem)] lg:text-[clamp(1.3vw,1.3vw,1.5rem)] font_britanica_bold text-[#780014] group-hover:text-white">
+                <p className="text-[clamp(2.8vw,2.8vw,5rem)] lg:text-[clamp(1.3vw,1.3vw,1.5rem)] font_britanica_bold text-[#780014] group-hover:text-white">
                     {advocate.title_position}
                 </p>
             </div>
@@ -101,13 +101,13 @@ const Main = () => {
     return (
         <div className="flex flex-col lg:flex-row w-full min-h-screen px-6 lg:px-[5vw] py-8 gap-8">
             <div className="w-full lg:w-[30vw] flex flex-col gap-y-6 lg:gap-y-[2vw]">
-                <h1 className="text-5xl lg:text-[clamp(3vw,3vw,6rem)] font_britanica_black text-[#5E0503] leading-tight">
+                <h1 className="text-[clamp(2rem,6vw,4rem)] lg:text-[clamp(3vw,3vw,6rem)] font_britanica_black text-[#5E0503] leading-tight">
                     Meet Your<br />
                     Lawyers
                 </h1>
                 <div className="w-full flex flex-col gap-y-4 lg:gap-y-[1vw]">
                     <div className="flex justify-between items-center py-2 lg:py-[1vw] border-b border-black/50">
-                        <h3 className="text-3xl lg:text-[clamp(2vw,2vw,4rem)] font_britanica_black text-[#780014]">Filter by</h3>
+                        <h3 className="text-xl lg:text-[clamp(2vw,2vw,4rem)] font_britanica_black text-[#780014]">Filter by</h3>
                         <button
                             onClick={resetFilters}
                             className="cursor-pointer text-sm lg:text-[clamp(1vw,1vw,2rem)] text-[#A0001B] hover:text-gray-700 transition-colors hover:underline hover:underline-offset-4"
@@ -117,67 +117,67 @@ const Main = () => {
                     </div>
                     <div className="space-y-2 lg:space-y-[0.5vw]">
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
-                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                            <label className="text-[#131313] text-[clamp(1vw,2vw,2rem) lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Partner
                             </label>
                             <div
                                 onClick={() => handleFilterChange('partner')}
-                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.partner ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
+                                className={`w-5 h-5 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.partner ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
                             >
                                 {filters.partner && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
-                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                            <label className="text-[#131313] text-[clamp(1vw,2vw,2rem) lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Senior Associate
                             </label>
                             <div
                                 onClick={() => handleFilterChange('seniorAssociate')}
-                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.seniorAssociate ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
+                                className={`w-5 h-5 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.seniorAssociate ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
                             >
                                 {filters.seniorAssociate && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
-                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                            <label className="text-[#131313] text-[clamp(1vw,2vw,2rem) lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Mid Associate
                             </label>
                             <div
                                 onClick={() => handleFilterChange('midAssociate')}
-                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.midAssociate ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
+                                className={`w-5 h-5 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.midAssociate ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
                             >
                                 {filters.midAssociate && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
-                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                            <label className="text-[#131313] text-[clamp(1vw,2vw,2rem) lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Associates
                             </label>
                             <div
                                 onClick={() => handleFilterChange('associates')}
-                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.associates ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
+                                className={`w-5 h-5 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.associates ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
                             >
                                 {filters.associates && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
-                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                            <label className="text-[#131313] text-[clamp(1vw,2vw,2rem) lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Senior Partner
                             </label>
                             <div
                                 onClick={() => handleFilterChange('seniorPartner')}
-                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.seniorPartner ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
+                                className={`w-5 h-5 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.seniorPartner ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
                             >
                                 {filters.seniorPartner && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
                         </div>
                         <div className="flex items-center justify-between py-3 lg:py-[1vw] border-b border-black/50">
-                            <label className="text-[#131313] text-lg lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
+                            <label className="text-[#131313] text-[clamp(1vw,2vw,2rem) lg:text-[clamp(1.5vw,1.5vw,2rem)] font_britanica_bold cursor-pointer flex-1">
                                 Of Counsel
                             </label>
                             <div
                                 onClick={() => handleFilterChange('ofCounsel')}
-                                className={`w-6 h-6 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.ofCounsel ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
+                                className={`w-5 h-5 lg:w-[2vw] lg:h-[2vw] border-2 rounded cursor-pointer flex items-center justify-center transition-all duration-200 ${filters.ofCounsel ? 'bg-[#A0001B] border-[#A0001B]' : 'border-[#D1D1D6]'}`}
                             >
                                 {filters.ofCounsel && <svg className="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>}
                             </div>
@@ -193,7 +193,7 @@ const Main = () => {
                 </div>
                 {filteredMembers.length === 0 && (
                     <div className="text-center text-gray-500 mt-12">
-                        <p className="text-lg">No advocates found matching the selected filters.</p>
+                        <p className="text-[clamp(1vw,2vw,2rem)">No advocates found matching the selected filters.</p>
                     </div>
                 )}
             </div>

@@ -58,7 +58,7 @@ const Hero = () => {
                             <h1 className="text-black font_britanica_black text-[clamp(1rem,1.2vw,2rem)]">Careers</h1>
                         </div>
                         <h1 className="font_britanica_black text-[clamp(1.8rem,2.5vw,3rem)] text-[#780014] text-right leading-tight">Shape the Future of Law With Us</h1>
-                        <h2 className="font_britanica_regular text-[clamp(1rem,1.5vw,5rem)] max-w-[70vw] text-right text-[#131313] leading-relaxed">The world is constantly changing, and so is the law. Join our dynamic team that doesn&apos;t just adapt, but leads the change in Indonesia&apos;s legal landscape through intelligent and innovative solutions.</h2>
+                        <h2 className="font_britanica_regular text-[clamp(0.85rem,4vw,1.2rem)] sm:text-[clamp(1vw,2vw,1.25rem)] max-w-[70vw] text-right text-[#131313] leading-relaxed">The world is constantly changing, and so is the law. Join our dynamic team that doesn&apos;t just adapt, but leads the change in Indonesia&apos;s legal landscape through intelligent and innovative solutions.</h2>
                     </div>
                 </div>
 

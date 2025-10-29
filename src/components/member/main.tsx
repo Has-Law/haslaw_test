@@ -39,11 +39,11 @@ const fetcher = async (url: string): Promise<Member[]> => {
 
 // --- Komponen Kartu ---
 const AdvocateCard = ({ advocate }: { advocate: Member }) => (
-    <div className="group relative bg-white rounded-lg shadow-md hover:bg-[#A0001B] transition-all duration-300 pr-4 hover:scale-105"
+    <div className="group relative bg-white rounded-lg shadow-md hover:bg-[#A0001B] transition-all duration-300 pr-[0.5vw] hover:scale-105"
         style={{ boxShadow: "0px 0px 4px 4px #00000033" }}
     >
-        <Link href={`/member/${advocate.id}`} className="flex items-center">
-            <div className="relative w-28 md:w-[12vw] h-auto -mt-8 md:-mt-[4vw] mr-4 md:mr-6 flex-shrink-0">
+        <Link href={`/member/${advocate.id}`} className="flex items-stretch">
+            <div className="relative w-28 md:w-[12vw] h-auto -mt-8 md:-mt-[4vw] lg:ml-0 ml-[1vw] mr-0 md:mr-6 flex-shrink-0">
                 <Image
                     src={`${API_BASE_URL}/${advocate.display_image}`}
                     alt={advocate.full_name}
@@ -52,11 +52,11 @@ const AdvocateCard = ({ advocate }: { advocate: Member }) => (
                     className="w-full h-full object-cover"
                 />
             </div>
-            <div className="flex-1 py-4">
-                <h3 className="text-lg md:text-[clamp(2vw,2vw,2rem)] font_britanica_black text-[#131313] mb-1 leading-tight group-hover:text-white">
+            <div className="flex flex-col py-4">
+                <h3 className="text-[clamp(3.3vw,3.3vw,5rem)] lg:text-[clamp(2vw,2vw,2rem)] font_britanica_black text-[#131313] mb-1 group-hover:text-white tracking-normal">
                     {advocate.full_name}
                 </h3>
-                <p className="text-sm md:text-[clamp(1.3vw,1.3vw,1.5rem)] font_britanica_bold text-[#780014] group-hover:text-white">
+                <p className="text-[clamp(2.5vw,2.5vw,5rem)] lg:text-[clamp(1.3vw,1.3vw,1.5rem)] font_britanica_bold text-[#780014] group-hover:text-white">
                     {advocate.title_position}
                 </p>
             </div>

@@ -128,7 +128,7 @@ const Navbar = () => {
                         </svg>
                     </button>
                 
-                    <div className="flex flex-col gap-y-4 mt-6 font_britanica_regular text-xs text-[#5E0503]">
+                    <div className="flex flex-col gap-y-4 mt-6 font_britanica_regular text-lg text-[#5E0503]">
                         <Link href="/" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
                         <Link href="/about" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
                         <Link href="/member" className="hover:text-[#A0001B] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Lawyers</Link>

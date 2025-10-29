@@ -19,7 +19,7 @@ const Team = () => {
     ];
 
     return (
-        <div className="flex flex-col items-center gap-y-[1.6vw] mt-[1vw] w-[90%] sm:w-[60%] mx-auto">
+        <div className="flex flex-col items-center gap-y-[1.6vw]  w-[90%] sm:w-[60%] mx-auto p-8">
             <h1 className="font_britanica_black text-[#131313] text-4xl sm:text-[clamp(1.5rem,4vw,3rem)]">Our Team</h1>
             <div className="flex flex-col items-center w-full">
                 
@@ -133,7 +133,7 @@ const Team = () => {
                     href="/member"
                     onMouseEnter={() => setHoveredSection('discover')}
                     onMouseLeave={() => setHoveredSection(null)}
-                    className="relative overflow-hidden font_britanica_black text-white flex justify-center text-2xl sm:text-[clamp(0.4rem,3vw,2.4rem)] w-full items-center rounded-b-xl sm:rounded-b-[1.6vw] py-4 mb-8 sm:py-[1.6vw]"
+                    className="relative overflow-hidden font_britanica_black text-white flex justify-center text-2xl sm:text-[clamp(0.4rem,3vw,2.4rem)] w-full items-center rounded-b-xl sm:rounded-b-[1.6vw] py-4  sm:py-[1.6vw]"
                 >
                     <div className={`absolute inset-0 bg-[linear-gradient(90deg,_#A0001B_0%,_#3A000A_100%)] transition-opacity duration-300 ease-in-out ${hoveredSection === 'discover' ? 'opacity-0' : 'opacity-100'}`} />
                     <div className={`absolute inset-0 bg-[linear-gradient(270deg,_#A0001B_0%,_#3A000A_100%)] transition-opacity duration-300 ease-in-out ${hoveredSection === 'discover' ? 'opacity-100' : 'opacity-0'}`} />

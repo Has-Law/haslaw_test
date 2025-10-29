@@ -51,14 +51,14 @@ const Hero = () => {
             <div className="flex flex-col justify-center items-end relative w-full">
                 {/* Desktop Hero */}
                 <div className="hidden bg-[#F5F5F5] sm:flex flex-col justify-center items-end relative aspect-[1280/640] w-full">
-                    <Image src={hero} alt="Hero Image" className="w-[clamp(70vw,70vw,65vw)] absolute top-0 left-0 z-0" />
+                    <Image src={hero} alt="Hero Image" className="w-[clamp(55vw,55vw,65vw)] absolute top-0 left-0 z-0" />
                     <div className="flex flex-col relative z-30 w-[clamp(45vw,60vw,59vw)] transform -translate-x-[clamp(6vw,8vw,10vw)] -translate-y-[clamp(3vw,4vw,5vw)] items-end">
                         <div className="flex flex-row items-center gap-x-[clamp(0.5vw,1vw,1.5vw)]">
                             <h1 className="bg-black h-[clamp(0.05vw,0.1vw,0.2vw)] w-[clamp(2vw,3vw,4vw)]" />
                             <h1 className="text-black font_britanica_black text-[clamp(1rem,1.2vw,2rem)]">Careers</h1>
                         </div>
                         <h1 className="font_britanica_black text-[clamp(1.8rem,2.5vw,3rem)] text-[#780014] text-right leading-tight">Shape the Future of Law With Us</h1>
-                        <h2 className="font_britanica_regular text-[clamp(0.85rem,4vw,1.2rem)] sm:text-[clamp(1vw,2vw,1.25rem)] max-w-[70vw] text-right text-[#131313] leading-relaxed">The world is constantly changing, and so is the law. Join our dynamic team that doesn&apos;t just adapt, but leads the change in Indonesia&apos;s legal landscape through intelligent and innovative solutions.</h2>
+                        <h2 className="font_britanica_regular text-[clamp(0.85rem,4vw,1.2rem)] sm:text-[clamp(1vw,2vw,1.25rem)] max-w-[40vw] text-justify text-[#131313] leading-relaxed">The world is constantly changing, and so is the law. Join our dynamic team that doesn&apos;t just adapt, but leads the change in Indonesia&apos;s legal landscape through intelligent and innovative solutions.</h2>
                     </div>
                 </div>
 
@@ -83,7 +83,7 @@ const Hero = () => {
                                 </h1>
                                 
                               
-                                <p className="font_britanica_regular text-black text-[clamp(1rem,3.5vw,1.1rem)] leading-relaxed opacity-95 max-w-[60%] ml-auto">
+                                <p className="font_britanica_regular text-justify text-black text-[clamp(1rem,3.5vw,1.1rem)] leading-relaxed opacity-95 max-w-[60%] ml-auto">
                                     The world is constantly changing, and so is the law. Join our dynamic team that doesn&apos;t just adapt, but leads the change in Indonesia&apos;s legal landscape through intelligent and innovative solutions.
                                 </p>
                             </div>
@@ -94,7 +94,7 @@ const Hero = () => {
 
       
             <div className="relative items-center flex flex-col gap-y-[clamp(1.5rem,2vw,2rem)] w-full px-[clamp(1rem,2vw,3rem)] ">
-                <h1 className="font_britanica_bold bg-gradient-to-t from-black via-[#860016] to-[#F20028] bg-clip-text text-transparent sm:mt-[9.5vw] text-[clamp(1.8rem,3vw,5rem)] text-center leading-none">Who We&apos;re Looking For</h1>
+                <h1 className="font_britanica_bold bg-gradient-to-t from-black via-[#860016] to-[#F20028] bg-clip-text text-transparent mt-[-2vw] text-[clamp(1.8rem,3vw,5rem)] text-center leading-none">Who We&apos;re Looking For</h1>
                 
                 {/* Desktop Layout */}
                 <div className="hidden sm:flex flex-row justify-center items-center ">

@@ -129,7 +129,7 @@ export default function Achievements() {
           <h1 className="text-white text-[clamp(2rem,6vw,4rem)] mt-[clamp(1rem,3vw,2.5rem)] font_britanica_black tracking-wide">
             Achievements
           </h1>
-          <p className="text-gray-200 text-[clamp(0.85rem,4vw,1.2rem)] sm:text-[clamp(1vw,2vw,1.25rem)]g max-w-[clamp(80vw,80vw,60rem)] mt-4 font_britanica_regular px-[1vw] text-justify">
+          <p className="text-gray-200 text-[clamp(0.85rem,4vw,1.2rem)] sm:text-[clamp(2vw,2vw,5rem)] max-w-[clamp(80vw,80vw,60rem)] mt-4 font_britanica_regular px-[1vw] text-justify">
             Our commitment to excellence is consistently recognized by the
             industry. Below are some of the awards and achievements that mark
             our dedication to providing premier legal services.

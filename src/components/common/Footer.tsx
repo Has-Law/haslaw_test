@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import logo from "@/assets/common/footer/footer-logo.svg";
+import logo from "@/assets/common/footer/footer-logo.png";
 import logoMobile from "@/assets/common/footer/footer-logo-mobile.png";
 import instagram from "@/assets/common/footer/instagram-footer.svg";
 import email from "@/assets/common/footer/email-footer.svg";

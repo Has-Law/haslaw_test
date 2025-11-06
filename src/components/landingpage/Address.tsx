@@ -61,7 +61,7 @@ const Address = () => {
                             <p className="font_britanica_bold text-black text-[clamp(1.2vw,1.2vw,1.5vw)] text-nowrap max-w-xs">
                                 Plaza Sentral 15th Floor
                                 <br />
-                                Jln. Jendral Sudirman Kav 47-48
+                                Jln. Jenderal Sudirman Kav 47-48
                                 <br />
                                 Jakarta Selatan 12930, Indonesia                            </p>
                         </div>
@@ -98,7 +98,7 @@ const Address = () => {
                             <p className="font_britanica_bold text-black text-[clamp(1rem,2.2vw,1.4rem)] leading-relaxed">
                                 Plaza Sentral 15th Floor
                                 <br />
-                                Jln. Jendral Sudirman Kav 47-48
+                                Jln. Jenderal Sudirman Kav 47-48
                                 <br />
                                 Jakarta Selatan 12930, Indonesia                            </p>
                         </div>

@@ -43,8 +43,9 @@ const Footer: React.FC = () => {
                             </div>
                         </div>
                         <p className="text-gray-700 text-[clamp(0.9rem,3.5vw,1.2rem)] leading-relaxed">
-                            Securing your business with litigation excellence in court and precision in corporate strategy.
-                        </p>
+Securing your business with
+litigation excellence and precision in corporate
+strategy.                        </p>
                     </div>
 
                     <div className="flex flex-col">
@@ -87,7 +88,7 @@ const Footer: React.FC = () => {
                                 <Image src={locationIcon} alt="Location" className="w-5 h-5 flex-shrink-0 mt-1" />
                                 <p className="text-[#4F000D] leading-relaxed text-nowrap text-[clamp(0.9rem,3.5vw,1.2rem)] max-w-xs">
                                     Plaza Sentral 15th Floor <br />
-                                    Jln. Jendral Sudirman Kav 47-48
+                                    Jln. Jenderal Sudirman Kav 47-48
                                     <br />
                                     Jakarta Selatan 12930, Indonesia                                
                                 </p>
@@ -108,8 +109,9 @@ const Footer: React.FC = () => {
                             />
                         </div>
                         <p className="text-[#4F000D] text-[clamp(0.9rem,3.5vw,1.2rem)] lg:text-[clamp(1vw,1vw,1.5rem)] leading-relaxed mb-[clamp(1.5vw,1.5vw,3rem)]">
-                            Securing your business with litigation excellence in court and precision in corporate strategy.
-                        </p>
+Securing your business with
+litigation excellence and precision in corporate
+strategy.                        </p>
                         <div className="flex space-x-[clamp(0.5vw,0.5vw,2rem)]">
                             <Link href="#" className="hover:opacity-80 transition-opacity">
                                 <Image src={instagram} alt="Instagram" className="w-[clamp(2.5vw,2.5vw,3rem)] h-[clamp(2.5vw,2.5vw,3rem)]" />
@@ -166,7 +168,7 @@ const Footer: React.FC = () => {
                                 <Image src={locationIcon} alt="Location" className="w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.5rem,2vw,2rem)] flex-shrink-0 " />
                                 <p className="text-[#4F000D]  text-[clamp(0.9rem,3.5vw,1.2rem)] text-nowrap lg:text-[clamp(1vw,1vw,1.5rem)] ">
                                     Plaza Sentral 15th Floor <br />
-                                    Jln. Jendral Sudirman Kav 47-48
+                                    Jln. Jenderal Sudirman Kav 47-48
                                     <br />
                                     Jakarta Selatan 12930, Indonesia                                </p>
                             </div>

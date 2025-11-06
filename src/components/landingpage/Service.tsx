@@ -31,19 +31,19 @@ const Service = () => {
                  
                     <div className="flex flex-col items-center justify-start w-1/3 sm:w-1/4 md:w-[3.6vw]">
                         <Image src={handcuffs} alt="Handcuffs Icon" className="w-12 sm:w-16 h-auto md:w-full mb-3 md:mb-[0.5vw]" />
-                        <h2 className="font_britanica_black text-white text-sm md:text-[clamp(1vw,1vw,2.4rem)]">
+                        <h2 className="font_britanica_black text-white text-base md:text-[clamp(1.1vw,1.3vw,3rem)]">
                             Criminal Litigation
                         </h2>
                     </div>
                     <div className="flex flex-col items-center justify-start w-1/3 sm:w-1/4 md:w-[3.6vw]">
                         <Image src={dolar} alt="Dolar Icon" className="w-12 sm:w-16 h-auto md:w-full mb-3 md:mb-[0.5vw]" />
-                        <h2 className="font_britanica_black text-white text-sm md:text-[clamp(1vw,1vw,2.4rem)]">
+                        <h2 className="font_britanica_black text-white text-base md:text-[clamp(1.1vw,1.3vw,3rem)]">
                             Commercial Litigation
                         </h2>
                     </div>
                     <div className="flex flex-col items-center justify-start w-1/3 sm:w-1/4 md:w-[3.6vw]">
                         <Image src={administrator} alt="Administrator Icon" className="w-12 sm:w-16 h-auto md:w-full mb-3 md:mb-[0.5vw]" />
-                        <h2 className="font_britanica_black text-white text-sm md:text-[clamp(1vw,1vw,2.4rem)]">
+                        <h2 className="font_britanica_black text-white text-base md:text-[clamp(1.1vw,1.3vw,3rem)]">
                             Administrative Litigation
                         </h2>
                     </div>

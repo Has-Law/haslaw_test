@@ -126,13 +126,19 @@ const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.35312
                         <div className="flex items-start gap-4">
                             <div>
                                 <h4 className="font_britanica_bold font-bold text-[clamp(0.95rem,2.2vw,1.125rem)] mb-1">Address</h4>
-                                <p className="text-white/90 font_britanica_regular break-words text-[clamp(0.9rem,2.2vw,1.1rem)] leading-relaxed">Plaza Sentral 15th Floor <br />Jln. Jendral Sudirman Kav 47-48 <br />Jakarta Selatan 12930, Indonesia</p>
+                                <p className="text-white/90 font_britanica_regular break-words text-[clamp(0.9rem,2.2vw,1.1rem)] leading-relaxed">Plaza Sentral 15th Floor <br />Jln. Jenderal Sudirman Kav 47-48 <br />Jakarta Selatan 12930, Indonesia</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
                             <div>
                                 <h4 className="font_britanica_bold text-[clamp(0.95rem,2.2vw,1.125rem)] mb-1">Email</h4>
                                 <p className="text-white/90 font_britanica_regular text-[clamp(0.9rem,2.2vw,1.1rem)]">info@has-law.com</p>
+                            </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                            <div>
+                                <h4 className="font_britanica_bold text-[clamp(0.95rem,2.2vw,1.125rem)] mb-1">Instagram</h4>
+                                <a href="https://instagram.com/has.law" className="text-white/90 font_britanica_regular text-[clamp(0.9rem,2.2vw,1.1rem)]">@has.law</a>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">

@@ -3,10 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import useSWR from 'swr'; // Pastikan sudah install: npm install swr
+import useSWR from 'swr'; 
 import search from "@/assets/news/search.webp";
 
-// --- 1. Definisi Tipe (Interfaces) ---
 export interface News {
     id: number;
     news_title: string;
@@ -27,8 +26,7 @@ export interface ApiResponse<T> {
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-// --- 2. Fetcher Function untuk SWR ---
-// Kita tambahkan { cache: 'no-store' } agar browser tidak menyimpan cache lama
+
 const fetcher = async (url: string): Promise<News[]> => {
     const res = await fetch(url, { cache: 'no-store' });
     if (!res.ok) throw new Error('Failed to fetch news');
@@ -36,12 +34,11 @@ const fetcher = async (url: string): Promise<News[]> => {
     return result.data;
 };
 
-// --- 3. Sub-Component: NewsCard ---
 const NewsCard = ({ item }: { item: News }) => (
     <Link href={`/news/${item.slug}`} className="group block">
         <div className='relative aspect-[16/10] rounded-lg overflow-hidden cursor-pointer'>
             <Image
-                src={`${API_BASE_URL}/${item.image}`} // Pastikan slash handling aman
+                src={`${API_BASE_URL}/${item.image}`} 
                 alt={item.news_title}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -67,9 +64,7 @@ const NewsCard = ({ item }: { item: News }) => (
     </Link>
 );
 
-// --- 4. Component Utama ---
 const Main = () => {
-    // Mengambil data di Client Side
     const { data: newsData, error, isLoading } = useSWR(
         `${API_BASE_URL}/api/v1/news`,
         fetcher
@@ -77,14 +72,11 @@ const Main = () => {
 
     const [searchQuery, setSearchQuery] = useState('');
 
-    // Menangani Loading dan Error
     if (isLoading) return <div className="w-full h-screen flex justify-center items-center">Loading News...</div>;
     if (error) return <div className="w-full h-screen flex justify-center items-center">Failed to load news.</div>;
 
-    // Fallback jika data kosong/undefined
     const newsList = newsData || [];
 
-    // Filter Logic
     const filteredNews = newsList.filter(item =>
         item.news_title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.category.toLowerCase().includes(searchQuery.toLowerCase())
@@ -102,7 +94,6 @@ const Main = () => {
                     valuable insights and stay one step ahead in anticipating regulatory changes and industry trends.
                 </h3>
                 
-                {/* Search Bar */}
                 <div className="relative w-full max-w-md flex items-center">
                     <input
                         type="text"
@@ -121,7 +112,6 @@ const Main = () => {
                 </div>
             </div>
 
-            {/* News Grid */}
             <div className="w-full px-[5vw] pb-[5vw]">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mx-auto">
                     {filteredNews.map((item) => (

@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     template: "HasLaw - %s", 
-    default: "HAS Attorneys at Law - Leading Indonesian Law Firm | Legal Services", 
+    default: "HAS Attorneys at Law", 
   },
   description: "HasLaw is a premier Indonesian law firm providing comprehensive legal services including corporate law, litigation, commercial transactions, and legal consulting. Trusted legal partners since establishment.",
   keywords: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     apple: '/favicon.ico',
   },
   openGraph: {
-    title: "HAS Attorneys at Law - Leading Indonesian Law Firm",
+    title: "HAS Attorneys at Law",
     description: "Premier Indonesian law firm providing comprehensive legal services including corporate law, litigation, and commercial transactions.",
     url: '/',
     siteName: 'HasLaw',
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "HAS Attorneys at Law - Leading Indonesian Law Firm",
+    title: "HAS Attorneys at Law",
     description: "Premier Indonesian law firm providing comprehensive legal services including corporate law, litigation, and commercial transactions.",
     images: ['/assets/logo.png'],
   },

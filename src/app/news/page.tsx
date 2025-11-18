@@ -8,12 +8,9 @@ export const metadata: Metadata = {
 
 
 const NewsPage = async () => {
-
-    const allNews = await getAllNews();
-
     return (
         <div className="bg-[#F2F2F2] min-h-screen">
-            <Main news={allNews} />
+            <Main/>
         </div>
     )
 }

@@ -1,5 +1,4 @@
 import Main from "@/components/news/Main";
-import { getAllNews } from "@/lib/news"; 
 import { Metadata } from "next";
 
 export const metadata: Metadata = { 

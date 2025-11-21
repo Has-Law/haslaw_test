@@ -100,13 +100,13 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
                                                 />
                                             </div>
                                             <div className="flex-1 min-w-0">
-                                                <p className="w-fit bg-[#A0001B] text-white px-2 py-1 rounded-md font_britanica-bold mb-2 text-[clamp(0.65rem,1.5vw,0.75rem)]">
+                                                <p className="w-fit bg-[#A0001B] text-white px-2 py-1 rounded-md font_britanica-bold mb-2 text-[clamp(0.65rem,1.5vw,0.75rem)] lg:text-[clamp(1rem,1.3vw,2vw)]">
                                                     {item.category}
                                                 </p>
-                                                <h3 className="font_britanica_bold text-[clamp(2rem,3vw,2.5rem)] leading-tight text-[#131313] group-hover:text-[#A0001B] transition-colors duration-300 line-clamp-3 mb-2">
+                                                <h3 className="font_britanica_bold text-[clamp(2rem,3vw,2.5rem)] lg:text-[clamp(1.2rem,1.5vw,2vw)] leading-tight text-[#131313] group-hover:text-[#A0001B] transition-colors duration-300 line-clamp-3 mb-2">
                                                     {item.news_title}
                                                 </h3>
-                                                <p className="text-[#848484] font_britanica_regular text-[clamp(1rem,2vw,1.5rem)]">
+                                                <p className="text-[#848484] font_britanica_regular text-[clamp(0.8rem,1vw,2vw)]">
                                                     {new Date(item.created_at).toLocaleDateString('id-ID', {
                                                         month: 'long', day: 'numeric', year: 'numeric'
                                                     })}

@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: "HasLaw - %s", 
+    template: "HAS Attorneys at Law - %s", 
     default: "HAS Attorneys at Law", 
   },
   description: "HasLaw is a premier Indonesian law firm providing comprehensive legal services including corporate law, litigation, commercial transactions, and legal consulting. Trusted legal partners since establishment.",

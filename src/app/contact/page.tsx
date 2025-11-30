@@ -1,4 +1,5 @@
 'use client'
+import { Metadata } from "next";
 import Image from "next/image";
 import bgHero from "@/assets/contact/image/bg-hero.png";
 import waIcon from "@/assets/contact/icon/wa-contact.svg";

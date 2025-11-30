@@ -1,5 +1,6 @@
 'use client';
 
+import { Metadata } from "next";
 import { useState } from 'react';
 import Image, { StaticImageData } from "next/image";
 import bg from "@/assets/achievments/bg-detail-achievements.svg"; 
@@ -19,6 +20,19 @@ import hukum25 from "@/assets/achievments/hukum25.png";
 import star25 from "@/assets/achievments/star25.png";
 import star24 from "@/assets/achievments/star24.png";
 import bgMobile from "@/assets/achievments/bg-mobile.webp";
+
+
+
+export const metadata: Metadata = {
+  title: 'Awards & Achievements',
+  // PILIH SALAH SATU DESKRIPSI:
+  
+  // Opsi 1: Fokus Prestasi (Authority Building)
+  description: "Recognized excellence. HAS Attorneys at Law is consistently ranked by IFLR 1000, ALB, and Hukumonline as a top-tier Indonesian law firm in litigation and corporate law.",
+
+  // Opsi 2: Daftar Penghargaan (Keyword Rich)
+  // description: "Explore our track record. Winner and finalist in ALB Indonesia Law Awards, Hukumonline Top 100, and Benchmark Litigation. Dedicated to high standards of legal practice."
+}
 
 interface Achievement {
   id: number;

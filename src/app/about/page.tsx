@@ -6,7 +6,8 @@ import Values from "@/components/about/Values";
 import VisiMisi from "@/components/about/Visi-misi";
 import { Metadata } from "next";
 export const metadata : Metadata = {
-    title : 'about'
+    title : 'about',
+    description: "Learn about HAS Attorneys at Law. Established with a vision to provide premier legal services in Indonesia based on integrity, professionalism, and client-centric values.",
 }
 
 const AboutPage = () => {

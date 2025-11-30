@@ -3,7 +3,8 @@ import Main from "@/components/litigation/Main"
 import { Metadata } from "next"
 
 export const metadata : Metadata = {
-    title : 'litigation'
+    title : 'litigation',
+    description: "Robust legal representation for complex disputes. Specializing in commercial litigation, arbitration, bankruptcy, and criminal defense in Indonesian courts.",
 }
 const LitigationService = () => {
     return(

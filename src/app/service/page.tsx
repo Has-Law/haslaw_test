@@ -3,7 +3,8 @@ import Main from "@/components/service/Main"
 import { Metadata } from "next"
 
 export const metadata : Metadata = {
-    title : 'service'
+    title : 'service',
+    description: "Explore our comprehensive legal services. From corporate restructuring and commercial transactions to high-stakes litigation, HAS Law covers your legal needs.",
 }
 
 const Services = () => {

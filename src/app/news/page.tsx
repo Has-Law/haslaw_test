@@ -2,7 +2,8 @@ import Main from "@/components/news/Main";
 import { Metadata } from "next";
 
 export const metadata: Metadata = { 
-    title: 'News'
+    title: 'News',
+    description: "Stay updated with the latest legal insights, regulatory changes, and firm news from HAS Attorneys at Law. Expert analysis on the Indonesian legal landscape.",
 }
 
 

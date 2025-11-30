@@ -3,7 +3,8 @@ import Main from "@/components/corporate/Main";
 import { Metadata } from "next";
 
 export const metadata : Metadata = {
-    title : 'corporate'
+    title : 'corporate',
+    description: "Expert corporate legal guidance in Indonesia. We assist clients with M&A, foreign investment, commercial contracts, and regulatory compliance.",
 }
 const CorporateService = () => {
     return(

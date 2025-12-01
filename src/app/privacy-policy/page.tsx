@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy Policy and Cookie Information for HasLaw',
+  description: 'HAS Attorneys at Law outlines data practices that ensure the secure handling of client information in accordance with professional standards and Indonesian legal requirements.',
 }
 
 export default function PrivacyPolicy() {

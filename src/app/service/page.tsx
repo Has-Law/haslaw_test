@@ -4,7 +4,7 @@ import { Metadata } from "next"
 
 export const metadata : Metadata = {
     title : 'service',
-    description: "Explore our comprehensive legal services. From corporate restructuring and commercial transactions to high-stakes litigation, HAS Law covers your legal needs.",
+    description: "Has Attorneys at Law offers two core service lines comprising litigation services and corporate services designed to support both complex disputes and day-to-day business needs in South Jakarta.",
 }
 
 const Services = () => {

@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata : Metadata = {
     title : 'corporate',
-    description: "Expert corporate legal guidance in Indonesia. We assist clients with M&A, foreign investment, commercial contracts, and regulatory compliance.",
+    description: "Has Attorneys at Law delivers comprehensive corporate legal support covering governance, compliance, and major commercial transactions across South Jakarta.",
 }
 const CorporateService = () => {
     return(

@@ -4,7 +4,7 @@ import { Metadata } from "next"
 
 export const metadata : Metadata = {
     title : 'litigation',
-    description: "Robust legal representation for complex disputes. Specializing in commercial litigation, arbitration, bankruptcy, and criminal defense in Indonesian courts.",
+    description: "Has Attorneys at Law provides litigation focused representation for commercial disputes, regulatory matters, and high-stakes legal proceedings in South Jakarta.",
 }
 const LitigationService = () => {
     return(

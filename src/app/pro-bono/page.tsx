@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata : Metadata = {
     title: 'probono',
-    description: "Committed to justice for all. Explore HAS Attorneys at Law's Pro Bono initiatives, providing accessible legal aid to underrepresented communities in Indonesia.",
+    description: "Has Attorneys at Law delivers comprehensive corporate legal support covering governance, compliance, and major commercial transactions across South Jakarta.",
 }
 const ProBono = () => {
     return(

@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getNewsBySlug, getAllNews } from "@/lib/news";
-
+import { getNewsBySlug, getAllNews, API_BASE_URL } from "@/lib/news";
 export async function generateStaticParams() {
     const allNews = await getAllNews();
 
@@ -33,7 +32,6 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
 
     const relatedNews = allNews.filter(item => item.slug !== slug).slice(0, 3);
 
-    const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 
     return (

@@ -16,8 +16,7 @@ export interface ApiResponse<T> {
     data: T;
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
-
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://api.has-law.com';
 export async function getAllNews(): Promise<News[]> {
     try {
         const response = await fetch(`${API_BASE_URL}/api/v1/news`, {

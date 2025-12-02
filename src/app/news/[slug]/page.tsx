@@ -118,7 +118,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
                             </div>
                             <div className="mt-8">
                                 <Link href="/news" className="block w-full text-center bg-[#A0001B] hover:bg-[#780014] text-white py-3 rounded-lg font_britanica_bold transition-colors duration-300">
-                                    View All New
+                                    View All News
                                 </Link>
                             </div>
                         </div>

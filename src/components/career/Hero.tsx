@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { getAllBatches, type BatchListItem } from "@/lib/career";
 import Image from "next/image";
 import hero from "@/assets/career/hero.webp";
-import heroMobile from "@/assets/career/hero-mobile.png";
+import heroMobile from "@/assets/career/hero-mobile.webp";
 import internship1 from "@/assets/career/image/internship-kiri.webp";
 import internship2 from "@/assets/career/image/internship-tengah.webp";
 import internship3 from "@/assets/career/image/internship-kanan.webp";

@@ -1,42 +1,76 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { getNewsBySlug, getAllNews, API_BASE_URL } from "@/lib/news";
-export async function generateStaticParams() {
-    const allNews = await getAllNews();
+import { useParams } from 'next/navigation';
+import useSWR from 'swr';
+import type { News } from "@/lib/news";
 
-    if (!allNews) return [];
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://api.has-law.com';
 
-    return allNews.map((news) => ({
-        slug: news.slug,
-    }));
+interface ApiResponse<T> {
+    success: boolean;
+    message: string;
+    data: T;
 }
 
-interface NewsDetailProps {
-    params: Promise<{
-        slug: string;
-    }>;
-}
+const fetcher = async (url: string) => {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Failed to fetch news');
+    const result: ApiResponse<News> = await res.json();
+    return result.data;
+};
 
-export default async function NewsDetail({ params }: NewsDetailProps) {
-    const { slug } = await params;
+const allNewsFetcher = async (url: string) => {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Failed to fetch news');
+    const result: ApiResponse<News[]> = await res.json();
+    return result.data;
+};
 
-    const [newsItem, allNews] = await Promise.all([
-        getNewsBySlug(slug),
-        getAllNews()
-    ]);
+export default function NewsDetail() {
+    const params = useParams();
+    const slug = params.slug as string;
 
-    if (!newsItem) {
-        notFound();
+    const { data: newsItem, error: newsError, isLoading: newsLoading } = useSWR(
+        slug ? `${API_BASE_URL}/api/v1/news/slug/${slug}` : null,
+        fetcher
+    );
+
+    const { data: allNews, error: allNewsError } = useSWR(
+        `${API_BASE_URL}/api/v1/news`,
+        allNewsFetcher
+    );
+
+    if (newsLoading) {
+        return (
+            <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+                <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#A0001B] mx-auto mb-4"></div>
+                    <p className="text-gray-600">Loading...</p>
+                </div>
+            </div>
+        );
     }
 
-    const relatedNews = allNews.filter(item => item.slug !== slug).slice(0, 3);
+    if (newsError || !newsItem) {
+        return (
+            <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+                <div className="text-center">
+                    <h1 className="text-4xl font-bold text-gray-800 mb-4">404</h1>
+                    <p className="text-gray-600 mb-6">News not found</p>
+                    <Link href="/news" className="bg-[#A0001B] text-white px-6 py-3 rounded-lg hover:bg-[#780014] transition-colors">
+                        Back to News
+                    </Link>
+                </div>
+            </div>
+        );
+    }
 
-
+    const relatedNews = allNews?.filter(item => item.slug !== slug).slice(0, 3) || [];
 
     return (
         <div className="min-h-screen bg-gray-50">
-
             <div className="relative h-[80vw] md:h-[52vw]">
                 <Image
                     src={`${API_BASE_URL}/${newsItem.image}`}
@@ -47,12 +81,12 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className='absolute bottom-0 left-0 right-0 p-6 md:px-[8vw] md:py-[5vw] md:pr-[15vw] text-white flex flex-row gap-x-4 md:gap-x-6 items-stretch'>
-           <div className=' w-2 bg-white rounded-tr-[2vw] rounded-br-[2vw]'/>         
+                    <div className=' w-2 bg-white rounded-tr-[2vw] rounded-br-[2vw]'/>         
                     <div className="flex flex-col gap-y-[1vw]">
-                        <p className="bg-[#A0001B] px-3 py-[0.2vw] rounded-lg w-fit font_britanica_bold  text-[clamp(1.5vw,2.5vw,2.5vw)] md:text-[clamp(2vw,2vw,7vw)]">
+                        <p className="bg-[#A0001B] px-3 py-[0.2vw] rounded-lg w-fit font_britanica_bold text-[clamp(1.5vw,2.5vw,2.5vw)] md:text-[clamp(2vw,2vw,7vw)]">
                             {newsItem.category}
                         </p>
-                        <h1 className="font_britanica_black  text-[clamp(3vw,4vw,5vw)] md:text-[clamp(2.5vw,2.5vw,4rem)] leading-tight text-justify">
+                        <h1 className="font_britanica_black text-[clamp(3vw,4vw,5vw)] md:text-[clamp(2.5vw,2.5vw,4rem)] leading-tight text-justify">
                             {newsItem.news_title}
                         </h1>
                         <p className="text-gray-300 font_britanica_regular text-[clamp(1.5vw,2.5vw,2.5vw)] md:text-[clamp(2vw,2vw,5vw)]">
@@ -64,18 +98,15 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
                 </div>
             </div>
 
-
             <div className="px-[5vw] mb-[2vw]">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-[3vw] mt-12 ">
                     <div className="sm:col-span-2">
-
                         <p className="font_britanica_regular text-gray-800 leading-relaxed 
                                    text-[clamp(0.85rem,4vw,1.2rem)]
                                    whitespace-pre-wrap break-words text-justify">
                             {newsItem.content}
                         </p>
                     </div>
-
 
                     <div className="lg:col-span-1 mt-12 lg:mt-0 sm:mb-0 mb-12">
                         <div className="">
@@ -125,4 +156,4 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
             </div>
         </div>
     );
-};
+}

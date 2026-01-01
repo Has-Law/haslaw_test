@@ -25,7 +25,7 @@ export interface BatchListItem {
 
 
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://api.has-law.com';
 
 
 export async function getBatch(batchId: string | number): Promise<BatchData> {

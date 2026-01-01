@@ -22,7 +22,7 @@ export interface ApiResponse<T> {
     data: T;
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://api.has-law.com';
 
 export async function getAllMembers(): Promise<Member[]> {
     try {

@@ -27,7 +27,8 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 export async function getAllMembers(): Promise<Member[]> {
     try {
         const response = await fetch(`${API_BASE_URL}/api/v1/members`, {
-            cache: 'no-store' 
+            // Untuk static export, gunakan force-cache
+            cache: 'force-cache' 
         });
         if (!response.ok) return [];
         const result: ApiResponse<Member[]> = await response.json();

@@ -1,5 +1,8 @@
 import { getAllMembers } from "@/lib/members";
-import MemberDetailClient from "./MemberDetailClient"; 
+import MemberDetailClient from "./MemberDetailClient";
+
+// Untuk static export, hanya path yang di-generate saat build yang valid
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
     try {

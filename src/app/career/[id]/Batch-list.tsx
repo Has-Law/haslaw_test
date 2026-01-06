@@ -115,7 +115,7 @@ export default function CareerBatchClient({ batchId }: CareerBatchClientProps) {
   const handleInitialSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
-    if (!batch) return;
+    if (!batch || !batch.form_fields) return;
 
     for (const field of batch.form_fields) {
       if (field.is_required) {
@@ -257,7 +257,7 @@ export default function CareerBatchClient({ batchId }: CareerBatchClientProps) {
             {success}
           </div>
         ) : (
-          batch && (
+          batch && batch.form_fields && (
             <>
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="font_britanica_bold text-[#780014] mb-4 text-[clamp(2.5rem,5vw,3.75rem)]">
@@ -276,7 +276,7 @@ export default function CareerBatchClient({ batchId }: CareerBatchClientProps) {
                 className="bg-white rounded-2xl shadow-xl p-[clamp(1.5rem,4vw,2.5rem)] w-full max-w-5xl mt-12"
               >
                 <div className="grid grid-cols-1 font_britanica_regular md:grid-cols-2 gap-x-8 gap-y-6">
-                  {batch.form_fields.map((field) => {
+                  {(batch.form_fields || []).map((field) => {
                     const key = `field_${field.id}`;
                     return (
                       <div

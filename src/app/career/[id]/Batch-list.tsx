@@ -72,10 +72,12 @@ export default function CareerBatchClient({ batchId }: CareerBatchClientProps) {
     getBatch(batchId)
       .then((data) => {
         console.log('Batch data received:', data);
+        console.log('Batch status:', data?.status);
         console.log('Form fields:', data?.form_fields);
         
         // Check if batch status is closed
         if (data.status !== "Open") {
+          console.log('Batch is not Open, redirecting to /career');
           // Redirect to career page if batch is closed
           router.push("/career");
           return;

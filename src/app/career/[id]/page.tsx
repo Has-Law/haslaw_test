@@ -1,13 +1,13 @@
 import { getAllBatches } from "@/lib/career";
 import CareerBatchClient from "./Batch-list";
 
-// Untuk static export, hanya path yang di-generate saat build yang valid
-export const dynamicParams = false;
+// Di Vercel: izinkan dynamic params (batch baru otomatis bisa diakses)
+// Di cPanel: hanya batch yang ter-generate saat build yang valid
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   try {
     console.log('Generating static params for career...');
-    // Gunakan getAllBatches untuk mendapatkan SEMUA batch, bukan hanya yang Open
     const batches = await getAllBatches();
 
     console.log('Found batches:', batches?.length || 0);

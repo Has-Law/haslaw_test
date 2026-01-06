@@ -18,7 +18,9 @@ import download from "@/assets/member/icon/download.png";
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 const fetcher = async (url: string): Promise<Member> => {
-    const res = await fetch(url);
+    const res = await fetch(url, {
+        cache: 'no-store', // Disable cache untuk selalu fetch data terbaru
+    });
     if (!res.ok) throw new Error('Gagal mengambil data anggota.');
     const result: ApiResponse<Member> = await res.json();
     return result.data;
@@ -30,7 +32,14 @@ export default function MemberDetailClient() {
 
     const { data: member, error, isLoading } = useSWR(
         id ? `${API_BASE_URL}/api/v1/members/${id}` : null,
-        fetcher
+        fetcher,
+        {
+            revalidateOnFocus: true,
+            revalidateOnReconnect: true,
+            errorRetryCount: 3, // Retry 3 kali jika error
+            errorRetryInterval: 1000, // Interval 1 detik antar retry
+            dedupingInterval: 0, // Disable deduplication untuk selalu fetch fresh
+        }
     );
 
     if (isLoading) return <div className="text-center py-40">Loading...</div>;

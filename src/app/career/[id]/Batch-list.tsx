@@ -11,7 +11,7 @@ import Image, { StaticImageData } from "next/image";
 import lawyersImg from "@/assets/career/image/lawyers-full.jpg";
 import staffImg from "@/assets/career/image/staff-full.jpg";
 import internshipImg from "@/assets/career/image/internship-full.jpg";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 
 interface OpportunityCardProps {
   image: StaticImageData;
@@ -45,11 +45,10 @@ interface OtherBatch {
   batch_type: string;
 }
 
-interface CareerBatchClientProps {
-  batchId: string;
-}
-
-export default function CareerBatchClient({ batchId }: CareerBatchClientProps) {
+export default function CareerBatchClient() {
+  const params = useParams();
+  const batchId = params.id as string;
+  
   const [batch, setBatch] = useState<BatchData | null>(null);
   const [loading, setLoading] = useState(true);
   const [form, setForm] = useState<Record<string, string | string[]>>({});

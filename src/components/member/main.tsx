@@ -31,7 +31,7 @@ const mapTitleToFilterKey = (title: string): FilterKey | null => {
 // --- Fetcher untuk SWR ---
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 const fetcher = async (url: string): Promise<Member[]> => {
-    const res = await fetch(url);
+    const res = await fetch(url, { cache: 'no-store' }); // Disable cache untuk selalu fetch data terbaru
     if (!res.ok) throw new Error('Gagal mengambil daftar anggota.');
     const result: ApiResponse<Member[]> = await res.json();
     return result.data;
@@ -68,7 +68,12 @@ const AdvocateCard = ({ advocate }: { advocate: Member }) => (
 const Main = () => {
     const { data: members, error, isLoading } = useSWR(
         `${API_BASE_URL}/api/v1/members`,
-        fetcher
+        fetcher,
+        {
+            revalidateOnFocus: true,
+            revalidateOnReconnect: true,
+            dedupingInterval: 0, // Disable deduplication untuk selalu fetch fresh
+        }
     );
 
     const [filters, setFilters] = useState<FiltersState>({

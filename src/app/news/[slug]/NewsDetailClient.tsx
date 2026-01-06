@@ -15,14 +15,18 @@ interface ApiResponse<T> {
 }
 
 const fetcher = async (url: string) => {
-    const res = await fetch(url);
+    const res = await fetch(url, {
+        cache: 'no-store', // Disable cache untuk selalu fetch data terbaru
+    });
     if (!res.ok) throw new Error('Failed to fetch news');
     const result: ApiResponse<News> = await res.json();
     return result.data;
 };
 
 const allNewsFetcher = async (url: string) => {
-    const res = await fetch(url);
+    const res = await fetch(url, {
+        cache: 'no-store',
+    });
     if (!res.ok) throw new Error('Failed to fetch news');
     const result: ApiResponse<News[]> = await res.json();
     return result.data;
@@ -34,12 +38,23 @@ export default function NewsDetailClient() {
 
     const { data: newsItem, error: newsError, isLoading: newsLoading } = useSWR(
         slug ? `${API_BASE_URL}/api/v1/news/slug/${slug}` : null,
-        fetcher
+        fetcher,
+        {
+            revalidateOnFocus: true,
+            revalidateOnReconnect: true,
+            errorRetryCount: 3, // Retry 3 kali jika error
+            errorRetryInterval: 1000, // Interval 1 detik antar retry
+            dedupingInterval: 0, // Disable deduplication untuk selalu fetch fresh
+        }
     );
 
     const { data: allNews } = useSWR(
         `${API_BASE_URL}/api/v1/news`,
-        allNewsFetcher
+        allNewsFetcher,
+        {
+            revalidateOnFocus: true,
+            dedupingInterval: 0,
+        }
     );
 
     if (newsLoading) {

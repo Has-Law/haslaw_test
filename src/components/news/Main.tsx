@@ -67,7 +67,12 @@ const NewsCard = ({ item }: { item: News }) => (
 const Main = () => {
     const { data: newsData, error, isLoading } = useSWR(
         `${API_BASE_URL}/api/v1/news`,
-        fetcher
+        fetcher,
+        {
+            revalidateOnFocus: true,
+            revalidateOnReconnect: true,
+            dedupingInterval: 0, // Disable deduplication untuk selalu fetch fresh
+        }
     );
 
     const [searchQuery, setSearchQuery] = useState('');

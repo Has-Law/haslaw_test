@@ -71,6 +71,9 @@ export default function CareerBatchClient({ batchId }: CareerBatchClientProps) {
     setLoading(true);
     getBatch(batchId)
       .then((data) => {
+        console.log('Batch data received:', data);
+        console.log('Form fields:', data?.form_fields);
+        
         // Check if batch status is closed
         if (data.status !== "Open") {
           // Redirect to career page if batch is closed
@@ -83,7 +86,8 @@ export default function CareerBatchClient({ batchId }: CareerBatchClientProps) {
           getOtherOpenBatches(data.batch_type).then(setOtherBatches);
         }
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error('Error fetching batch:', err);
         setError("Failed to load batch info");
         setLoading(false);
       });
@@ -257,7 +261,7 @@ export default function CareerBatchClient({ batchId }: CareerBatchClientProps) {
             {success}
           </div>
         ) : (
-          batch && batch.form_fields && (
+          batch && (
             <>
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="font_britanica_bold text-[#780014] mb-4 text-[clamp(2.5rem,5vw,3.75rem)]">
@@ -271,6 +275,11 @@ export default function CareerBatchClient({ batchId }: CareerBatchClientProps) {
                 </p>
               </div>
 
+              {(!batch.form_fields || batch.form_fields.length === 0) ? (
+                <div className="py-20 text-center text-gray-600 text-lg">
+                  No application form available at this time.
+                </div>
+              ) : (
               <form
                 onSubmit={handleInitialSubmit}
                 className="bg-white rounded-2xl shadow-xl p-[clamp(1.5rem,4vw,2.5rem)] w-full max-w-5xl mt-12"
@@ -451,6 +460,7 @@ export default function CareerBatchClient({ batchId }: CareerBatchClientProps) {
                   </div>
                 )}
               </form>
+              )}
 
               <div className="w-full max-w-5xl mt-20 text-center">
                 <h2 className="text-[clamp(2rem,4vw,2.75rem)] font_britanica_black text-[#4F000D] mb-8">

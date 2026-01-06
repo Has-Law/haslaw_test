@@ -1,9 +1,10 @@
 import { getAllBatches } from "@/lib/career";
 import CareerBatchClient from "./Batch-list";
 
-// Di Vercel: izinkan dynamic params (batch baru otomatis bisa diakses)
-// Di cPanel: hanya batch yang ter-generate saat build yang valid
-export const dynamicParams = true;
+// PENTING: Set false untuk kompatibilitas dengan static export
+// Di Vercel (tanpa output:'export'), Next.js akan tetap bisa generate halaman baru on-demand
+// karena generateStaticParams hanya pre-render, bukan membatasi
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   try {
